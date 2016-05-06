@@ -25,7 +25,7 @@ public class ButterKnife implements IWeapon
 		this.tier = tier;
 		attack = 1;
 		durability = 3;
-		speed = 50 * ((tier / 10) + 1);
+		speed = (int)(50.0 * (2 - (1 / Math.log(tier))));;
 		accuracy = 100.0;
 		weight = 1;
 		pfLimit = 0;

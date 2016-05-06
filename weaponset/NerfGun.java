@@ -1,9 +1,9 @@
 // Brad Howard
-// OCP Weapon Nerf Lance
+// OCP Weapon Nerf Gun
 
 package weaponset;
 
-public class NerfLance implements IWeapon
+public class NerfGun implements IWeapon
 {
 	private int ID;
 	private int eventID;
@@ -17,17 +17,17 @@ public class NerfLance implements IWeapon
 	private int attack;
 	private int pfLimit;
 	
-	public NerfLance(int tier)
+	public NerfGun(int tier)
 	{
-		ID = 3;
-		range = 'M';
+		ID = 4;
+		range = 'L';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(2 + (2 - (1 / Math.log(tier))));
-		durability = 4;
-		speed = (int)(25.0 * (2 - (1 / Math.log(tier))));
-		accuracy = 80.0;
-		weight = 3;
+		attack = (int)(1 + (2 - (1 / Math.log(tier))));
+		durability = 6;
+		speed = (int)(75.0 * (2 - (1 / Math.log(tier))));
+		accuracy = 60.0;
+		weight = 4;
 		pfLimit = 1;
 	}
 
@@ -83,12 +83,12 @@ public class NerfLance implements IWeapon
 	
 	public String getName()
 	{
-		return "Nerf Lance";
+		return "Nerf Gun";
 	}
 	
 	public String getAttackType()
 	{
-		return "Frrrrrromp!";
+		return "PingZoooomStick, right in eye!";
 	}
 
 	public int getID()

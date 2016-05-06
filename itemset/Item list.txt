@@ -51,6 +51,7 @@ Event IDs
 540 - Battle won
 550 - Battle lost
 560 - Force end of battle
+570 - Boss weakness override
 
 6-Item modifications
 600 - Fix durability
@@ -97,8 +98,8 @@ Event IDs
 2 - random number +
 3 - random number -
 4 - boosted stats
-5 - negative number error
-6 - effect error
+5 - random effect
+6 - error
 7 - effect mis-match error
 8 - event override
 9 - event end
