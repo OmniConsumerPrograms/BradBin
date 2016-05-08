@@ -23,11 +23,12 @@ public class NerfLance implements IWeapon
 		range = 'M';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(2 + (2 - (1 / Math.log(tier))));
+		attack = (int)(2 + (2 - (1 / Math.log(tier + 1))));
 		durability = 4;
-		speed = (int)(25.0 * (2 - (1 / Math.log(tier))));
+		speed = (int)(25.0 * (2 - (1 / Math.log(tier + 1))));
 		accuracy = 80.0;
 		weight = 3;
+		value = 9 * tier;
 		pfLimit = 1;
 	}
 

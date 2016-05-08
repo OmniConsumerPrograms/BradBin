@@ -23,11 +23,12 @@ public class NerfBat implements IWeapon
 		range = 'S';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(2 + (2 - (1 / Math.log(tier))));
+		attack = (int)(2 + (2 - (1 / Math.log(tier + 1))));
 		durability = 4;
-		speed = (int)(25.0 * (2 - (1 / Math.log(tier))));
+		speed = (int)(25.0 * (2 - (1 / Math.log(tier + 1))));
 		accuracy = 100.0;
 		weight = 2;
+		value = 8 * tier;
 		pfLimit = 1;
 	}
 

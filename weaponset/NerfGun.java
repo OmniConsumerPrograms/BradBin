@@ -23,11 +23,12 @@ public class NerfGun implements IWeapon
 		range = 'L';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(1 + (2 - (1 / Math.log(tier))));
+		attack = (int)(1 + (2 - (1 / Math.log(tier + 1))));
 		durability = 6;
-		speed = (int)(75.0 * (2 - (1 / Math.log(tier))));
+		speed = (int)(75.0 * (2 - (1 / Math.log(tier + 1))));
 		accuracy = 60.0;
 		weight = 4;
+		value = 10 * tier;
 		pfLimit = 1;
 	}
 
