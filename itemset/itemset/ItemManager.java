@@ -36,6 +36,4 @@ public class ItemManager implements IManager<IItem>
 	{
 		return itemList.indexOf(item);
 	}
-	
-	
 }
