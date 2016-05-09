@@ -3,34 +3,35 @@
 
 package weaponset;
 
-public class Dull extends PrefixSystem
+public class TierBoost extends PrefixSystem
 {
-	private int prefixID = 1;
-	private double effectBoost = -10.0;
+	private int prefixID = 0;
+	private int tier;
 	
-	public Dull(IWeapon weapon)
+	public TierBoost(IWeapon weapon, int tier)
 	{
 		super.weapon = weapon;
+		this.tier = tier;
 	}
 
 	public int getID()
 	{
-		return weapon.getID();
+		return prefixID + weapon.getID();
 	}
 
 	public String getName()
 	{
-		return "Dull " + weapon.getName();
+		return weapon.getName();
 	}
 
 	public int getEventID()
 	{
-		return prefixID + weapon.getEventID();
+		return weapon.getEventID();
 	}
 
 	public String getAttackType()
 	{
-		return "a dull " + weapon.getAttackType();
+		return weapon.getAttackType();
 	}
 
 	public char getRange()
@@ -40,7 +41,7 @@ public class Dull extends PrefixSystem
 
 	public int getSpeed()
 	{
-		return weapon.getSpeed();
+		return (int)(weapon.getSpeed() + (5 - (1 / Math.log(tier + 1))));
 	}
 
 	public double getAccuracy()
@@ -60,22 +61,22 @@ public class Dull extends PrefixSystem
 
 	public double getValue()
 	{
-		return weapon.getValue() * ((100.0 + (effectBoost * 2.0)) / 100);
+		return tier * weapon.getValue();
 	}
 
 	public int getTier()
 	{
-		return weapon.getTier();
+		return tier + weapon.getTier();
 	}
 
 	public int getAttack()
 	{
-		return (int)(weapon.getAttack() * ((100.0 + effectBoost)) / 100);
+		return (int)(weapon.getAttack() != 0 ? weapon.getAttack() + (5 - (1 / Math.log(tier + 1))) : 0);
 	}
 	
 	public int getPFLimit()
 	{
-		return 1 - weapon.getPFLimit();
+		return weapon.getPFLimit();
 	}
 
 }

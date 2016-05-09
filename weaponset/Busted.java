@@ -15,7 +15,7 @@ public class Busted extends PrefixSystem
 
 	public int getID()
 	{
-		return prefixID + weapon.getID();
+		return weapon.getID();
 	}
 
 	public String getName()
@@ -25,7 +25,7 @@ public class Busted extends PrefixSystem
 
 	public int getEventID()
 	{
-		return 1 + weapon.getEventID();
+		return prefixID + weapon.getEventID();
 	}
 
 	public String getAttackType()
@@ -50,7 +50,7 @@ public class Busted extends PrefixSystem
 
 	public int getDurability()
 	{
-		return weapon.getDurability();
+		return weapon.getDurability() * 0;
 	}
 
 	public double getWeight()
@@ -70,7 +70,7 @@ public class Busted extends PrefixSystem
 
 	public int getAttack()
 	{
-		return (int)(weapon.getAttack() * ((100.0 + effectBoost)) / 100);
+		return weapon.getAttack() * 0;
 	}
 	
 	public int getPFLimit()

@@ -3,12 +3,12 @@
 
 package weaponset;
 
-public class Awesome extends PrefixSystem
+public class Light extends PrefixSystem
 {
 	private int prefixID = 1;
-	private double effectBoost = 20.0;
+	private double effectBoost = 30.0;
 	
-	public Awesome(IWeapon weapon)
+	public Light(IWeapon weapon)
 	{
 		super.weapon = weapon;
 	}
@@ -20,7 +20,7 @@ public class Awesome extends PrefixSystem
 
 	public String getName()
 	{
-		return "Awesome " + weapon.getName();
+		return "Light " + weapon.getName();
 	}
 
 	public int getEventID()
@@ -30,7 +30,7 @@ public class Awesome extends PrefixSystem
 
 	public String getAttackType()
 	{
-		return "More than " + weapon.getAttackType();
+		return "Lightweight: " + weapon.getAttackType();
 	}
 
 	public char getRange()
@@ -45,17 +45,17 @@ public class Awesome extends PrefixSystem
 
 	public double getAccuracy()
 	{
-		return (int)(weapon.getAccuracy() * (1 + (effectBoost / 100)));
+		return (int)(weapon.getAccuracy() * (1 + (effectBoost / 200)));
 	}
 
 	public int getDurability()
 	{
-		return (int)(weapon.getDurability() + (effectBoost / 10));
+		return (int)(weapon.getDurability() - (effectBoost / 10));
 	}
 
 	public double getWeight()
 	{
-		return weapon.getWeight();
+		return weapon.getWeight() * (1 + (-effectBoost / 100));
 	}
 
 	public double getValue()

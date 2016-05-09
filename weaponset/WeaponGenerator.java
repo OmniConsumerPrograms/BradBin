@@ -10,7 +10,7 @@ public class WeaponGenerator
 {
 	private IManager<IWeapon> WM;
 	private IWeapon weapon;
-	private int prefixNumber = 4;
+	private int prefixNumber = 9;
 	
 	public WeaponGenerator()
 	{
@@ -73,11 +73,38 @@ public class WeaponGenerator
 			case 4:
 				weapon = new NerfGun(1);
 				break;
+			case 5:
+				weapon = new ShortSword(1);
+				break;
+			case 6:
+				weapon = new Spear(1);
+				break;
+			case 7:
+				weapon = new CrossBow(1);
+				break;
 			default:
 				weapon = new ButterKnife(99);
 				break;
 		}
 		
+		return weapon;
+	}
+	
+	public IWeapon levelWeaponUp(IWeapon weapon, int tier)
+	{
+		return weapon = new TierBoost(weapon, tier);
+	}
+	
+	public IWeapon fixWeapon(IWeapon weapon)
+	{
+		if(weapon.getName().contains("Busted"))
+		{
+			int ID = weapon.getID();
+			int tier = weapon.getTier();
+			weapon = makeWeapon(ID);
+			if(tier != 1)
+				weapon = levelWeaponUp(weapon, tier - 1);
+		}
 		return weapon;
 	}
 	
@@ -102,6 +129,21 @@ public class WeaponGenerator
 				break;
 			case 3:
 				weapon = new Godly(weapon);
+				break;
+			case 4:
+				weapon = new Awful(weapon);
+				break;
+			case 5:
+				weapon = new Furious(weapon);
+				break;
+			case 6:
+				weapon = new Light(weapon);
+				break;
+			case 7:
+				weapon = new Heavy(weapon);
+				break;
+			case 8:
+				weapon = new Legendary(weapon);
 				break;
 			default:
 				weapon = new Busted(weapon);

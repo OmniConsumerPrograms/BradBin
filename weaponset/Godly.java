@@ -15,7 +15,7 @@ public class Godly extends PrefixSystem
 
 	public int getID()
 	{
-		return prefixID + weapon.getID();
+		return weapon.getID();
 	}
 
 	public String getName()
@@ -25,12 +25,12 @@ public class Godly extends PrefixSystem
 
 	public int getEventID()
 	{
-		return 1 + weapon.getEventID();
+		return prefixID + weapon.getEventID();
 	}
 
 	public String getAttackType()
 	{
-		return "Godly + " + weapon.getAttackType();
+		return "Godly + " + weapon.getAttackType() + " + boosters + ??? = profit";
 	}
 
 	public char getRange()
@@ -60,7 +60,7 @@ public class Godly extends PrefixSystem
 
 	public double getValue()
 	{
-		return weapon.getValue() * effectBoost * 1111;
+		return weapon.getValue() * effectBoost * 11;
 	}
 
 	public int getTier()

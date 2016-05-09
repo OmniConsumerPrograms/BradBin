@@ -3,12 +3,12 @@
 
 package weaponset;
 
-public class Awesome extends PrefixSystem
+public class Legendary extends PrefixSystem
 {
 	private int prefixID = 1;
-	private double effectBoost = 20.0;
+	private double effectBoost = 40.0;
 	
-	public Awesome(IWeapon weapon)
+	public Legendary(IWeapon weapon)
 	{
 		super.weapon = weapon;
 	}
@@ -20,7 +20,7 @@ public class Awesome extends PrefixSystem
 
 	public String getName()
 	{
-		return "Awesome " + weapon.getName();
+		return "Legendary " + weapon.getName();
 	}
 
 	public int getEventID()
@@ -30,7 +30,7 @@ public class Awesome extends PrefixSystem
 
 	public String getAttackType()
 	{
-		return "More than " + weapon.getAttackType();
+		return "Legendary " + weapon.getAttackType();
 	}
 
 	public char getRange()

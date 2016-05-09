@@ -1,9 +1,9 @@
 // Brad Howard
-// OCP Weapon Nerf Gun
+// OCP Weapon Spear
 
 package weaponset;
 
-public class NerfGun implements IWeapon
+public class Spear implements IWeapon
 {
 	private int ID;
 	private int eventID;
@@ -17,18 +17,18 @@ public class NerfGun implements IWeapon
 	private int attack;
 	private int pfLimit;
 	
-	public NerfGun(int tier)
+	public Spear(int tier)
 	{
-		ID = 4;
-		range = 'L';
+		ID = 6;
+		range = 'M';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(1 + (2 - (1 / Math.log(tier + 1))));
-		durability = 6;
-		speed = (int)(75.0 * (2 - (1 / Math.log(tier + 1))));
-		accuracy = 60.0;
-		weight = 4;
-		value = 10 * tier;
+		attack = (int)(6 + (2 - (1 / Math.log(tier + 1))));
+		durability = 4;
+		speed = (int)(15.0 * (2 - (1 / Math.log(tier + 1))));
+		accuracy = 75.0;
+		weight = 6;
+		value = 24 * tier;
 		pfLimit = 1;
 	}
 
@@ -84,12 +84,12 @@ public class NerfGun implements IWeapon
 	
 	public String getName()
 	{
-		return "Nerf Gun";
+		return "Spear";
 	}
 	
 	public String getAttackType()
 	{
-		return "PingZoooomStick, owww my eye!";
+		return "SPEARED!";
 	}
 
 	public int getID()

@@ -1,0 +1,7 @@
+01 - Butter Knife
+02 - Nerf Bat
+03 - Nerf Lance
+04 - Nerf Gun
+05 - Short Sword
+06 - Spear
+07 - Cross Bow

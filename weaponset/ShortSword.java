@@ -1,9 +1,9 @@
 // Brad Howard
-// OCP Weapon Nerf Gun
+// OCP Weapon Short Sword
 
 package weaponset;
 
-public class NerfGun implements IWeapon
+public class ShortSword implements IWeapon
 {
 	private int ID;
 	private int eventID;
@@ -17,18 +17,18 @@ public class NerfGun implements IWeapon
 	private int attack;
 	private int pfLimit;
 	
-	public NerfGun(int tier)
+	public ShortSword(int tier)
 	{
-		ID = 4;
-		range = 'L';
+		ID = 5;
+		range = 'S';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(1 + (2 - (1 / Math.log(tier + 1))));
-		durability = 6;
-		speed = (int)(75.0 * (2 - (1 / Math.log(tier + 1))));
-		accuracy = 60.0;
+		attack = (int)(6 + (2 - (1 / Math.log(tier + 1))));
+		durability = 10;
+		speed = (int)(20.0 * (2 - (1 / Math.log(tier + 1))));
+		accuracy = 100.0;
 		weight = 4;
-		value = 10 * tier;
+		value = 25 * tier;
 		pfLimit = 1;
 	}
 
@@ -84,12 +84,12 @@ public class NerfGun implements IWeapon
 	
 	public String getName()
 	{
-		return "Nerf Gun";
+		return "Short Sword";
 	}
 	
 	public String getAttackType()
 	{
-		return "PingZoooomStick, owww my eye!";
+		return "Its Sharp as broken arrow";
 	}
 
 	public int getID()

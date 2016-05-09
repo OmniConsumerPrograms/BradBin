@@ -14,6 +14,11 @@ public class WeaponManager implements IManager<IWeapon>
 		itemList = new ArrayList<IWeapon>();
 	}
 	
+	public int size()
+	{
+		return itemList.size();
+	}
+	
 	public void set(IWeapon weapon)
 	{
 		itemList.add(weapon);
