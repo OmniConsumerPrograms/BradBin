@@ -23,18 +23,38 @@ public class NerfGun implements IWeapon
 		range = 'L';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(1 + (2 - (1 / Math.log(tier + 1))));
+		attack = 1;
 		durability = 6;
-		speed = (int)(75.0 * (2 - (1 / Math.log(tier + 1))));
+		speed = 75;
 		accuracy = 60.0;
 		weight = 4;
-		value = 10 * tier;
+		value = 10;
 		pfLimit = 1;
+	}
+
+	public String getName()
+	{
+		return "Nerf Gun";
+	}
+	
+	public String getAttackType()
+	{
+		return "PingZoooomStick, owww my eye!";
 	}
 
 	public int getAttack()
 	{
-		return attack;
+		return (int)(attack + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public int getSpeed()
+	{
+		return (int)(speed + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public void setTier(int tier)
+	{
+		this.tier = tier;
 	}
 	
 	public int getTier()
@@ -45,11 +65,6 @@ public class NerfGun implements IWeapon
 	public int getPFLimit()
 	{
 		return pfLimit;
-	}
-	
-	public int getSpeed()
-	{
-		return speed;
 	}
 	
 	public char getRange()
@@ -79,17 +94,7 @@ public class NerfGun implements IWeapon
 	
 	public double getValue()
 	{
-		return value;
-	}
-	
-	public String getName()
-	{
-		return "Nerf Gun";
-	}
-	
-	public String getAttackType()
-	{
-		return "PingZoooomStick, owww my eye!";
+		return value * tier;
 	}
 
 	public int getID()

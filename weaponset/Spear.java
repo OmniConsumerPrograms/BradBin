@@ -23,18 +23,38 @@ public class Spear implements IWeapon
 		range = 'M';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(6 + (2 - (1 / Math.log(tier + 1))));
+		attack = 6;
 		durability = 4;
-		speed = (int)(15.0 * (2 - (1 / Math.log(tier + 1))));
+		speed = 15;
 		accuracy = 75.0;
 		weight = 6;
-		value = 24 * tier;
+		value = 24;
 		pfLimit = 1;
+	}
+	
+	public String getName()
+	{
+		return "Spear";
+	}
+	
+	public String getAttackType()
+	{
+		return "SPEARED!";
 	}
 
 	public int getAttack()
 	{
-		return attack;
+		return (int)(attack + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public int getSpeed()
+	{
+		return (int)(speed + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public void setTier(int tier)
+	{
+		this.tier = tier;
 	}
 	
 	public int getTier()
@@ -45,11 +65,6 @@ public class Spear implements IWeapon
 	public int getPFLimit()
 	{
 		return pfLimit;
-	}
-	
-	public int getSpeed()
-	{
-		return speed;
 	}
 	
 	public char getRange()
@@ -79,17 +94,7 @@ public class Spear implements IWeapon
 	
 	public double getValue()
 	{
-		return value;
-	}
-	
-	public String getName()
-	{
-		return "Spear";
-	}
-	
-	public String getAttackType()
-	{
-		return "SPEARED!";
+		return value * tier;
 	}
 
 	public int getID()

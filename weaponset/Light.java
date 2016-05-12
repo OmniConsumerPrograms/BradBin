@@ -63,6 +63,11 @@ public class Light extends PrefixSystem
 		return weapon.getValue() * (1 + (effectBoost / 100));
 	}
 
+	public void setTier(int tier)
+	{
+		weapon.setTier(tier);
+	}
+	
 	public int getTier()
 	{
 		return weapon.getTier();

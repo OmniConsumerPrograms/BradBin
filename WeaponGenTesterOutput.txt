@@ -1,0 +1,801 @@
+7
+ID: 1
+EvID: 305
+Name: Butter Knife
+Attack Type: Use for Random effect!
+Attack: 1
+Range: S
+Speed: 27
+Accuracy: 100.0
+Weight: 1.0
+Durability: 3
+Value: 2.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 2
+EvID: 300
+Name: Nerf Bat
+Attack Type: Bonk!
+Attack: 2
+Range: S
+Speed: 13
+Accuracy: 100.0
+Weight: 2.0
+Durability: 4
+Value: 8.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 3
+EvID: 300
+Name: Nerf Lance
+Attack Type: Frrrrrromp!
+Attack: 2
+Range: M
+Speed: 13
+Accuracy: 80.0
+Weight: 3.0
+Durability: 4
+Value: 9.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 4
+EvID: 300
+Name: Nerf Gun
+Attack Type: PingZoooomStick, owww my eye!
+Attack: 1
+Range: L
+Speed: 41
+Accuracy: 60.0
+Weight: 4.0
+Durability: 6
+Value: 10.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 300
+Name: Short Sword
+Attack Type: Its Sharp as broken arrow
+Attack: 6
+Range: S
+Speed: 11
+Accuracy: 100.0
+Weight: 4.0
+Durability: 10
+Value: 25.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 300
+Name: Spear
+Attack Type: SPEARED!
+Attack: 6
+Range: M
+Speed: 8
+Accuracy: 75.0
+Weight: 6.0
+Durability: 4
+Value: 24.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 300
+Name: Cross Bow
+Attack Type: Thuuack!
+Attack: 6
+Range: L
+Speed: 27
+Accuracy: 60.0
+Weight: 6.0
+Durability: 12
+Value: 20.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 2
+EvID: 301
+Name: Dull Nerf Bat
+Attack Type: a dull Bonk!
+Attack: 1
+Range: S
+Speed: 13
+Accuracy: 100.0
+Weight: 2.0
+Durability: 4
+Value: 6.4
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 3
+EvID: 301
+Name: Awful Nerf Lance
+Attack Type: Less than Frrrrrromp!
+Attack: 1
+Range: M
+Speed: 12
+Accuracy: 76.0
+Weight: 3.0
+Durability: 3
+Value: 8.549999999999999
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 4
+EvID: 301
+Name: Legendary Nerf Gun
+Attack Type: Legendary PingZoooomStick, owww my eye!
+Attack: 1
+Range: L
+Speed: 57
+Accuracy: 84.0
+Weight: 4.0
+Durability: 10
+Value: 14.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 301
+Name: Light Short Sword
+Attack Type: Lightweight: Its Sharp as broken arrow
+Attack: 7
+Range: S
+Speed: 14
+Accuracy: 114.0
+Weight: 2.8
+Durability: 7
+Value: 32.5
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 301
+Name: Awful Spear
+Attack Type: Less than SPEARED!
+Attack: 5
+Range: M
+Speed: 7
+Accuracy: 71.0
+Weight: 6.0
+Durability: 3
+Value: 22.799999999999997
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Awesome Cross Bow
+Attack Type: More than Thuuack!
+Attack: 7
+Range: L
+Speed: 32
+Accuracy: 72.0
+Weight: 6.0
+Durability: 14
+Value: 24.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 300
+Name: Short Sword
+Attack Type: Its Sharp as broken arrow
+Attack: 10
+Range: S
+Speed: 15
+Accuracy: 100.0
+Weight: 4.0
+Durability: 10
+Value: 125.0
+Tier: 6
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 300
+Name: Spear
+Attack Type: SPEARED!
+Attack: 10
+Range: M
+Speed: 12
+Accuracy: 75.0
+Weight: 6.0
+Durability: 4
+Value: 192.0
+Tier: 9
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 300
+Name: Cross Bow
+Attack Type: Thuuack!
+Attack: 10
+Range: L
+Speed: 31
+Accuracy: 60.0
+Weight: 6.0
+Durability: 12
+Value: 380.0
+Tier: 20
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Godly Cross Bow
+Attack Type: Godly + Thuuack! + boosters + ??? = profit
+Attack: 7777
+Range: L
+Speed: 272
+Accuracy: 526.0
+Weight: 0.7792207792207793
+Durability: 789
+Value: 3251107.8600000003
+Tier: 20
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Godly Cross Bow
+Attack Type: Godly + Thuuack! + boosters + ??? = profit
+Attack: 7781
+Range: L
+Speed: 276
+Accuracy: 526.0
+Weight: 0.7792207792207793
+Durability: 789
+Value: 6.50221572E7
+Tier: 40
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Awesome Cross Bow
+Attack Type: More than Thuuack!
+Attack: 11
+Range: L
+Speed: 36
+Accuracy: 72.0
+Weight: 6.0
+Durability: 14
+Value: 936.0
+Tier: 40
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fixing
+After Fixing
+ID: 1
+EvID: 305
+Name: Butter Knife
+Attack Type: Use for Random effect!
+Attack: 1
+Range: S
+Speed: 27
+Accuracy: 100.0
+Weight: 1.0
+Durability: 3
+Value: 2.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 2
+EvID: 300
+Name: Nerf Bat
+Attack Type: Bonk!
+Attack: 2
+Range: S
+Speed: 13
+Accuracy: 100.0
+Weight: 2.0
+Durability: 4
+Value: 8.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 3
+EvID: 300
+Name: Nerf Lance
+Attack Type: Frrrrrromp!
+Attack: 2
+Range: M
+Speed: 13
+Accuracy: 80.0
+Weight: 3.0
+Durability: 4
+Value: 9.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 4
+EvID: 300
+Name: Nerf Gun
+Attack Type: PingZoooomStick, owww my eye!
+Attack: 1
+Range: L
+Speed: 41
+Accuracy: 60.0
+Weight: 4.0
+Durability: 6
+Value: 10.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 300
+Name: Short Sword
+Attack Type: Its Sharp as broken arrow
+Attack: 6
+Range: S
+Speed: 11
+Accuracy: 100.0
+Weight: 4.0
+Durability: 10
+Value: 25.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 300
+Name: Spear
+Attack Type: SPEARED!
+Attack: 6
+Range: M
+Speed: 8
+Accuracy: 75.0
+Weight: 6.0
+Durability: 4
+Value: 24.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 300
+Name: Cross Bow
+Attack Type: Thuuack!
+Attack: 6
+Range: L
+Speed: 27
+Accuracy: 60.0
+Weight: 6.0
+Durability: 12
+Value: 20.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 2
+EvID: 301
+Name: Dull Nerf Bat
+Attack Type: a dull Bonk!
+Attack: 1
+Range: S
+Speed: 13
+Accuracy: 100.0
+Weight: 2.0
+Durability: 4
+Value: 6.4
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 3
+EvID: 301
+Name: Awful Nerf Lance
+Attack Type: Less than Frrrrrromp!
+Attack: 1
+Range: M
+Speed: 12
+Accuracy: 76.0
+Weight: 3.0
+Durability: 3
+Value: 8.549999999999999
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 4
+EvID: 301
+Name: Legendary Nerf Gun
+Attack Type: Legendary PingZoooomStick, owww my eye!
+Attack: 1
+Range: L
+Speed: 57
+Accuracy: 84.0
+Weight: 4.0
+Durability: 10
+Value: 14.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 301
+Name: Light Short Sword
+Attack Type: Lightweight: Its Sharp as broken arrow
+Attack: 7
+Range: S
+Speed: 14
+Accuracy: 114.0
+Weight: 2.8
+Durability: 7
+Value: 32.5
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 301
+Name: Awful Spear
+Attack Type: Less than SPEARED!
+Attack: 5
+Range: M
+Speed: 7
+Accuracy: 71.0
+Weight: 6.0
+Durability: 3
+Value: 22.799999999999997
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Awesome Cross Bow
+Attack Type: More than Thuuack!
+Attack: 7
+Range: L
+Speed: 32
+Accuracy: 72.0
+Weight: 6.0
+Durability: 14
+Value: 24.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 300
+Name: Short Sword
+Attack Type: Its Sharp as broken arrow
+Attack: 10
+Range: S
+Speed: 15
+Accuracy: 100.0
+Weight: 4.0
+Durability: 10
+Value: 125.0
+Tier: 6
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 300
+Name: Spear
+Attack Type: SPEARED!
+Attack: 10
+Range: M
+Speed: 12
+Accuracy: 75.0
+Weight: 6.0
+Durability: 4
+Value: 192.0
+Tier: 9
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 300
+Name: Cross Bow
+Attack Type: Thuuack!
+Attack: 10
+Range: L
+Speed: 31
+Accuracy: 60.0
+Weight: 6.0
+Durability: 12
+Value: 380.0
+Tier: 20
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Godly Cross Bow
+Attack Type: Godly + Thuuack! + boosters + ??? = profit
+Attack: 7777
+Range: L
+Speed: 272
+Accuracy: 526.0
+Weight: 0.7792207792207793
+Durability: 789
+Value: 3251107.8600000003
+Tier: 20
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Godly Cross Bow
+Attack Type: Godly + Thuuack! + boosters + ??? = profit
+Attack: 7781
+Range: L
+Speed: 276
+Accuracy: 526.0
+Weight: 0.7792207792207793
+Durability: 789
+Value: 6.50221572E7
+Tier: 40
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Awesome Cross Bow
+Attack Type: More than Thuuack!
+Attack: 11
+Range: L
+Speed: 36
+Accuracy: 72.0
+Weight: 6.0
+Durability: 14
+Value: 936.0
+Tier: 40
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 1
+EvID: 305
+Name: Butter Knife
+Attack Type: Use for Random effect!
+Attack: 1
+Range: S
+Speed: 27
+Accuracy: 100.0
+Weight: 1.0
+Durability: 3
+Value: 2.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 2
+EvID: 300
+Name: Nerf Bat
+Attack Type: Bonk!
+Attack: 2
+Range: S
+Speed: 13
+Accuracy: 100.0
+Weight: 2.0
+Durability: 4
+Value: 8.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 3
+EvID: 300
+Name: Nerf Lance
+Attack Type: Frrrrrromp!
+Attack: 2
+Range: M
+Speed: 13
+Accuracy: 80.0
+Weight: 3.0
+Durability: 4
+Value: 9.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 4
+EvID: 300
+Name: Nerf Gun
+Attack Type: PingZoooomStick, owww my eye!
+Attack: 1
+Range: L
+Speed: 41
+Accuracy: 60.0
+Weight: 4.0
+Durability: 6
+Value: 10.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 300
+Name: Short Sword
+Attack Type: Its Sharp as broken arrow
+Attack: 6
+Range: S
+Speed: 11
+Accuracy: 100.0
+Weight: 4.0
+Durability: 10
+Value: 25.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 300
+Name: Spear
+Attack Type: SPEARED!
+Attack: 6
+Range: M
+Speed: 8
+Accuracy: 75.0
+Weight: 6.0
+Durability: 4
+Value: 24.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 300
+Name: Cross Bow
+Attack Type: Thuuack!
+Attack: 6
+Range: L
+Speed: 27
+Accuracy: 60.0
+Weight: 6.0
+Durability: 12
+Value: 20.0
+Tier: 1
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 2
+EvID: 301
+Name: Dull Nerf Bat
+Attack Type: a dull Bonk!
+Attack: 1
+Range: S
+Speed: 13
+Accuracy: 100.0
+Weight: 2.0
+Durability: 4
+Value: 6.4
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 3
+EvID: 301
+Name: Awful Nerf Lance
+Attack Type: Less than Frrrrrromp!
+Attack: 1
+Range: M
+Speed: 12
+Accuracy: 76.0
+Weight: 3.0
+Durability: 3
+Value: 8.549999999999999
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 4
+EvID: 301
+Name: Legendary Nerf Gun
+Attack Type: Legendary PingZoooomStick, owww my eye!
+Attack: 1
+Range: L
+Speed: 57
+Accuracy: 84.0
+Weight: 4.0
+Durability: 10
+Value: 14.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 301
+Name: Light Short Sword
+Attack Type: Lightweight: Its Sharp as broken arrow
+Attack: 7
+Range: S
+Speed: 14
+Accuracy: 114.0
+Weight: 2.8
+Durability: 7
+Value: 32.5
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 301
+Name: Awful Spear
+Attack Type: Less than SPEARED!
+Attack: 5
+Range: M
+Speed: 7
+Accuracy: 71.0
+Weight: 6.0
+Durability: 3
+Value: 22.799999999999997
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Awesome Cross Bow
+Attack Type: More than Thuuack!
+Attack: 7
+Range: L
+Speed: 32
+Accuracy: 72.0
+Weight: 6.0
+Durability: 14
+Value: 24.0
+Tier: 1
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 5
+EvID: 300
+Name: Short Sword
+Attack Type: Its Sharp as broken arrow
+Attack: 10
+Range: S
+Speed: 15
+Accuracy: 100.0
+Weight: 4.0
+Durability: 10
+Value: 125.0
+Tier: 6
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 6
+EvID: 300
+Name: Spear
+Attack Type: SPEARED!
+Attack: 10
+Range: M
+Speed: 12
+Accuracy: 75.0
+Weight: 6.0
+Durability: 4
+Value: 192.0
+Tier: 9
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 300
+Name: Cross Bow
+Attack Type: Thuuack!
+Attack: 10
+Range: L
+Speed: 31
+Accuracy: 60.0
+Weight: 6.0
+Durability: 12
+Value: 380.0
+Tier: 20
+PF Limit: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Godly Cross Bow
+Attack Type: Godly + Thuuack! + boosters + ??? = profit
+Attack: 7777
+Range: L
+Speed: 272
+Accuracy: 526.0
+Weight: 0.7792207792207793
+Durability: 789
+Value: 3251107.8600000003
+Tier: 20
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Godly Cross Bow
+Attack Type: Godly + Thuuack! + boosters + ??? = profit
+Attack: 7781
+Range: L
+Speed: 276
+Accuracy: 526.0
+Weight: 0.7792207792207793
+Durability: 789
+Value: 6.50221572E7
+Tier: 40
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ID: 7
+EvID: 301
+Name: Awesome Cross Bow
+Attack Type: More than Thuuack!
+Attack: 11
+Range: L
+Speed: 36
+Accuracy: 72.0
+Weight: 6.0
+Durability: 14
+Value: 936.0
+Tier: 40
+PF Limit: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

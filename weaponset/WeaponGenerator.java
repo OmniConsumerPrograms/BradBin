@@ -90,9 +90,9 @@ public class WeaponGenerator
 		return weapon;
 	}
 	
-	public IWeapon levelWeaponUp(IWeapon weapon, int tier)
+	public void levelWeaponUp(IWeapon weapon, int tier)
 	{
-		return weapon = new TierBoost(weapon, tier);
+		weapon.setTier(tier);
 	}
 	
 	public IWeapon fixWeapon(IWeapon weapon)
@@ -103,7 +103,7 @@ public class WeaponGenerator
 			int tier = weapon.getTier();
 			weapon = makeWeapon(ID);
 			if(tier != 1)
-				weapon = levelWeaponUp(weapon, tier - 1);
+				levelWeaponUp(weapon, tier - 1);
 		}
 		return weapon;
 	}

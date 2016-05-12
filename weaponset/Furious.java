@@ -67,6 +67,11 @@ public class Furious extends PrefixSystem
 	{
 		return weapon.getTier();
 	}
+	
+	public void setTier(int tier)
+	{
+		weapon.setTier(tier);
+	}
 
 	public int getAttack()
 	{

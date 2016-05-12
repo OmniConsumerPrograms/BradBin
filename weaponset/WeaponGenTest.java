@@ -16,12 +16,12 @@ public class WeaponGenTest
 		WM.set(WG.getRandomPrefix(WM.get(4)));
 		WM.set(WG.getRandomPrefix(WM.get(5)));
 		WM.set(WG.getRandomPrefix(WM.get(6)));
-		WM.set(WG.levelWeaponUp(WM.get(4), 5));
-		WM.set(WG.levelWeaponUp(WM.get(5), 8));
-		WM.set(WG.levelWeaponUp(WM.get(6), 19));
-		WM.set(WG.getRandomPrefix(WM.get(15)));
-		WM.set(WG.levelWeaponUp(WM.get(16), 20));
-		WM.set(WG.levelWeaponUp(WM.get(12), 39));
+		WG.levelWeaponUp(WM.get(4), 5);
+		WG.levelWeaponUp(WM.get(5), 8);
+		WG.levelWeaponUp(WM.get(6), 20);
+		WM.set(WG.getRandomPrefix(WM.get(12)));
+		WG.levelWeaponUp(WM.get(12), 20);
+		WG.levelWeaponUp(WM.get(12), 40);
 		
       if(eventID == 820)
       {

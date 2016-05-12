@@ -23,18 +23,38 @@ public class ShortSword implements IWeapon
 		range = 'S';
 		eventID = 300;
 		this.tier = tier;
-		attack = (int)(6 + (2 - (1 / Math.log(tier + 1))));
+		attack = 6;
 		durability = 10;
-		speed = (int)(20.0 * (2 - (1 / Math.log(tier + 1))));
+		speed = 20;
 		accuracy = 100.0;
 		weight = 4;
-		value = 25 * tier;
+		value = 25;
 		pfLimit = 1;
+	}
+	
+	public String getName()
+	{
+		return "Short Sword";
+	}
+	
+	public String getAttackType()
+	{
+		return "Its Sharp as broken arrow";
 	}
 
 	public int getAttack()
 	{
-		return attack;
+		return (int)(attack + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public int getSpeed()
+	{
+		return (int)(speed + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public void setTier(int tier)
+	{
+		this.tier = tier;
 	}
 	
 	public int getTier()
@@ -45,11 +65,6 @@ public class ShortSword implements IWeapon
 	public int getPFLimit()
 	{
 		return pfLimit;
-	}
-	
-	public int getSpeed()
-	{
-		return speed;
 	}
 	
 	public char getRange()
@@ -80,16 +95,6 @@ public class ShortSword implements IWeapon
 	public double getValue()
 	{
 		return value;
-	}
-	
-	public String getName()
-	{
-		return "Short Sword";
-	}
-	
-	public String getAttackType()
-	{
-		return "Its Sharp as broken arrow";
 	}
 
 	public int getID()

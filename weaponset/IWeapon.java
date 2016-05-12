@@ -25,6 +25,8 @@ public interface IWeapon
 	
 	public double getValue();
 	
+	public void setTier(int tier);
+	
 	public int getTier();
 	
 	public int getAttack();

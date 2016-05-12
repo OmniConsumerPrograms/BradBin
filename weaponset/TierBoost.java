@@ -7,7 +7,7 @@ public class TierBoost extends PrefixSystem
 {
 	private int prefixID = 0;
 	private int tier;
-	
+		
 	public TierBoost(IWeapon weapon, int tier)
 	{
 		super.weapon = weapon;
@@ -67,6 +67,11 @@ public class TierBoost extends PrefixSystem
 	public int getTier()
 	{
 		return tier + weapon.getTier();
+	}
+	
+	public void setTier(int tier)
+	{
+		weapon.setTier(tier);
 	}
 
 	public int getAttack()

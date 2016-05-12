@@ -25,16 +25,36 @@ public class ButterKnife implements IWeapon
 		this.tier = tier;
 		attack = 1;
 		durability = 3;
-		speed = (int)(50.0 * (2 - (1 / Math.log(tier + 1))));;
+		speed = 50;
 		accuracy = 100.0;
 		weight = 1;
-		value = 2 * tier;
+		value = 2;
 		pfLimit = 0;
+	}
+
+	public String getName()
+	{
+		return "Butter Knife";
+	}
+	
+	public String getAttackType()
+	{
+		return "Use for Random effect!";
 	}
 
 	public int getAttack()
 	{
 		return attack;
+	}
+	
+	public int getSpeed()
+	{
+		return (int)(speed + (2 - (1 / Math.log(tier + 1))));
+	}
+	
+	public void setTier(int tier)
+	{
+		this.tier = tier;
 	}
 	
 	public int getTier()
@@ -45,11 +65,6 @@ public class ButterKnife implements IWeapon
 	public int getPFLimit()
 	{
 		return pfLimit;
-	}
-	
-	public int getSpeed()
-	{
-		return speed;
 	}
 	
 	public char getRange()
@@ -79,17 +94,7 @@ public class ButterKnife implements IWeapon
 	
 	public double getValue()
 	{
-		return value;
-	}
-	
-	public String getName()
-	{
-		return "Butter Knife";
-	}
-	
-	public String getAttackType()
-	{
-		return "Use for Random effect!";
+		return value * tier;
 	}
 
 	public int getID()
