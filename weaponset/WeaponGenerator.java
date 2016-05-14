@@ -103,7 +103,7 @@ public class WeaponGenerator
 			int tier = weapon.getTier();
 			weapon = makeWeapon(ID);
 			if(tier != 1)
-				levelWeaponUp(weapon, tier - 1);
+				levelWeaponUp(weapon, tier);
 		}
 		return weapon;
 	}

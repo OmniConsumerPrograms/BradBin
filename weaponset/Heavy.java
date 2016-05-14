@@ -60,7 +60,7 @@ public class Heavy extends PrefixSystem
 
 	public double getValue()
 	{
-		return weapon.getValue() * (1 + (effectBoost / 100));
+		return weapon.getValue() * (1 + (-effectBoost / 100));
 	}
 
 	public int getTier()

@@ -75,7 +75,7 @@ public class Light extends PrefixSystem
 
 	public int getAttack()
 	{
-		return (int)(weapon.getAttack() * (1 + (effectBoost / 100)));
+		return (int)(weapon.getAttack() * (1 + (-effectBoost / 100)));
 	}
 	
 	public int getPFLimit()

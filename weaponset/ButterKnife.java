@@ -49,7 +49,7 @@ public class ButterKnife implements IWeapon
 	
 	public int getSpeed()
 	{
-		return (int)(speed + (2 - (1 / Math.log(tier + 1))));
+		return (int)(speed * (2 - (1 / (double)tier)));
 	}
 	
 	public void setTier(int tier)

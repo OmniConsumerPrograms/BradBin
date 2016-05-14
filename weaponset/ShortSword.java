@@ -44,12 +44,12 @@ public class ShortSword implements IWeapon
 
 	public int getAttack()
 	{
-		return (int)(attack + (2 - (1 / Math.log(tier + 1))));
+		return (int)(attack * (2 - (1 / (double)tier)));
 	}
 	
 	public int getSpeed()
 	{
-		return (int)(speed + (2 - (1 / Math.log(tier + 1))));
+		return (int)(speed * (2 - (1 / (double)tier)));
 	}
 	
 	public void setTier(int tier)
@@ -94,7 +94,7 @@ public class ShortSword implements IWeapon
 	
 	public double getValue()
 	{
-		return value;
+		return value * tier;
 	}
 
 	public int getID()
