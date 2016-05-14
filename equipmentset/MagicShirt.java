@@ -72,17 +72,17 @@ public class MagicShirt implements IEquipment
 	
 	public int getPhysicalDefense()
 	{
-		return (int)(physicalDefense * (2 - (1 / Math.log(tier + 1))));
+		return (int)(physicalDefense * (2 - (1 / (double)tier)));
 	}
 	
 	public int getMagicalDefense()
 	{
-		return (int)(magicalDefense * (2 - (1 / Math.log(tier + 1))));
+		return (int)(magicalDefense * (2 - (1 / (double)tier)));
 	}
 	
 	public int getSpeed()
 	{
-		return (int)(speed * (2 - (1 / Math.log(tier + 1))));
+		return (int)(speed * (2 - (1 / (double)tier)));
 	}
 		
 	public double getValue()
