@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP IManager
 
-package itemset;
+package equipmentset;
 
 public interface IManager<T>
 {
@@ -12,6 +12,6 @@ public interface IManager<T>
 	public boolean has(T t);
 	
 	public int indexOf(T t);
-
+	
 	public int size();
 }

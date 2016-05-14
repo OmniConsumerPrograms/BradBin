@@ -45,7 +45,7 @@ public class ItemGenerator
 		}
 		
 		in.close();
-		return 810;
+		return 820;
 	}
 	
 	private void addItem(IItem item)

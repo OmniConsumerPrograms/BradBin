@@ -1,0 +1,12 @@
+01 - Paper Armor
+02 - Magic Shirt
+03 - Pot Lid
+04 - Rubber Gloves
+05 - Golden Ring
+06 - Hard Hat
+07 - Wooden Shield
+08 - Tin Helmet
+09 - Chainmail
+10 - Iron Gauntlet
+11 - Iron Shield
+12 - Iron Chest Plate

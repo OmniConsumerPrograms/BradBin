@@ -5,5 +5,5 @@ package equipmentset;
 
 public abstract class PrefixSystem implements IEquipment
 {
-	protected IEquipment equpiment;
+	protected IEquipment equipment;
 }

@@ -25,9 +25,9 @@ public class WeaponGenTest
 		WG.levelWeaponUp(WM.get(6), 20);
 		WG.levelWeaponUp(WM.get(10), 40);
 		
-      if(eventID == 820)
+      if(eventID == 830)
       {
-		 for(int index = 0; index < WM.size(); index++)
+		 for(int index = 1; index < WM.size(); index++)
          {
             System.out.println("ID: " + WM.get(index).getID());
 			System.out.println("EvID: " + WM.get(index).getEventID());
@@ -46,12 +46,12 @@ public class WeaponGenTest
      }
 		 System.out.println("Fixing");
 		 int limit = WM.size();
-		 for(int index = 0; index < limit; index++)
+		 for(int index = 1; index < limit; index++)
 		 {
 			 WM.set(WG.fixWeapon(WM.get(index)));
 		 }
 		 System.out.println("After Fixing");
-		 for(int index = 0; index < WM.size(); index++)
+		 for(int index = 1; index < WM.size(); index++)
          {
             System.out.println("ID: " + WM.get(index).getID());
 			System.out.println("EvID: " + WM.get(index).getEventID());

@@ -14,6 +14,11 @@ public class ItemManager implements IManager<IItem>
 		itemList = new ArrayList<IItem>();
 	}
 	
+	public int size()
+	{
+		return itemList.size() + 1;
+	}
+	
 	public void set(IItem item)
 	{
 		itemList.add(item);
@@ -21,7 +26,7 @@ public class ItemManager implements IManager<IItem>
 	
 	public IItem get(int ID)
 	{
-		return itemList.get(ID);
+		return itemList.get(ID - 1);
 	}
 	
 	public boolean has(IItem item)

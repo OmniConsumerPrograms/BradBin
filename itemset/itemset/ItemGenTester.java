@@ -10,9 +10,9 @@ public class ItemGenTester
       
 		eventID = IG.build();
       
-      if(eventID == 810)
+      if(eventID == 820)
       {
-		 for(int index = 0; index < 17; index++)
+		 for(int index = 1; index < IM.size(); index++)
          {
             System.out.println("ID: " + IM.get(index).getID());
             System.out.println("EvID: " + IM.get(index).getEventID());

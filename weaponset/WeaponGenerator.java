@@ -46,7 +46,7 @@ public class WeaponGenerator
 		}
 		
 		in.close();
-		return 820;
+		return 830;
 	}
 
 	private void addWeapon(IWeapon weapon)

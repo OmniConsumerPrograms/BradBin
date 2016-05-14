@@ -21,6 +21,8 @@ public interface IEquipment
 	
 	public int getTier();
 	
+	public int getSpeed();
+	
 	public int getPhysicalDefense();
 	
 	public int getMagicalDefense();
