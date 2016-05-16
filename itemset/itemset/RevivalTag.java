@@ -14,7 +14,7 @@ public class RevivalTag implements IItem
 	{
 		ID = 13;
 		effect = 25.0;
-		eventID = 50;
+		eventID = 780;
 	}
 	
 	public int getID()
@@ -34,7 +34,7 @@ public class RevivalTag implements IItem
 	
 	public String getEffectType()
 	{
-		return "restoring HP/MP";
+		return "Remove before life";
 	}
 	
 	public double getEffect()

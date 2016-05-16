@@ -1,20 +1,20 @@
 // Brad Howard
-// OCP potion
+// OCP Item
 
 package itemset;
 
-public class Potion implements IItem
+public class DisPoison implements IItem
 {
 	private int ID;
 	private double effect;
 	private int eventID;
-	private int prefixLimit = 1;
+	private int prefixLimit = 0;
 	
-	public Potion()
+	public DisPoison()
 	{
-		ID = 1;
-		effect = 10.0;
-		eventID = 100;
+		ID = 21;
+		effect = 1.0;
+		eventID = 740;
 	}
 	
 	public int getID()
@@ -24,7 +24,7 @@ public class Potion implements IItem
 	
 	public String getName()
 	{
-		return "Potion";
+		return "Dis-Poison";
 	}
 	
 	public int getEventID()
@@ -34,7 +34,7 @@ public class Potion implements IItem
 	
 	public String getEffectType()
 	{
-		return "Yeah that hit the spot";
+		return "Helps when nothing else will";
 	}
 	
 	public double getEffect()
@@ -46,4 +46,4 @@ public class Potion implements IItem
 	{
 		return prefixLimit;
 	}
-} 
+}

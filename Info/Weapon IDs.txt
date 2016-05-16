@@ -5,3 +5,31 @@
 05 - Short Sword
 06 - Spear
 07 - Cross Bow
+08 - Dagger
+09 - Throwing Knifes
+10 - Short Bow
+11 - Staff
+12 - Lead Pipe
+13 - Machete
+14 - Long Bow
+15 - Halberd
+16 - Javelin
+17 - Hammer
+18 - Mace
+19 - Lance
+20 - Katana
+21 - Arquebus
+22 - Magic Staff
+23 - Blunderbuss
+24 - Claymore
+25 - Excalibur
+26 - Gungnir
+27 - Spear of Longinus
+28 - Bow of Destiny
+29 - EggBlaster
+30 - Plasteel Sword
+31 - Rifle
+32 - Pistol
+34 - Golden Gun
+35 - Phas-Plasma Rifle
+36 - Charged Particle Sword

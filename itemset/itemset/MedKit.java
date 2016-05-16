@@ -34,7 +34,7 @@ public class MedKit implements IItem
 	
 	public String getEffectType()
 	{
-		return "restoring HP/MP";
+		return "A must have on any trip";
 	}
 	
 	public double getEffect()

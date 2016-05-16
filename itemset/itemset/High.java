@@ -35,7 +35,7 @@ public class High extends PrefixSystem
 	
 	public String getEffectType()
 	{
-		return item.getEffectType();
+		return "More of " + item.getEffectType();
 	}
 	
 	public int getPFLimit()

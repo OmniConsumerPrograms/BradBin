@@ -35,7 +35,7 @@ public class Low extends PrefixSystem
 	
 	public String getEffectType()
 	{
-		return item.getEffectType();
+		return "A little " + item.getEffectType();
 	}
 	
 	public int getPFLimit()

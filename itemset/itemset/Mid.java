@@ -35,7 +35,7 @@ public class Mid extends PrefixSystem
 	
 	public String getEffectType()
 	{
-		return item.getEffectType();
+		return "Medium side of " + item.getEffectType();
 	}
 	
 	public int getPFLimit()

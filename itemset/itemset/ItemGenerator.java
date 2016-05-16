@@ -124,6 +124,34 @@ public class ItemGenerator
 				item = new RevivalTag();
 				item = new Max(item);
 				break;
+			case 17:
+				item = new RepairKit();
+				item = new Low(item);
+				break;
+			case 18:
+				item = new RepairKit();
+				item = new Mid(item);
+				break;
+			case 19:
+				item = new RepairKit();
+				item = new High(item);
+				break;
+			case 20:
+				item = new RepairKit();
+				item = new Max(item);
+				break;
+			case 21:
+				item = new DisPoison();
+				break;
+			case 22:
+				item = new DisRage();
+				break;
+			case 23:
+				item = new DisPanic();
+				break;
+			case 24:
+				item = new DisConfusion();
+				break;
 			default:
 				item = new Potion();
 				break;

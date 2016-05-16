@@ -34,7 +34,7 @@ public class Elixir implements IItem
 	
 	public String getEffectType()
 	{
-		return "Restoring MP";
+		return "A drink of the Soul";
 	}
 	
 	public double getEffect()

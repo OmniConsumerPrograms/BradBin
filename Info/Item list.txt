@@ -5,8 +5,7 @@ Event IDs
 020	- Rage
 030	- Panic
 040 - Confusion
-050	- cures KO 
-060 - causes KO 
+050	- KO
 
 1-HP/MP change
 100 - restores HP
@@ -24,6 +23,8 @@ Event IDs
 240 - Magic Defence boost
 250 - Speed boost
 260 - Accuracy boost
+270 - Boost all
+280 - Boost durability
 
 3-Attack actions
 300 - Attack, weapon, Normal
@@ -37,11 +38,17 @@ Event IDs
 380 - Attack, floor, booby-trap
 390 - Attack, floor, trapdoor
 
-4-Stat nerfs
+4-Stat nerfs / Status effects
 400 - nerf Attack
 410 - nerf Defence
 420 - nerf Magic Attack
 430 - nerf Magic Defence
+440 - causes Poison
+450 - causes Rage
+460 - causes Panic
+470 - causes Confusion
+480 - causes OK
+490 - nerf all stats
 
 5-Battle events
 500 - Escape battle
@@ -59,14 +66,23 @@ Event IDs
 620 - Remove prefix
 630 - Re-roll item
 640 - Re-roll weapon
-650 - Add item
-660 - Add weapon
+650 - Re-roll equipment
+660 - Add item
+670 - Add weapon
+680 - Add equipment
+690 - Fix Busted prefix
 
 7-Item actions
 700 - item drop
 710 - item box
 720 - user added item
 730 - item used
+740 - cure Poison
+750 - cure Rage
+760 - cure Panic
+770 - cure Confusion
+780 - cure KO
+790 - cure all
 
 8-Start up
 800 - Start game
@@ -114,8 +130,8 @@ ID | name			| effect type					| effect | EvID | prefixLimit
 1  | Potion			| healing HP					| 10%	 | 100	| 4
 5  | Elixir			| restoring MP					| 10%	 | 140	| 4
 9  | Med-kit		| restoring HP/MP				| 20%	 | 120	| 4
-13 | Revival tag	| reviving from OK at 25% hp	| 25%	 | 50	| 4
+13 | Revival tag	| reviving from OK at 25% hp	| 25%	 | 780	| 4
 17 | Repair kit		| restoring durability			| 10%	 | 600	| 4
-21 | Dis-poison		| cures poison					| 100%	 | 10	| 0
-22 | Dis-rage		| cures rage					| 100%	 | 20	| 0
-23 | Dis-panic		| cures panic					| 100%	 | 30	| 0
+21 | Dis-poison		| cures poison					| 100%	 | 740	| 0
+22 | Dis-rage		| cures rage					| 100%	 | 750	| 0
+23 | Dis-panic		| cures panic					| 100%	 | 760	| 0

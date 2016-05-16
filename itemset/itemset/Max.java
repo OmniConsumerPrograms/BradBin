@@ -35,7 +35,7 @@ public class Max extends PrefixSystem
 	
 	public String getEffectType()
 	{
-		return item.getEffectType();
+		return item.getEffectType() + " to the MAX!";
 	}
 	
 	public int getPFLimit()
