@@ -90,11 +90,11 @@ Event IDs
 820 - build weapon list
 830 - build equipment list
 840 - build character list
-850 - build monster list
-860 - build floors
-870 - build dungeon
-880 - build save
-890 - build party
+850 - build floors
+860 - build dungeon
+870 - build Inventory
+880 - build save Manager
+890 - build party, Menu, Battle, and other Managers
 
 9-Gamemaster Events
 900 - Adventure state

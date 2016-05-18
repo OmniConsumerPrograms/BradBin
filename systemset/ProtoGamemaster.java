@@ -36,14 +36,33 @@ public class ProtoGamemaster
 	
 	public void buildEventSet()
 	{
-		IEvent[] tempSet = {new BuildItemSet(this), new BuildWeaponSet(this), new BuildEquipmentSet(this), new EndEvent(this)};
-		IEvent[] errorSet = {new BuildItemError(this), new BuildWeaponError(this), new BuildEquipmentError(this), new EndEvent(this)};
+		IEvent[] buildSet = {new BuildItemSet(this), 
+							 new BuildWeaponSet(this),
+							 new BuildEquipmentSet(this),
+							 new BuildCharacterSet(this),
+							 new BuildFloors(this),
+							 new BuildDungeon(this),
+							 new BuildInventory(this),
+							 new BuildSaveManager(this),
+							 new BuildOtherManager(this)};
 		
-		for(int index = 0; index < tempSet.length; index++)
+		IEvent[] buildErrorSet = {new BuildItemError(this),
+								  new BuildWeaponError(this),
+								  new BuildEquipmentError(this),
+								  new BuildCharacterError(this),
+								  new BuildFloorsError(this),
+								  new BuildDungeonError(this),
+								  new BuildInventoryError(this),
+								  new BuildSaveManagerError(this),
+								  new BuildOtherManagerError(this)};
+		
+		for(int index = 0; index < buildSet.length; index++)
 		{
-			eventSet[8][index + 1][0] = tempSet[index];
-			eventSet[8][index + 1][6] = errorSet[index];
+			eventSet[8][index + 1][0] = buildSet[index];
+			eventSet[8][index + 1][6] = buildErrorSet[index];
 		}
+		
+		eventSet[9][0][0] = new EndEvent(this);
 	}
 	
 	public void check()
@@ -80,5 +99,35 @@ public class ProtoGamemaster
 		EM = new EquipmentManager();
 		EG = new EquipmentGenerator(EM);
 		callEvent(EG.build());
+	}
+	
+	public void buildCharacterSet()
+	{
+		callEvent(850);
+	}
+	
+	public void buildFloors()
+	{
+		callEvent(860);
+	}
+	
+	public void buildDungeon()
+	{
+		callEvent(870);
+	}
+	
+	public void buildInventory()
+	{
+		callEvent(880);
+	}
+	
+	public void buildSaveManager()
+	{
+		callEvent(890);
+	}
+	
+	public void buildOtherManagers()
+	{
+		callEvent(900);
 	}
 }

@@ -10,3 +10,21 @@
 10 - Iron Gauntlet
 11 - Iron Shield
 12 - Iron Chest Plate
+13 - Magical Vest
+14 - Scalemail
+15 - Great Helm
+16 - Kite Shield
+17 - Dragonmail
+18 - Platemail
+19 - Steel Chest Plate
+20 - Large Shield
+21 - Mythril Chest Plate
+22 - Mythril Sheild
+23 - Spectre vest
+24 - Spectre cloak
+25 - Plasteel Armor
+26 - Plasteel Shield
+27 - Plasma Shield
+28 - Neutronium Armor
+29 - Phased Cloak
+30 - Omotanium DDS

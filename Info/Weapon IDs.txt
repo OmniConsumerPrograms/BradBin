@@ -31,5 +31,9 @@
 31 - Rifle
 32 - Pistol
 34 - Golden Gun
-35 - Phas-Plasma Rifle
+35 - Phase-Plasma Rifle
 36 - Charged Particle Sword
+37 - Rail-Gun
+38 - Phase-Plasma Cutter
+39 - Anti-Matter Cannon
+40 - Omotanium Blaster
