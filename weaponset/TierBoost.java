@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class TierBoost extends PrefixSystem
 {
 	private int prefixID = 0;

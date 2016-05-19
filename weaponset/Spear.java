@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Spear implements IWeapon
 {
 	private int ID;

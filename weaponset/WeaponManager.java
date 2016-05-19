@@ -5,6 +5,9 @@ package weaponset;
 
 import java.util.*;
 
+import Interfaces.IManager;
+import Interfaces.IWeapon;
+
 public class WeaponManager implements IManager<IWeapon>
 {
 	private ArrayList<IWeapon> itemList;

@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP IEvent interface
 
-package systemset;
+package Interfaces;
 
 public interface IEvent
 {

@@ -3,6 +3,8 @@
 
 package itemset;
 
+import Interfaces.IItem;
+
 public class Elixir implements IItem
 {
 	private int ID;

@@ -3,6 +3,8 @@
 
 package systemset;
 
+import Interfaces.IEvent;
+
 public class BuildWeaponError implements IEvent
 {
 	private ProtoGamemaster PGM;

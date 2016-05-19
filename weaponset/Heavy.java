@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Heavy extends PrefixSystem
 {
 	private int prefixID = 1;

@@ -6,6 +6,9 @@ package itemset;
 import java.io.*;
 import java.util.*;
 
+import Interfaces.IItem;
+import Interfaces.IManager;
+
 public class ItemGenerator
 {
 	private IManager<IItem> IM;

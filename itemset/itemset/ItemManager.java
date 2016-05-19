@@ -5,6 +5,9 @@ package itemset;
 
 import java.util.*;
 
+import Interfaces.IItem;
+import Interfaces.IManager;
+
 public class ItemManager implements IManager<IItem>
 {
 	private ArrayList<IItem> itemList;

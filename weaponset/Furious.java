@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Furious extends PrefixSystem
 {
 	private int prefixID = 1;

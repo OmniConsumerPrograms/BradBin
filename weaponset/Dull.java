@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Dull extends PrefixSystem
 {
 	private int prefixID = 1;

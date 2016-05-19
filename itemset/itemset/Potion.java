@@ -3,6 +3,8 @@
 
 package itemset;
 
+import Interfaces.IItem;
+
 public class Potion implements IItem
 {
 	private int ID;

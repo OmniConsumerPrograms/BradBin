@@ -3,6 +3,8 @@
 
 package itemset;
 
+import Interfaces.IItem;
+
 public abstract class PrefixSystem implements IItem
 {
 	protected IItem item;

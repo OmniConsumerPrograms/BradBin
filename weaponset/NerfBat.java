@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class NerfBat implements IWeapon
 {
 	private int ID;

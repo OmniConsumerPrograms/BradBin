@@ -3,6 +3,8 @@
 
 package itemset;
 
+import Interfaces.IItem;
+
 public class Mid extends PrefixSystem
 {
 	private int prefixID = 1;

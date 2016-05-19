@@ -3,6 +3,8 @@
 
 package equipmentset;
 
+import Interfaces.IEquipment;
+
 public class Armored extends PrefixSystem
 {
 	private int prefixID = 1;

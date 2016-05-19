@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class NerfGun implements IWeapon
 {
 	private int ID;

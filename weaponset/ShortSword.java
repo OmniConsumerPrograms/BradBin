@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class ShortSword implements IWeapon
 {
 	private int ID;

@@ -3,6 +3,8 @@
 
 package equipmentset;
 
+import Interfaces.IEquipment;
+
 public class IronGauntlet implements IEquipment
 {
 	private int ID;

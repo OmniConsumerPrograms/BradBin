@@ -3,6 +3,7 @@
 
 package systemset;
 
+import Interfaces.IEvent;
 import equipmentset.*;
 import weaponset.*;
 import itemset.*;

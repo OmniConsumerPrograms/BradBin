@@ -3,6 +3,8 @@
 
 package itemset;
 
+import Interfaces.IItem;
+
 public class Max extends PrefixSystem
 {
 	private int prefixID = 3;

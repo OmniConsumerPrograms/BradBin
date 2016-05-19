@@ -5,6 +5,9 @@ package equipmentset;
 
 import java.util.*;
 
+import Interfaces.IEquipment;
+import Interfaces.IManager;
+
 public class EquipmentManager implements IManager<IEquipment>
 {
 	private ArrayList<IEquipment> itemList;

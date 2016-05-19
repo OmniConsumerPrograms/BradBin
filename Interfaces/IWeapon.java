@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP Weapon Interface
 
-package weaponset;
+package Interfaces;
 
 public interface IWeapon
 {

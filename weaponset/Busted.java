@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Busted extends PrefixSystem
 {
 	private int prefixID = 1;

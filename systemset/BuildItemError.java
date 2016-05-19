@@ -3,6 +3,8 @@
 
 package systemset;
 
+import Interfaces.IEvent;
+
 public class BuildItemError implements IEvent
 {
 	private ProtoGamemaster PGM;

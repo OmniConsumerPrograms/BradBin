@@ -3,6 +3,8 @@
 
 package itemset;
 
+import Interfaces.IItem;
+
 public class High extends PrefixSystem
 {
 	private int prefixID = 2;

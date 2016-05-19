@@ -6,6 +6,9 @@ package equipmentset;
 import java.io.*;
 import java.util.*;
 
+import Interfaces.IEquipment;
+import Interfaces.IManager;
+
 public class EquipmentGenerator
 {
 	private IManager<IEquipment> EM;

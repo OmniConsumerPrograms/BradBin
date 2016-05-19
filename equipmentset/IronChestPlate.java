@@ -3,6 +3,8 @@
 
 package equipmentset;
 
+import Interfaces.IEquipment;
+
 public class IronChestPlate implements IEquipment
 {
 	private int ID;

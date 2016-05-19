@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Awful extends PrefixSystem
 {
 	private int prefixID = 1;

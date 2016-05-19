@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class Godly extends PrefixSystem
 {
 	private int prefixID = 1;

@@ -3,6 +3,8 @@
 
 package systemset;
 
+import Interfaces.IEvent;
+
 public class BuildFloorsError implements IEvent
 {
 	private ProtoGamemaster PGM;

@@ -3,6 +3,8 @@
 
 package weaponset;
 
+import Interfaces.IWeapon;
+
 public class ButterKnife implements IWeapon
 {
 	private int ID;

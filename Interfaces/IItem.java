@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP item object
 
-package itemset;
+package Interfaces;
 
 public interface IItem
 {
