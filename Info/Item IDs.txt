@@ -1,0 +1,40 @@
+01 - Low Potion
+02 - Mid Potion
+03 - High Potion
+04 - Max Potion
+05 - Low Elixir
+06 - Mid Elixir
+07 - High Elixir
+08 - Max Elixir
+09 - Low Med-Kit
+10 - Mid Med-Kit
+11 - High Med-Kit
+12 - Max Med-Kit
+13 - Low Revival Tag
+14 - Mid Revival Tag
+15 - High Revival Tag
+16 - Max Revival Tag
+17 - Low Repair Kit
+18 - Mid Repair Kit
+19 - High Repair Kit
+20 - Max Repair Kit
+21 - Dis-Poison
+22 - Dis-Rage
+23 - Dis-Panic
+24 - Dis-Confusion
+25 - Drink of the Fist
+26 - Drink of the Mind
+27 - Drink of the Wall
+28 - Drink of the Photon
+29 - Drink of the Realm
+30 - Drink of the Bullseye
+31 - Smoke Bomb
+32 - Time Bomb
+33 - Dis-nerf
+34 - Dis-buff
+35 - Drink of Health
+36 - Drink of Magic
+37 - Drink of the Body
+38 - Drink of the Gods
+39 - Holy Hand-grenade
+40 - Black hole in a bottle

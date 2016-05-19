@@ -155,6 +155,24 @@ public class ItemGenerator implements IGenerator
 			case 24:
 				item = new DisConfusion();
 				break;
+			case 25:
+				item = new DrinkOfTheFist();
+				break;
+			case 26:
+				item = new DrinkOfTheMind();
+				break;
+			case 27:
+				item = new DrinkOfTheWall();
+				break;
+			case 28:
+				item = new DrinkOfThePhoton();
+				break;
+			case 29:
+				item = new DrinkOfTheRealm();
+				break;
+			case 30:
+				item = new DrinkOfTheBullseye();
+				break;
 			default:
 				item = new Potion();
 				break;
