@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP Weapon Interface
 
-package Interfaces;
+package interfaces;
 
 public interface IWeapon
 {

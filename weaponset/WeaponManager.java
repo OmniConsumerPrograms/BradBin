@@ -5,8 +5,8 @@ package weaponset;
 
 import java.util.*;
 
-import Interfaces.IManager;
-import Interfaces.IWeapon;
+import interfaces.IManager;
+import interfaces.IWeapon;
 
 public class WeaponManager implements IManager<IWeapon>
 {

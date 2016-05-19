@@ -3,7 +3,7 @@
 
 package itemset;
 
-import Interfaces.IItem;
+import interfaces.IItem;
 
 public class RevivalTag implements IItem
 {

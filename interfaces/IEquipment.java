@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP Equipment Interface
 
-package Interfaces;
+package interfaces;
 
 public interface IEquipment
 {

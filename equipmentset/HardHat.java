@@ -3,7 +3,7 @@
 
 package equipmentset;
 
-import Interfaces.IEquipment;
+import interfaces.IEquipment;
 
 public class HardHat implements IEquipment
 {

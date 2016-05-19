@@ -6,8 +6,8 @@ package equipmentset;
 import java.io.*;
 import java.util.*;
 
-import Interfaces.IEquipment;
-import Interfaces.IManager;
+import interfaces.IEquipment;
+import interfaces.IManager;
 
 public class EquipmentGenerator
 {

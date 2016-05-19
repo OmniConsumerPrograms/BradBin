@@ -3,7 +3,7 @@
 
 package equipmentset;
 
-import Interfaces.IEquipment;
+import interfaces.IEquipment;
 
 public abstract class PrefixSystem implements IEquipment
 {

@@ -5,8 +5,8 @@ package itemset;
 
 import java.util.*;
 
-import Interfaces.IItem;
-import Interfaces.IManager;
+import interfaces.IItem;
+import interfaces.IManager;
 
 public class ItemManager implements IManager<IItem>
 {

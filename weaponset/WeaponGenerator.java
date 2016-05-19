@@ -6,8 +6,8 @@ package weaponset;
 import java.io.*;
 import java.util.*;
 
-import Interfaces.IManager;
-import Interfaces.IWeapon;
+import interfaces.IManager;
+import interfaces.IWeapon;
 
 public class WeaponGenerator
 {

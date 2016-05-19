@@ -3,7 +3,7 @@
 
 package systemset;
 
-import Interfaces.IEvent;
+import interfaces.IEvent;
 
 public class BuildSaveManagerError implements IEvent
 {

@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP IEvent interface
 
-package Interfaces;
+package interfaces;
 
 public interface IEvent
 {

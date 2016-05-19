@@ -3,7 +3,7 @@
 
 package weaponset;
 
-import Interfaces.IWeapon;
+import interfaces.IWeapon;
 
 public abstract class PrefixSystem implements IWeapon
 {

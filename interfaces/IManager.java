@@ -1,7 +1,7 @@
 // Brad Howard
 // OCP IManager
 
-package Interfaces;
+package interfaces;
 
 public interface IManager<T>
 {

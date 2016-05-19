@@ -3,7 +3,7 @@
 
 package weaponset;
 
-import Interfaces.IWeapon;
+import interfaces.IWeapon;
 
 public class EggBlaster implements IWeapon
 {
