@@ -12,6 +12,6 @@ public interface IManager<T>
 	public boolean has(T t);
 	
 	public int indexOf(T t);
-
+	
 	public int size();
 }

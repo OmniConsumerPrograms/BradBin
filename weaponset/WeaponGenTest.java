@@ -16,14 +16,14 @@ public class WeaponGenTest
 		WM.set(WG.getRandomPrefix(WM.get(4)));
 		WM.set(WG.getRandomPrefix(WM.get(5)));
 		WM.set(WG.getRandomPrefix(WM.get(6)));
-		WG.levelWeaponUp(WM.get(2), 3);
-		WG.levelWeaponUp(WM.get(3), 4);
-		WG.levelWeaponUp(WM.get(4), 5);
-		WG.levelWeaponUp(WM.get(5), 8);
-		WG.levelWeaponUp(WM.get(6), 20);
+		WG.levelUp(WM.get(2), 3);
+		WG.levelUp(WM.get(3), 4);
+		WG.levelUp(WM.get(4), 5);
+		WG.levelUp(WM.get(5), 8);
+		WG.levelUp(WM.get(6), 20);
 		WM.set(WG.getRandomPrefix(WM.get(12)));
-		WG.levelWeaponUp(WM.get(6), 20);
-		WG.levelWeaponUp(WM.get(10), 40);
+		WG.levelUp(WM.get(6), 20);
+		WG.levelUp(WM.get(10), 40);
 		
       if(eventID == 830)
       {
@@ -48,7 +48,7 @@ public class WeaponGenTest
 		 int limit = WM.size();
 		 for(int index = 1; index < limit; index++)
 		 {
-			 WM.set(WG.fixWeapon(WM.get(index)));
+			 WM.set(WG.fix(WM.get(index)));
 		 }
 		 System.out.println("After Fixing");
 		 for(int index = 1; index < WM.size(); index++)

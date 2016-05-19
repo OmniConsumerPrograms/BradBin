@@ -5,11 +5,11 @@ package itemset;
 
 import java.io.*;
 import java.util.*;
-
+import interfaces.IGenerator;
 import interfaces.IItem;
 import interfaces.IManager;
 
-public class ItemGenerator
+public class ItemGenerator implements IGenerator
 {
 	private IManager<IItem> IM;
 	private IItem item;

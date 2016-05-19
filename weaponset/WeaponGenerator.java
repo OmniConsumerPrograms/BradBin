@@ -5,11 +5,11 @@ package weaponset;
 
 import java.io.*;
 import java.util.*;
-
+import interfaces.IItemGenerator;
 import interfaces.IManager;
 import interfaces.IWeapon;
 
-public class WeaponGenerator
+public class WeaponGenerator implements IItemGenerator<IWeapon>
 {
 	private IManager<IWeapon> WM;
 	private IWeapon weapon;
@@ -93,12 +93,12 @@ public class WeaponGenerator
 		return weapon;
 	}
 	
-	public void levelWeaponUp(IWeapon weapon, int tier)
+	public void levelUp(IWeapon weapon, int tier)
 	{
 		weapon.setTier(tier);
 	}
 	
-	public IWeapon fixWeapon(IWeapon weapon)
+	public IWeapon fix(IWeapon weapon)
 	{
 		if(weapon.getName().contains("Busted"))
 		{
@@ -106,7 +106,7 @@ public class WeaponGenerator
 			int tier = weapon.getTier();
 			weapon = makeWeapon(ID);
 			if(tier != 1)
-				levelWeaponUp(weapon, tier);
+				levelUp(weapon, tier);
 		}
 		return weapon;
 	}

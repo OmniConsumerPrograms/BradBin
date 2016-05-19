@@ -5,5 +5,5 @@ package interfaces;
 
 public interface IGenerator
 {
-	public void build();
+	public int build();
 }

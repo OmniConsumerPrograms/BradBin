@@ -5,11 +5,11 @@ package equipmentset;
 
 import java.io.*;
 import java.util.*;
-
+import interfaces.IItemGenerator;
 import interfaces.IEquipment;
 import interfaces.IManager;
 
-public class EquipmentGenerator
+public class EquipmentGenerator implements IItemGenerator<IEquipment>
 {
 	private IManager<IEquipment> EM;
 	private IEquipment equipment;
@@ -108,12 +108,12 @@ public class EquipmentGenerator
 		return equipment;
 	}
 	
-	public void levelEquipmentUp(IEquipment equipment, int tier)
+	public void levelUp(IEquipment equipment, int tier)
 	{
 		equipment.setTier(tier);
 	}
 	
-	public IEquipment fixEquipment(IEquipment equipment)
+	public IEquipment fix(IEquipment equipment)
 	{
 		if(equipment.getName().contains("Busted"))
 		{
@@ -121,7 +121,7 @@ public class EquipmentGenerator
 			int tier = equipment.getTier();
 			equipment = makeEquipment(ID);
 			if(tier != 1)
-				levelEquipmentUp(equipment, tier);
+				levelUp(equipment, tier);
 		}
 		return equipment;
 	}

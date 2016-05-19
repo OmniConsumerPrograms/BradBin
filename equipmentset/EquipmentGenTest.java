@@ -15,11 +15,11 @@ public class EquipmentGenTest
 		
 		if(eventID == 840)
 		{
-			EG.levelEquipmentUp(EM.get(1), 50);
-			EG.levelEquipmentUp(EM.get(2), 60);
-			EG.levelEquipmentUp(EM.get(3), 70);
-			EG.levelEquipmentUp(EM.get(4), 80);
-			EG.levelEquipmentUp(EM.get(5), 100);
+			EG.levelUp(EM.get(1), 50);
+			EG.levelUp(EM.get(2), 60);
+			EG.levelUp(EM.get(3), 70);
+			EG.levelUp(EM.get(4), 80);
+			EG.levelUp(EM.get(5), 100);
 			EM.set(EG.getRandomPrefix(EM.get(1)));
 			EM.set(EG.getRandomPrefix(EM.get(2)));
 			EM.set(EG.getRandomPrefix(EM.get(3)));
