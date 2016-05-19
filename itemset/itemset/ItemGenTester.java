@@ -1,12 +1,14 @@
 package itemset;
 
 import interfaces.IGenerator;
+import interfaces.IManager;
+import interfaces.IItem;
 
 public class ItemGenTester
 {
 	public static void main(String[] args)
 	{
-		ItemManager IM = new ItemManager();
+		IManager<IItem> IM = new ItemManager();
 		IGenerator IG = new ItemGenerator(IM);
 		int eventID = 000;
       

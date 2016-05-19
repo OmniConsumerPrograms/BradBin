@@ -20,7 +20,7 @@ public class EquipmentGenerator implements IItemGenerator<IEquipment>
 		EM = new EquipmentManager();
 	}
 	
-	public EquipmentGenerator(EquipmentManager EM)
+	public EquipmentGenerator(IManager<IEquipment> EM)
 	{
 		this.EM = EM;
 	}

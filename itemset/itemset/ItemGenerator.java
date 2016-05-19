@@ -19,7 +19,7 @@ public class ItemGenerator implements IGenerator
 		IM = new ItemManager();
 	}
 	
-	public ItemGenerator(ItemManager IM)
+	public ItemGenerator(IManager<IItem> IM)
 	{
 		this.IM = IM;
 	}

@@ -1,11 +1,15 @@
 package weaponset;
 
+import interfaces.IWeapon;
+import interfaces.IManager;
+import interfaces.IItemGenerator;
+
 public class WeaponGenTest
 {
 	public static void main(String[] args)
 	{
-		WeaponManager WM = new WeaponManager();
-		WeaponGenerator WG = new WeaponGenerator(WM);
+		IManager<IWeapon> WM = new WeaponManager();
+		IItemGenerator<IWeapon> WG = new WeaponGenerator(WM);
 		int eventID = 000;
       
 		eventID = WG.build();

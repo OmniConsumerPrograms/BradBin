@@ -3,12 +3,16 @@
 
 package equipmentset;
 
+import interfaces.IManager;
+import interfaces.IEquipment;
+import interfaces.IItemGenerator;
+
 public class EquipmentGenTest
 {
 	public static void main(String[] args)
 	{
-		EquipmentManager EM = new EquipmentManager();
-		EquipmentGenerator EG = new EquipmentGenerator(EM);
+		IManager<IEquipment> EM = new EquipmentManager();
+		IItemGenerator<IEquipment> EG = new EquipmentGenerator(EM);
 		int eventID = 000;
 		
 		eventID = EG.build();

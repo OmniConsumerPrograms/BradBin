@@ -20,7 +20,7 @@ public class WeaponGenerator implements IItemGenerator<IWeapon>
 		WM = new WeaponManager();
 	}
 	
-	public WeaponGenerator(WeaponManager WM)
+	public WeaponGenerator(IManager<IWeapon> WM)
 	{
 		this.WM = WM;
 	}
