@@ -100,6 +100,9 @@ public class EquipmentGenerator implements IItemGenerator<IEquipment>
 			case 12:
 				equipment = new IronChestPlate(1);
 				break;
+			case 13:
+				equipment = new MagicalVest(1);
+				break;
 			default:
 				equipment = new PaperArmor(99);
 				break;

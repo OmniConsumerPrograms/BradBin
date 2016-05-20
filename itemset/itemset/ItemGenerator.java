@@ -173,6 +173,36 @@ public class ItemGenerator implements IGenerator
 			case 30:
 				item = new DrinkOfTheBullseye();
 				break;
+			case 31:
+				item = new SmokeBomb();
+				break;
+			case 32:
+				item = new TimeBomb();
+				break;
+			case 33:
+				item = new DisNerf();
+				break;
+			case 34:
+				item = new DisBuff();
+				break;
+			case 35:
+				item = new DrinkOfHealth();
+				break;
+			case 36:
+				item = new DrinkOfMagic();
+				break;
+			case 37:
+				item = new DrinkOfTheBody();
+				break;
+			case 38:
+				item = new DrinkOfTheGods();
+				break;
+			case 39:
+				item = new HolyHandGrenade();
+				break;
+			case 40:
+				item = new BlackHole();
+				break;
 			default:
 				item = new Potion();
 				break;
