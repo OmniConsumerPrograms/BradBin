@@ -31,7 +31,7 @@ public class WeaponGenTest
 		
       if(eventID == 830)
       {
-		 for(int index = 1; index < WM.size(); index++)
+		 for(int index = 0; index < WM.size(); index++)
          {
             System.out.println("ID: " + WM.get(index).getID());
 			System.out.println("EvID: " + WM.get(index).getEventID());

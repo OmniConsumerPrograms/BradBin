@@ -16,7 +16,7 @@ public class DrinkOfTheBullseye implements IItem
 	{
 		ID = 30;
 		effect = 5.0;
-		eventID = 260;
+		eventID = 264;
 	}
 	
 	public int getID()

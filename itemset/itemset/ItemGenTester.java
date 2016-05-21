@@ -16,7 +16,7 @@ public class ItemGenTester
       
       if(eventID == 820)
       {
-		 for(int index = 1; index < IM.size(); index++)
+		 for(int index = 0; index < IM.size(); index++)
          {
             System.out.println("ID: " + IM.get(index).getID());
             System.out.println("EvID: " + IM.get(index).getEventID());

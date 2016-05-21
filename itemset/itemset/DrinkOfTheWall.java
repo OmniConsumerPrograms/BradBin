@@ -16,7 +16,7 @@ public class DrinkOfTheWall implements IItem
 	{
 		ID = 27;
 		effect = 5.0;
-		eventID = 210;
+		eventID = 214;
 	}
 	
 	public int getID()

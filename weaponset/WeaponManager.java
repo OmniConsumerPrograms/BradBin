@@ -19,7 +19,7 @@ public class WeaponManager implements IManager<IWeapon>
 	
 	public int size()
 	{
-		return itemList.size() + 1;
+		return itemList.size();
 	}
 	
 	public void set(IWeapon weapon)
@@ -29,7 +29,7 @@ public class WeaponManager implements IManager<IWeapon>
 	
 	public IWeapon get(int ID)
 	{
-		return itemList.get(ID - 1);
+		return itemList.get(ID);
 	}
 	
 	public boolean has(IWeapon item)

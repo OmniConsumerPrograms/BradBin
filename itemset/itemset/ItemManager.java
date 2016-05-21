@@ -19,7 +19,7 @@ public class ItemManager implements IManager<IItem>
 	
 	public int size()
 	{
-		return itemList.size() + 1;
+		return itemList.size();
 	}
 	
 	public void set(IItem item)
@@ -29,7 +29,7 @@ public class ItemManager implements IManager<IItem>
 	
 	public IItem get(int ID)
 	{
-		return itemList.get(ID - 1);
+		return itemList.get(ID);
 	}
 	
 	public boolean has(IItem item)

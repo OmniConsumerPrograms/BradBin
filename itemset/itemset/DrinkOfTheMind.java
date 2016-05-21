@@ -16,7 +16,7 @@ public class DrinkOfTheMind implements IItem
 	{
 		ID = 26;
 		effect = 5.0;
-		eventID = 230;
+		eventID = 234;
 	}
 	
 	public int getID()

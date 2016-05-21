@@ -37,7 +37,7 @@ public class EquipmentGenTest
 			EM.set(EG.getRandomPrefix(EM.get(11)));
 			EM.set(EG.getRandomPrefix(EM.get(12)));
 			
-			for(int index = 1; index < EM.size(); index++)
+			for(int index = 0; index < EM.size(); index++)
 			{
 				System.out.println("ID: " + EM.get(index).getID());
 				System.out.println("Event ID: " + EM.get(index).getEventID());

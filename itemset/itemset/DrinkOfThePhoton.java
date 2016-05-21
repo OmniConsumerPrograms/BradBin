@@ -16,7 +16,7 @@ public class DrinkOfThePhoton implements IItem
 	{
 		ID = 28;
 		effect = 5.0;
-		eventID = 220;
+		eventID = 224;
 	}
 	
 	public int getID()

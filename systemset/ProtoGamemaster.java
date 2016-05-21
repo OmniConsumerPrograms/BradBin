@@ -3,6 +3,7 @@
 
 package systemset;
 
+import java.util.*;
 import equipmentset.*;
 import interfaces.IEvent;
 import weaponset.*;
@@ -57,13 +58,18 @@ public class ProtoGamemaster
 								  new BuildSaveManagerError(this),
 								  new BuildOtherManagerError(this)};
 		
+		eventSet[7][0][0] = new ItemDrop(this);
+		eventSet[7][0][6] = new ItemDropError(this);
+		
 		for(int index = 0; index < buildSet.length; index++)
 		{
 			eventSet[8][index + 1][0] = buildSet[index];
 			eventSet[8][index + 1][6] = buildErrorSet[index];
 		}
-		
-		eventSet[9][0][0] = new EndEvent(this);
+
+		eventSet[8][9][9] = new EndEvent(this);
+		eventSet[9][0][0] = new RunAdventureLoop(this);
+		eventSet[9][0][9] = new EndEvent(this);
 	}
 	
 	public void check()
@@ -79,6 +85,61 @@ public class ProtoGamemaster
 	public void runStartUp()
 	{
 		callEvent(810);
+		callEvent(900);
+	}
+	
+	public void runAdventureLoop()
+	{
+      int i = 10;
+      
+		while(i > 0)
+		{
+			if(i > 0)
+         {
+				callEvent(700);
+         }
+         i--;
+		}
+	}
+	
+	public void itemDrop()
+	{
+		Random r = new Random();
+		int rID = 0;
+		int type = r.nextInt(3);
+		try
+		{
+			switch(type)
+			{
+				case 0:
+					rID = r.nextInt(IM.size());
+               System.out.println(type + ":" + rID);
+					System.out.println(IM.get(rID).getName());
+					break;
+				case 1:
+					rID = r.nextInt(WM.size());
+               System.out.println(type + ":" + rID);
+					System.out.println(WM.get(rID).getName());
+					break;
+				case 2:
+					rID = r.nextInt(EM.size());
+               System.out.println(type + ":" + rID);
+					System.out.println(EM.get(rID).getName());
+					break;
+				default:
+					System.out.println("Random error");
+			}
+		}
+		catch(Exception e)
+		{
+			callEvent(706);
+		}
+		
+	}
+	
+	public void runBattleLoop()
+	{
+		
 	}
 	
 	public void buildItemSet()
@@ -129,6 +190,6 @@ public class ProtoGamemaster
 	
 	public void buildOtherManagers()
 	{
-		callEvent(900);
+		callEvent(899);
 	}
 }
