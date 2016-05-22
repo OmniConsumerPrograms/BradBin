@@ -5,7 +5,7 @@ package systemset;
 
 import java.util.*;
 import equipmentset.*;
-import interfaces.IEvent;
+import interfaces.*;
 import weaponset.*;
 import itemset.*;
 
@@ -18,10 +18,16 @@ public class ProtoGamemaster
 	ItemManager IM;
 	ItemGenerator IG;
 	IEvent[][][] eventSet;
+	IBin<IWeapon> weaponHolder;
+	IBin<IEquipment> equipmentHolder;
+	int prefixSwitch;
 	
 	public ProtoGamemaster()
 	{
 		eventSet = new IEvent[10][10][10];
+		weaponHolder = new Holder<IWeapon>();
+		equipmentHolder = new Holder<IEquipment>();
+		prefixSwitch = -1;
 		buildEventSet();
 	}
 	
@@ -58,6 +64,8 @@ public class ProtoGamemaster
 								  new BuildSaveManagerError(this),
 								  new BuildOtherManagerError(this)};
 		
+		eventSet[6][1][0] = new AddPrefix(this);
+		eventSet[6][1][6] = new AddPrefixError(this);
 		eventSet[7][0][0] = new ItemDrop(this);
 		eventSet[7][0][6] = new ItemDropError(this);
 		
@@ -113,18 +121,26 @@ public class ProtoGamemaster
 			{
 				case 0:
 					rID = r.nextInt(IM.size());
-               System.out.println(type + ":" + rID);
+					System.out.println(type + ":" + rID);
 					System.out.println(IM.get(rID).getName());
 					break;
 				case 1:
 					rID = r.nextInt(WM.size());
-               System.out.println(type + ":" + rID);
+					System.out.println(type + ":" + rID);
 					System.out.println(WM.get(rID).getName());
+					weaponHolder.place(WM.get(rID));
+					prefixSwitch = 0;
+					callEvent(610);
+					System.out.println(weaponHolder.get().getName());
 					break;
 				case 2:
 					rID = r.nextInt(EM.size());
-               System.out.println(type + ":" + rID);
+					System.out.println(type + ":" + rID);
 					System.out.println(EM.get(rID).getName());
+					equipmentHolder.place(EM.get(rID));
+					prefixSwitch = 1;
+					callEvent(610);
+					System.out.println(equipmentHolder.get().getName());
 					break;
 				default:
 					System.out.println("Random error");
@@ -134,7 +150,21 @@ public class ProtoGamemaster
 		{
 			callEvent(706);
 		}
-		
+		prefixSwitch = -1;
+	}
+	
+	public void addPrefix()
+	{
+		if(prefixSwitch == 0)
+		{
+			weaponHolder.place(WG.getRandomPrefix(weaponHolder.get()));
+		}
+		else if(prefixSwitch == 1)
+		{
+			equipmentHolder.place(EG.getRandomPrefix(equipmentHolder.get()));
+		}
+		else
+			callEvent(616);
 	}
 	
 	public void runBattleLoop()

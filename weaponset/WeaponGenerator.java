@@ -85,6 +85,67 @@ public class WeaponGenerator implements IItemGenerator<IWeapon>
 			case 7:
 				weapon = new CrossBow(1);
 				break;
+			case 8:
+				weapon = new Dagger(1);
+				break;
+			case 9:
+				weapon = new ThrowingKnife(1);
+				break;
+			case 10:
+				weapon = new ShortBow(1);
+				break;
+			case 11:
+				weapon = new Staff(1);
+				break;
+			case 12:
+				weapon = new LeadPipe(1);
+				break;
+			case 13:
+				weapon = new Machete(1);
+				break;
+			case 14:
+				weapon = new LongBow(1);
+				break;
+			case 15:
+				weapon = new Halberd(1);
+				break;
+			case 16:
+				weapon = new Javelin(1);
+				break;
+			case 17:
+				weapon = new Hammer(1);
+				break;
+			case 18:
+				weapon = new Mace(1);
+				break;
+			case 19:
+				weapon = new Lance(1);
+				break;
+			case 20:
+				weapon = new Katana(1);
+				break;
+			case 21:
+			case 22:
+			case 23:
+			case 24:
+			case 25:
+			case 26:
+			case 27:
+			case 28:
+			case 29:
+				weapon = new EggBlaster(1);
+				break;
+			case 30:
+			case 31:
+			case 32:
+			case 33:
+			case 34:
+			case 35:
+			case 36:
+			case 37:
+			case 38:
+			case 39:
+			case 40:
 			default:
 				weapon = new ButterKnife(99);
 				break;

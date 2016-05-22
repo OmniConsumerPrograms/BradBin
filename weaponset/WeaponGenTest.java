@@ -14,7 +14,7 @@ public class WeaponGenTest
       
 		eventID = WG.build();
 		System.out.println(WM.size());
-		WM.set(WG.getRandomPrefix(WM.get(1)));
+		/*WM.set(WG.getRandomPrefix(WM.get(1)));
 		WM.set(WG.getRandomPrefix(WM.get(2)));
 		WM.set(WG.getRandomPrefix(WM.get(3)));
 		WM.set(WG.getRandomPrefix(WM.get(4)));
@@ -27,7 +27,7 @@ public class WeaponGenTest
 		WG.levelUp(WM.get(6), 20);
 		WM.set(WG.getRandomPrefix(WM.get(12)));
 		WG.levelUp(WM.get(6), 20);
-		WG.levelUp(WM.get(10), 40);
+		WG.levelUp(WM.get(10), 40);*/
 		
       if(eventID == 830)
       {

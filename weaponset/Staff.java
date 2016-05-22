@@ -1,11 +1,11 @@
 // Brad Howard
-// OCP Weapon Nerf Gun
+// OCP Weapon Cross Bow
 
 package weaponset;
 
 import interfaces.IWeapon;
 
-public class EggBlaster implements IWeapon
+public class Staff implements IWeapon
 {
 	private int ID;
 	private int eventID;
@@ -19,29 +19,29 @@ public class EggBlaster implements IWeapon
 	private int attack;
 	private int pfLimit;
 	
-	public EggBlaster(int tier)
+	public Staff(int tier)
 	{
-		ID = 29;
-		range = 'L';
+		ID = 11;
+		range = 'S';
 		eventID = 300;
 		this.tier = tier;
-		attack = 42;
-		durability = 42;
-		speed = 80;
+		attack = 7;
+		durability = 8;
+		speed = 15;
 		accuracy = 90.0;
-		weight = 8;
-		value = 500;
+		weight = 3;
+		value = 18;
 		pfLimit = 1;
 	}
 
 	public String getName()
 	{
-		return "Egg Blaster";
+		return "Staff";
 	}
 	
 	public String getAttackType()
 	{
-		return "Get a load of this!";
+		return "Useful for many things, not just for magic";
 	}
 
 	public int getAttack()

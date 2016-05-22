@@ -1,39 +1,40 @@
-01 - Butter Knife
-02 - Nerf Bat
-03 - Nerf Lance
-04 - Nerf Gun
-05 - Short Sword
-06 - Spear
-07 - Cross Bow
-08 - Dagger
-09 - Throwing Knifes
-10 - Short Bow
-11 - Staff
-12 - Lead Pipe
-13 - Machete
-14 - Long Bow
-15 - Halberd
-16 - Javelin
-17 - Hammer
-18 - Mace
-19 - Lance
-20 - Katana
-21 - Arquebus
-22 - Magic Staff
-23 - Blunderbuss
-24 - Claymore
-25 - Excalibur
-26 - Gungnir
-27 - Spear of Longinus
-28 - Bow of Destiny
-29 - EggBlaster
-30 - Plasteel Sword
-31 - Rifle
-32 - Pistol
-34 - Golden Gun
-35 - Phase-Plasma Rifle
-36 - Charged Particle Sword
-37 - Rail-Gun
-38 - Phase-Plasma Cutter
-39 - Anti-Matter Cannon
-40 - Omotanium Blaster
+d - ID - Name					- range	- dam	- durab	- Speed	- acc	- wght	- value	- eID
+* - 01 - Butter Knife			- S		- 1		- 3		- 50	- 100	- 1		- 2		- 305
+* - 02 - Nerf Bat				- S		- 2		- 4		- 25	- 100	- 8		- 8		- 300
+* - 03 - Nerf Lance				- M		- 2		- 4		- 25	- 80	- 3		- 9		- 300
+* - 04 - Nerf Gun				- L		- 1		- 6		- 75	- 60	- 4		- 10	- 300
+* - 05 - Short Sword			- S		- 6		- 10	- 20	- 100	- 4		- 25	- 300
+* - 06 - Spear					- M		- 6		- 4		- 15	- 75	- 6		- 24	- 300
+* - 07 - Cross Bow				- L		- 6		- 12	- 50	- 60	- 6		- 20	- 300
+* - 08 - Dagger					- S		- 8		- 8		- 20	- 100	- 2		- 22	- 300
+* - 09 - Throwing Knifes		- M		- 8		- 8		- 30	- 60	- 2		- 20	- 300
+* - 10 - Short Bow				- L		- 7		- 12	- 40	- 75	- 5		- 23	- 300
+* - 11 - Staff					- S		- 7		- 8		- 15	- 90	- 3		- 18	- 300
+* - 12 - Lead Pipe				- S		- 9		- 14	- 20	- 100	- 8		- 30	- 300
+* - 13 - Machete				- S		- 12	- 10	- 10	- 100	- 6		- 32	- 300
+* - 14 - Long Bow				- L		- 10	- 18	- 25	- 75	- 5		- 28	- 300
+* - 15 - Halberd				- M		- 10	- 10	- 20	- 60	- 9		- 34	- 300
+* - 16 - Javelin				- M		- 15	- 12	- 30	- 70	- 6		- 38	- 300
+* - 17 - Hammer					- S		- 18	- 15	- 25	- 100	- 8		- 42	- 300
+* - 18 - Mace					- S		- 22	- 18	- 15	- 100	- 10	- 45	- 300
+* - 19 - Lance					- M		- 22	- 20	- 35	- 80	- 10	- 42	- 300
+* - 20 - Katana					- S		- 25	- 22	- 40	- 100	- 7		- 48	- 300
+  - 21 - Arquebus				- L		- 24	- 16	- 70	- 60	- 9		- 55	- 300
+  - 22 - Magic Staff			- S		- 20	- 12	- 50	- 100	- 6		- 60	- 300
+  - 23 - Blunderbuss			- M		- 28	- 14	- 60	- 50	- 8		- 75	- 300
+  - 24 - Claymore				- S		- 32	- 30	- 40	- 100	- 12	- 150	- 300
+  - 25 - Excalibur				- S		- 35	- 30	- 40	- 100	- 11	- 300	- 300
+  - 26 - Gungnir				- M		- 35	- 35	- 60	- 100	- 10	- 300	- 300
+  - 27 - Spear of Longinus		- M		- 38	- 38	- 75	- 90	- 9		- 400	- 300
+  - 28 - Bow of Destiny			- L		- 40	- 40	- 80	- 80	- 8		- 450	- 300
+* - 29 - EggBlaster				- L		- 42	- 42	- 80	- 90	- 8		- 500	- 300
+  - 30 - Plasteel Sword			- S		- 45	- 35	- 60	- 100	- 10	- 600	- 300
+  - 31 - Rifle					- L		- 46	- 30	- 80	- 90	- 7		- 600	- 300
+  - 32 - Pistol					- M		- 45	- 30	- 90	- 90	- 5		- 600	- 300
+  - 34 - Golden Gun				- L		- 50	- 40	- 80	- 90	- 6		- 777	- 300
+  - 35 - Phase-Plasma Rifle		- L		- 58	- 45	- 55	- 90	- 12	- 800	- 300
+  - 36 - Charged Particle Sword	- S		- 62	- 45	- 75	- 100	- 10	- 850	- 300
+  - 37 - Rail-Gun				- L		- 68	- 50	- 60	- 90	- 12	- 900	- 300
+  - 38 - Phase-Plasma Cutter	- M		- 72	- 50	- 50	- 80	- 12	- 950	- 300
+  - 39 - Anti-Matter Cannon		- L		- 75	- 50	- 80	- 80	- 12	- 1000	- 300
+  - 40 - Omotanium Blaster		- L		- 80	- 50	- 90	- 100	- 10	- 2000	- 300
