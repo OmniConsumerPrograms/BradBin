@@ -17,6 +17,7 @@ public class ProtoGamemaster
 	WeaponGenerator WG;
 	ItemManager IM;
 	ItemGenerator IG;
+	InventoryManager IVM;
 	IEvent[][][] eventSet;
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
@@ -210,16 +211,19 @@ public class ProtoGamemaster
 	
 	public void buildInventory()
 	{
+		IVM = new InventoryManager();
 		callEvent(880);
 	}
 	
 	public void buildSaveManager()
 	{
+		// builds SaveManager
 		callEvent(890);
 	}
 	
 	public void buildOtherManagers()
 	{
+		// builds Party, Menu, Battle, and any other managers to be
 		callEvent(899);
 	}
 }

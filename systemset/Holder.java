@@ -1,6 +1,6 @@
 package systemset;
 
-import java.util.IllegalFormatException;
+import interfaces.IBin;
 
 public class Holder<T> implements IBin<T>
 {
@@ -16,7 +16,7 @@ public class Holder<T> implements IBin<T>
 		this.t = t;
 	}
 	
-	public void place(T t) throws IllegalFormatException
+	public void place(T t)
 	{
 		this.t = t;
 	}

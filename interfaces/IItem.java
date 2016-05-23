@@ -3,7 +3,7 @@
 
 package interfaces;
 
-public interface IItem
+public interface IItem extends IUsable
 {
 	public int getID();
 	

@@ -3,7 +3,7 @@
 
 package interfaces;
 
-public interface IWeapon
+public interface IWeapon extends IUsable
 {
 	public int getID();
 	

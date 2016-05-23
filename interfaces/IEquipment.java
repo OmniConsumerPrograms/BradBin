@@ -3,7 +3,7 @@
 
 package interfaces;
 
-public interface IEquipment
+public interface IEquipment extends IUsable
 {
 	public int getID();
 	

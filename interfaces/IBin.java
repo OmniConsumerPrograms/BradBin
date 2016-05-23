@@ -1,4 +1,4 @@
-package systemset;
+package interfaces;
 
 public interface IBin<T>
 {
