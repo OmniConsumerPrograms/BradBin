@@ -65,6 +65,8 @@ public class ProtoGamemaster
 								  new BuildSaveManagerError(this),
 								  new BuildOtherManagerError(this)};
 		
+		eventSet[6][0][0] = new FixDurability(this);
+		eventSet[6][0][6] = new FixDurabilityError(this);
 		eventSet[6][1][0] = new AddPrefix(this);
 		eventSet[6][1][6] = new AddPrefixError(this);
 		eventSet[7][0][0] = new ItemDrop(this);
@@ -133,6 +135,8 @@ public class ProtoGamemaster
 					prefixSwitch = 0;
 					callEvent(610);
 					System.out.println(weaponHolder.get().getName());
+					callEvent(600);
+					System.out.println(weaponHolder.get().getName());
 					break;
 				case 2:
 					rID = r.nextInt(EM.size());
@@ -141,6 +145,8 @@ public class ProtoGamemaster
 					equipmentHolder.place(EM.get(rID));
 					prefixSwitch = 1;
 					callEvent(610);
+					System.out.println(equipmentHolder.get().getName());
+					callEvent(600);
 					System.out.println(equipmentHolder.get().getName());
 					break;
 				default:
@@ -166,6 +172,20 @@ public class ProtoGamemaster
 		}
 		else
 			callEvent(616);
+	}
+	
+	public void fixDurability()
+	{
+		if(prefixSwitch == 0)
+		{
+			weaponHolder.place(WG.fix(weaponHolder.get()));
+		}
+		else if(prefixSwitch == 1)
+		{
+			equipmentHolder.place(EG.fix(equipmentHolder.get()));
+		}
+		else
+			callEvent(606);
 	}
 	
 	public void runBattleLoop()

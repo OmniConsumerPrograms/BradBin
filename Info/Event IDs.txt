@@ -1,112 +1,112 @@
 Event IDs
-0-Status effects and running status
-000 - Normal
-010	- Poison
-020	- Rage
-030	- Panic
-040 - Confusion
-050	- KO
+0-Status effects and running status (Party Manager)
+  - 000 - Normal
+  - 010	- Poison
+  - 020	- Rage
+  - 030	- Panic
+  - 040 - Confusion
+  - 050	- KO
 
-1-HP/MP change
-100 - restores HP
-110 - adds HP+
-120 - restores HP & MP 
-130 - adds HP+ & MP+
-140 - restores MP
-150 - adds MP+
+1-HP/MP change (Party Manager)
+  - 100 - restores HP
+  - 110 - adds HP+
+  - 120 - restores HP & MP 
+  - 130 - adds HP+ & MP+
+  - 140 - restores MP
+  - 150 - adds MP+
 
-2-Stat Boosts
-200 - Attack boost
-210 - Defence boost
-220 - Attack Speed boost
-230 - Magic Attack boost
-240 - Magic Defence boost
-250 - Speed boost
-260 - Accuracy boost
-270 - Boost all
-280 - Boost durability
+2-Stat Boosts (Party Manager)
+  - 200 - Attack boost
+  - 210 - Defence boost
+  - 220 - Attack Speed boost
+  - 230 - Magic Attack boost
+  - 240 - Magic Defence boost
+  - 250 - Speed boost
+  - 260 - Accuracy boost
+  - 270 - Boost all
+  - 280 - Boost durability
 
-3-Attack actions
-300 - Attack, weapon, Normal
-310 - Attack, weapon, Magic
-320 - Attack, skill, normal
-330 - Attack, skill, magic
-340 - Attack, item, Normal
-350 - Attack, item, magic
-360 - Attack, box, mimic
-370 - Attack, box, booby-trap
-380 - Attack, floor, booby-trap
-390 - Attack, floor, trapdoor
+3-Attack actions (Battle Manager)
+  - 300 - Attack, weapon, Normal
+  - 310 - Attack, weapon, Magic
+  - 320 - Attack, skill, normal
+  - 330 - Attack, skill, magic
+  - 340 - Attack, item, Normal
+  - 350 - Attack, item, magic
+  - 360 - Attack, box, mimic
+  - 370 - Attack, box, booby-trap
+  - 380 - Attack, floor, booby-trap
+  - 390 - Attack, floor, trapdoor
 
-4-Stat nerfs / Status effects
-400 - nerf Attack
-410 - nerf Defence
-420 - nerf Magic Attack
-430 - nerf Magic Defence
-440 - causes Poison
-450 - causes Rage
-460 - causes Panic
-470 - causes Confusion
-480 - causes OK
-490 - nerf all stats
+4-Stat nerfs / Status effects (Battle Manager)
+  - 400 - nerf Attack
+  - 410 - nerf Defence
+  - 420 - nerf Magic Attack
+  - 430 - nerf Magic Defence
+  - 440 - causes Poison
+  - 450 - causes Rage
+  - 460 - causes Panic
+  - 470 - causes Confusion
+  - 480 - causes OK
+  - 490 - nerf all stats
 
-5-Battle events
-500 - Escape battle
-510 - Stops enemies attack
-520 - Nullifies Stat Nerfs
-530 - Nullifies Stat Boosts
-540 - Battle won
-550 - Battle lost
-560 - Force end of battle
-570 - Boss weakness override
+5-Battle events (Battle Manager)
+  - 500 - Escape battle
+  - 510 - Stops enemies attack
+  - 520 - Nullifies Stat Nerfs
+  - 530 - Nullifies Stat Boosts
+  - 540 - Battle won
+  - 550 - Battle lost
+  - 560 - Force end of battle
+  - 570 - Boss weakness override
 
-6-Item modifications
-600 - Fix durability
-610 - Add prefix
-620 - Remove prefix
-630 - Re-roll item
-640 - Re-roll weapon
-650 - Re-roll equipment
-660 - Add item
-670 - Add weapon
-680 - Add equipment
-690 - Fix Busted prefix
+6-Item modifications (Gamemaster)
+* - 600 - Fix durability
+* - 610 - Add prefix
+  - 620 - Remove prefix
+  - 630 - Re-roll item
+  - 640 - Re-roll weapon
+  - 650 - Re-roll equipment
+  - 660 - Add item
+  - 670 - Add weapon
+  - 680 - Add equipment
+  - 690 - Fix Busted prefix
 
-7-Item actions
-700 - item drop
-710 - item box
-720 - user added item
-730 - item used
-740 - cure Poison
-750 - cure Rage
-760 - cure Panic
-770 - cure Confusion
-780 - cure KO
-790 - cure all
+7-Item actions (Gamemaster)
+* - 700 - item drop
+  - 710 - item box
+  - 720 - user added item
+  - 730 - item used
+  - 740 - cure Poison
+  - 750 - cure Rage
+  - 760 - cure Panic
+  - 770 - cure Confusion
+  - 780 - cure KO
+  - 790 - cure all
 
-8-Start up
-800 - Start game
-810 - build item list
-820 - build weapon list
-830 - build equipment list
-840 - build character list
-850 - build floors
-860 - build dungeon
-870 - build Inventory
-880 - build save Manager
-890 - build party, Menu, Battle, and other Managers
+8-Start up (Gamemaster)
+* - 800 - Start game
+* - 810 - build item list
+* - 820 - build weapon list
+* - 830 - build equipment list
+* - 840 - build character list
+* - 850 - build floors
+* - 860 - build dungeon
+* - 870 - build Inventory
+* - 880 - build save Manager
+* - 890 - build party, Menu, Battle, and other Managers
 
-9-Gamemaster Events
-900 - Adventure state
-910 - Battle state
-920 - floor change
-930 - random encounter
-940 - fix encounter
-950 - boss encounter
-960 - pause menu
-970 - innovatory menu
-980 - Auto-next floor
-990 - End of Game
+9-Gamemaster Events (Gamemaster)
+* - 900 - Adventure state
+  - 910 - Battle state
+  - 920 - floor change
+  - 930 - random encounter
+  - 940 - fix encounter
+  - 950 - boss encounter
+  - 960 - pause menu
+  - 970 - innovatory menu
+  - 980 - Auto-next floor
+  - 990 - End of Game
 
 1s place is for case for the event
 0 - normal
