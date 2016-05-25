@@ -4,7 +4,9 @@
 package systemset;
 
 import java.util.*;
+import javax.swing.*;
 import equipmentset.*;
+import eventset.*;
 import interfaces.*;
 import weaponset.*;
 import itemset.*;
@@ -18,6 +20,7 @@ public class ProtoGamemaster
 	ItemManager IM;
 	ItemGenerator IG;
 	InventoryManager IVM;
+	MenuManager MM;
 	IEvent[][][] eventSet;
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
@@ -80,7 +83,12 @@ public class ProtoGamemaster
 
 		eventSet[8][9][9] = new EndEvent(this);
 		eventSet[9][0][0] = new RunAdventureLoop(this);
+		eventSet[9][0][1] = new SaveGame(this);
+		eventSet[9][0][2] = new LoadGame(this);
 		eventSet[9][0][9] = new EndEvent(this);
+		eventSet[9][6][0] = new RunPauseMenu(this);
+		eventSet[9][9][0] = new EndGame(this);
+		eventSet[9][9][1] = new SaveAndQuit(this);
 	}
 	
 	public void check()
@@ -99,18 +107,28 @@ public class ProtoGamemaster
 		callEvent(900);
 	}
 	
+	public void runPauseMenu()
+	{
+		MM.get(0).runMenu(this);
+	}
+	
 	public void runAdventureLoop()
 	{
-      int i = 10;
-      
-		while(i > 0)
-		{
-			if(i > 0)
-         {
-				callEvent(700);
-         }
-         i--;
-		}
+		KeyInputSystem KIS = new KeyInputSystem(this);
+		JPanel JP = new JPanel();
+		JFrame JF = new JFrame("Menu Testing");
+		JP.addKeyListener(KIS);
+		JF.add(JP);
+		
+		JF.setSize(100, 100);
+		JF.setVisible(true);
+		JP.requestFocusInWindow();
+	}
+	
+	public void exit()
+	{
+		System.out.println("Exiting system");
+		System.exit(0);
 	}
 	
 	public void itemDrop()
@@ -193,6 +211,16 @@ public class ProtoGamemaster
 		
 	}
 	
+	public void save()
+	{
+		
+	}
+	
+	public void load()
+	{
+		
+	}
+	
 	public void buildItemSet()
 	{
 		IM = new ItemManager();
@@ -244,6 +272,8 @@ public class ProtoGamemaster
 	public void buildOtherManagers()
 	{
 		// builds Party, Menu, Battle, and any other managers to be
+		MM = new MenuManager();
+		MM.set(new PauseMenu(this));
 		callEvent(899);
 	}
 }

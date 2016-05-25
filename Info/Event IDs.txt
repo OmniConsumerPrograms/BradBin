@@ -104,18 +104,19 @@ Event IDs
   - 940 - fix encounter
   - 950 - boss encounter
   - 960 - pause menu
-  - 970 - innovatory menu
+  - 970 - Inventory menu
   - 980 - Auto-next floor
   - 990 - End of Game
 
 1s place is for case for the event
-0 - normal
-1 - has prefix
-2 - random number +
-3 - random number -
-4 - boosted stats
-5 - random effect
-6 - error
-7 - effect mis-match error
-8 - event override
-9 - event end
+N - Battle Manager/Party Manager - Gamemaster
+0 - normal			 		- normal
+1 - has prefix			 	- Save Game
+2 - random number +		 	- Load Game
+3 - random number -		 	- N/A
+4 - boosted stats			- N/A
+5 - random effect			- N/A
+6 - error			 		- error
+7 - effect mis-match error	- effect mis-match error
+8 - event override		 	- event override
+9 - event end			 	- event end
