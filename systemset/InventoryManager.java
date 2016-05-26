@@ -2,6 +2,7 @@ package systemset;
 
 import java.util.*;
 import interfaces.IManager;
+import interfaces.IUsable;
 import interfaces.IBin;
 
 @SuppressWarnings("rawtypes")
@@ -40,5 +41,19 @@ public class InventoryManager implements IManager<IBin>
 	public int indexOf(IBin object)
 	{
 		return inventory.indexOf(object);
+	}
+	
+	@Override
+	public String toString()
+	{
+		String s = "";
+		int l = 1;
+		
+		for(IBin i : inventory)
+		{
+			s += l + ":" + ((IUsable) i.get()).getName() + "\n";
+		}
+		
+		return s;
 	}
 }

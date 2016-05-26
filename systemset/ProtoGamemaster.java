@@ -4,7 +4,6 @@
 package systemset;
 
 import java.util.*;
-import javax.swing.*;
 import equipmentset.*;
 import eventset.*;
 import interfaces.*;
@@ -74,6 +73,9 @@ public class ProtoGamemaster
 		eventSet[6][1][6] = new AddPrefixError(this);
 		eventSet[7][0][0] = new ItemDrop(this);
 		eventSet[7][0][6] = new ItemDropError(this);
+		eventSet[7][3][0] = new EndEvent(this);
+		eventSet[7][3][3] = new EndEvent(this);
+		eventSet[7][3][4] = new EndEvent(this);
 		
 		for(int index = 0; index < buildSet.length; index++)
 		{
@@ -87,6 +89,7 @@ public class ProtoGamemaster
 		eventSet[9][0][2] = new LoadGame(this);
 		eventSet[9][0][9] = new EndEvent(this);
 		eventSet[9][6][0] = new RunPauseMenu(this);
+		eventSet[9][7][0] = new RunInventoryMenu(this);
 		eventSet[9][9][0] = new EndGame(this);
 		eventSet[9][9][1] = new SaveAndQuit(this);
 	}
@@ -112,17 +115,29 @@ public class ProtoGamemaster
 		MM.get(0).runMenu(this);
 	}
 	
+	public void runInventoryMenu()
+	{
+		MM.get(1).runMenu(this);
+	}
+	
+	@SuppressWarnings("resource")
 	public void runAdventureLoop()
 	{
-		KeyInputSystem KIS = new KeyInputSystem(this);
-		JPanel JP = new JPanel();
-		JFrame JF = new JFrame("Menu Testing");
-		JP.addKeyListener(KIS);
-		JF.add(JP);
+		Scanner input = new Scanner(System.in);
+		String inputData = "";
 		
-		JF.setSize(100, 100);
-		JF.setVisible(true);
-		JP.requestFocusInWindow();
+		while(true)
+		{
+			System.out.println("P: Pause\nI: Inventory\nD: Item Drop");
+			inputData = input.nextLine();
+						
+			if(inputData.equals("P") || inputData.equals("p"))
+				callEvent(960);
+			else if(inputData.equals("I") || inputData.equals("i"))
+				callEvent(970);
+			else if(inputData.equals("D") || inputData.equals("d"))
+				callEvent(700);
+		}
 	}
 	
 	public void exit()
@@ -143,7 +158,8 @@ public class ProtoGamemaster
 				case 0:
 					rID = r.nextInt(IM.size());
 					System.out.println(type + ":" + rID);
-					System.out.println(IM.get(rID).getName());
+					IVM.set(new Holder<IItem>(IM.get(rID)));
+					System.out.println(IM.get(rID).getName() + ": Has been placed in Inventory");
 					break;
 				case 1:
 					rID = r.nextInt(WM.size());
@@ -152,9 +168,8 @@ public class ProtoGamemaster
 					weaponHolder.place(WM.get(rID));
 					prefixSwitch = 0;
 					callEvent(610);
-					System.out.println(weaponHolder.get().getName());
-					callEvent(600);
-					System.out.println(weaponHolder.get().getName());
+					IVM.set(weaponHolder);
+					System.out.println(weaponHolder.get().getName() + ": Has been placed in Inventory");
 					break;
 				case 2:
 					rID = r.nextInt(EM.size());
@@ -163,9 +178,8 @@ public class ProtoGamemaster
 					equipmentHolder.place(EM.get(rID));
 					prefixSwitch = 1;
 					callEvent(610);
-					System.out.println(equipmentHolder.get().getName());
-					callEvent(600);
-					System.out.println(equipmentHolder.get().getName());
+					IVM.set(equipmentHolder);
+					System.out.println(equipmentHolder.get().getName() + ": Has been placed in Inventory");
 					break;
 				default:
 					System.out.println("Random error");
@@ -274,6 +288,7 @@ public class ProtoGamemaster
 		// builds Party, Menu, Battle, and any other managers to be
 		MM = new MenuManager();
 		MM.set(new PauseMenu(this));
+		MM.set(new InventoryMenu(this));
 		callEvent(899);
 	}
 }

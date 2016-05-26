@@ -76,7 +76,7 @@ Event IDs
 * - 700 - item drop
   - 710 - item box
   - 720 - user added item
-  - 730 - item used
+* - 730 - item used
   - 740 - cure Poison
   - 750 - cure Rage
   - 760 - cure Panic
@@ -103,18 +103,18 @@ Event IDs
   - 930 - random encounter
   - 940 - fix encounter
   - 950 - boss encounter
-  - 960 - pause menu
+* - 960 - pause menu
   - 970 - Inventory menu
   - 980 - Auto-next floor
-  - 990 - End of Game
+* - 990 - End of Game
 
 1s place is for case for the event
 N - Battle Manager/Party Manager - Gamemaster
 0 - normal			 		- normal
 1 - has prefix			 	- Save Game
 2 - random number +		 	- Load Game
-3 - random number -		 	- N/A
-4 - boosted stats			- N/A
+3 - random number -		 	- Equip
+4 - boosted stats			- Unequip
 5 - random effect			- N/A
 6 - error			 		- error
 7 - effect mis-match error	- effect mis-match error
