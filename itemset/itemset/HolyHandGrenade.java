@@ -19,6 +19,11 @@ public class HolyHandGrenade implements IItem
 		eventID = 540;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

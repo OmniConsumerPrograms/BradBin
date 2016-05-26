@@ -20,6 +20,11 @@ public class High extends PrefixSystem
 		return prefixID + item.getID();
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public double getEffect()
 	{
 		return effectBoost * item.getEffect();

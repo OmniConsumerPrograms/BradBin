@@ -9,7 +9,7 @@ public interface IEquipment extends IUsable
 	
 	public String getName();
 	
-	public String getType();
+	public String getEquipmentType();
 	
 	public int getEventID();
 	

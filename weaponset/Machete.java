@@ -33,6 +33,11 @@ public class Machete implements IWeapon
 		value = 32;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

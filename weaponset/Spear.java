@@ -34,6 +34,11 @@ public class Spear implements IWeapon
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Weapon";
+	}
+	
 	public String getName()
 	{
 		return "Spear";

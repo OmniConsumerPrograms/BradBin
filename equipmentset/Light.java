@@ -15,6 +15,11 @@ public class Light extends PrefixSystem
 		super.equipment = equipment;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public int getID()
 	{
 		return equipment.getID();
@@ -25,7 +30,7 @@ public class Light extends PrefixSystem
 		return "Light " + equipment.getName();
 	}
 
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Lighten " + equipment.getType();
 	}

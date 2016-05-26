@@ -33,6 +33,11 @@ public class EggBlaster implements IWeapon
 		value = 500;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

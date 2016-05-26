@@ -32,12 +32,17 @@ public class HardHat implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Hard Hat";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "A must have in a work zone";
 	}

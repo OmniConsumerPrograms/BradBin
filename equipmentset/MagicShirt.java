@@ -32,12 +32,17 @@ public class MagicShirt implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Magic Shirt";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Does more than a Shirt";
 	}

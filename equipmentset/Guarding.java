@@ -15,6 +15,11 @@ public class Guarding extends PrefixSystem
 		super.equipment = equipment;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public int getID()
 	{
 		return equipment.getID();
@@ -25,7 +30,7 @@ public class Guarding extends PrefixSystem
 		return "Guarding " + equipment.getName();
 	}
 
-	public String getType()
+	public String getEquipmentType()
 	{
 		return equipment.getType() + " plus Guards";
 	}

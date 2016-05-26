@@ -33,6 +33,11 @@ public class CrossBow implements IWeapon
 		value = 20;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

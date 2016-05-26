@@ -19,6 +19,11 @@ public class DisBuff implements IItem
 		eventID = 530;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

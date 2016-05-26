@@ -33,6 +33,11 @@ public class Katana implements IWeapon
 		value = 48;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

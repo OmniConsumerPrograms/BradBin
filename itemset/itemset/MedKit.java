@@ -19,6 +19,11 @@ public class MedKit implements IItem
 		eventID = 120;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

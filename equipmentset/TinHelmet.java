@@ -32,12 +32,17 @@ public class TinHelmet implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Tin Helmet";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Please recycle after use";
 	}

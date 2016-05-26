@@ -33,6 +33,11 @@ public class ShortBow implements IWeapon
 		value = 23;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

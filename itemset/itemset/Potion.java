@@ -19,6 +19,11 @@ public class Potion implements IItem
 		eventID = 100;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

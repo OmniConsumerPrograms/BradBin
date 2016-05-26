@@ -33,6 +33,11 @@ public class NerfGun implements IWeapon
 		value = 10;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

@@ -33,6 +33,11 @@ public class Dagger implements IWeapon
 		value = 22;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

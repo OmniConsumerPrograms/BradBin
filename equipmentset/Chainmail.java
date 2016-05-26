@@ -32,12 +32,17 @@ public class Chainmail implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Chainmail";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Not light but not heavy";
 	}

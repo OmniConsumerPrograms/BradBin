@@ -52,6 +52,7 @@ public class InventoryManager implements IManager<IBin>
 		for(IBin i : inventory)
 		{
 			s += l + ":" + ((IUsable) i.get()).getName() + "\n";
+			l++;
 		}
 		
 		return s;

@@ -32,12 +32,17 @@ public class RubberGloves implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Rubber Gloves";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Good for more then just cleaning";
 	}

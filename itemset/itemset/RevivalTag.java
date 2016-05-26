@@ -19,6 +19,11 @@ public class RevivalTag implements IItem
 		eventID = 780;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

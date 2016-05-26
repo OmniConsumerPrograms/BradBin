@@ -19,6 +19,11 @@ public class DrinkOfTheWall implements IItem
 		eventID = 214;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

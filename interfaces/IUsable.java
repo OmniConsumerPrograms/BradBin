@@ -10,4 +10,6 @@ public interface IUsable
 	public String getName();
 	
 	public int getEventID();
+	
+	public String getType();
 }

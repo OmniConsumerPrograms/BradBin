@@ -19,6 +19,11 @@ public class DrinkOfThePhoton implements IItem
 		eventID = 224;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

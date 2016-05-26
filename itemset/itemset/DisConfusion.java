@@ -19,6 +19,11 @@ public class DisConfusion implements IItem
 		eventID = 770;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

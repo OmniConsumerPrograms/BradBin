@@ -32,12 +32,17 @@ public class IronShield implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Iron Shield";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Shield of Iron and Iron of Shields";
 	}

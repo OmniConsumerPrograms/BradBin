@@ -19,6 +19,11 @@ public class Elixir implements IItem
 		eventID = 150;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

@@ -19,6 +19,11 @@ public class DisPoison implements IItem
 		eventID = 740;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

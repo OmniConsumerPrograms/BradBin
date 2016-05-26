@@ -33,6 +33,11 @@ public class Javelin implements IWeapon
 		value = 38;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

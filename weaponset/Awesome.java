@@ -14,6 +14,11 @@ public class Awesome extends PrefixSystem
 	{
 		super.weapon = weapon;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public int getID()
 	{

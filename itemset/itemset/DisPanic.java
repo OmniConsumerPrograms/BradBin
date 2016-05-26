@@ -19,6 +19,11 @@ public class DisPanic implements IItem
 		eventID = 760;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

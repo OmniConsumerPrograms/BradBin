@@ -19,6 +19,11 @@ public class DrinkOfHealth implements IItem
 		eventID = 110;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

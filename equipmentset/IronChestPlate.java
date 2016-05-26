@@ -32,12 +32,17 @@ public class IronChestPlate implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Iron Chest Plate";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Check mate, wait Chest not Chess";
 	}

@@ -33,6 +33,11 @@ public class Halberd implements IWeapon
 		value = 34;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

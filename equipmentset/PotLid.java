@@ -32,12 +32,17 @@ public class PotLid implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Pot Lid";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Came from a large pot of stuff";
 	}

@@ -32,12 +32,17 @@ public class GoldenRing implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Golden Ring";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "No it will not make you invisible";
 	}

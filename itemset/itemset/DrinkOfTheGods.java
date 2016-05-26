@@ -19,6 +19,11 @@ public class DrinkOfTheGods implements IItem
 		eventID = 274;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

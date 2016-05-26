@@ -19,6 +19,11 @@ public class DrinkOfTheBullseye implements IItem
 		eventID = 264;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

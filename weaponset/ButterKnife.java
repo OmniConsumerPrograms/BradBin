@@ -33,6 +33,11 @@ public class ButterKnife implements IWeapon
 		value = 2;
 		pfLimit = 0;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

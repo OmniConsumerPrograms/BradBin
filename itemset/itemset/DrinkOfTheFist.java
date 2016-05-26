@@ -19,6 +19,11 @@ public class DrinkOfTheFist implements IItem
 		eventID = 204;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

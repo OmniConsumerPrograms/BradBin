@@ -32,12 +32,17 @@ public class IronGauntlet implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Iron Gauntlet";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Check your HP as you go";
 	}

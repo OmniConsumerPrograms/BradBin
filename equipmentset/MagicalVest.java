@@ -32,12 +32,17 @@ public class MagicalVest implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Magic Vest";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Goes well with the magical shirt";
 	}

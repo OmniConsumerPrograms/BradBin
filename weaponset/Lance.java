@@ -33,6 +33,11 @@ public class Lance implements IWeapon
 		value = 42;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

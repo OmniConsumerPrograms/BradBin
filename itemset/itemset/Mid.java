@@ -15,6 +15,11 @@ public class Mid extends PrefixSystem
 		super.item = item;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return prefixID + item.getID();

@@ -19,6 +19,11 @@ public class BlackHole implements IItem
 		eventID = 560;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

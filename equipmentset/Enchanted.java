@@ -15,6 +15,11 @@ public class Enchanted extends PrefixSystem
 		super.equipment = equipment;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public int getID()
 	{
 		return equipment.getID();
@@ -25,7 +30,7 @@ public class Enchanted extends PrefixSystem
 		return "Enchanted " + equipment.getName();
 	}
 
-	public String getType()
+	public String getEquipmentType()
 	{
 		return equipment.getType() + " was enchanted by a magical sticker";
 	}

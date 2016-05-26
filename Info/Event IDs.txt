@@ -104,7 +104,7 @@ Event IDs
   - 940 - fix encounter
   - 950 - boss encounter
 * - 960 - pause menu
-  - 970 - Inventory menu
+* - 970 - Inventory menu
   - 980 - Auto-next floor
 * - 990 - End of Game
 

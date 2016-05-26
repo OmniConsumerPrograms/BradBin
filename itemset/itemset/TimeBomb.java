@@ -19,6 +19,11 @@ public class TimeBomb implements IItem
 		eventID = 510;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

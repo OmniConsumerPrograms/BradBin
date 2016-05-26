@@ -33,6 +33,11 @@ public class NerfLance implements IWeapon
 		value = 9;
 		pfLimit = 1;
 	}
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
 
 	public String getName()
 	{

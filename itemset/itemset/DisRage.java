@@ -19,6 +19,11 @@ public class DisRage implements IItem
 		eventID = 750;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

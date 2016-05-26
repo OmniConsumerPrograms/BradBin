@@ -19,6 +19,11 @@ public class SmokeBomb implements IItem
 		eventID = 500;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

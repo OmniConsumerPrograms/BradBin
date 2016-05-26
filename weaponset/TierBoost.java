@@ -15,7 +15,12 @@ public class TierBoost extends PrefixSystem
 		super.weapon = weapon;
 		this.tier = tier;
 	}
-
+	
+	public String getType()
+	{
+		return "Weapon";
+	}
+	
 	public int getID()
 	{
 		return prefixID + weapon.getID();

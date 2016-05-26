@@ -19,6 +19,11 @@ public class DrinkOfTheRealm implements IItem
 		eventID = 244;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

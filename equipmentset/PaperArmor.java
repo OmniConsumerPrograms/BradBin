@@ -32,12 +32,17 @@ public class PaperArmor implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Paper Armor";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "It can stop a pencil";
 	}

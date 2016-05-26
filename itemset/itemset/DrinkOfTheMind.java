@@ -19,6 +19,11 @@ public class DrinkOfTheMind implements IItem
 		eventID = 234;
 	}
 	
+	public String getType()
+	{
+		return "Item";
+	}
+	
 	public int getID()
 	{
 		return ID;

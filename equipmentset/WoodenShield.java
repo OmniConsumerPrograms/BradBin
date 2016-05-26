@@ -32,12 +32,17 @@ public class WoodenShield implements IEquipment
 		pfLimit = 1;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public String getName()
 	{
 		return "Wooden Shield";
 	}
 	
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Made of Oak and is a shield";
 	}

@@ -15,6 +15,11 @@ public class Hard extends PrefixSystem
 		super.equipment = equipment;
 	}
 	
+	public String getType()
+	{
+		return "Equipment";
+	}
+	
 	public int getID()
 	{
 		return equipment.getID();
@@ -25,7 +30,7 @@ public class Hard extends PrefixSystem
 		return "Hard " + equipment.getName();
 	}
 
-	public String getType()
+	public String getEquipmentType()
 	{
 		return "Harden " + equipment.getType();
 	}
