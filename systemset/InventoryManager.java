@@ -30,6 +30,16 @@ public class InventoryManager implements IManager<IBin>
 		return inventory.get(ID);
 	}
 	
+	public IBin remove(int ID)
+	{		
+		return inventory.remove(ID);
+	}
+	
+	public void replace(IBin object, int ID)
+	{
+		inventory.set(ID, object);
+	}
+	
 	public boolean has(IBin object)
 	{
 		if(inventory.contains(object))
@@ -49,9 +59,12 @@ public class InventoryManager implements IManager<IBin>
 		String s = "";
 		int l = 1;
 		
-		for(IBin i : inventory)
+		for(int index = 0; index < inventory.size(); index++)
 		{
-			s += l + ":" + ((IUsable) i.get()).getName() + "\n";
+			if(l % 3 != 0)
+				s += l + ": " + ((IUsable) inventory.get(index).get()).getName() + " : ";
+			else
+				s += l + ": " + ((IUsable) inventory.get(index).get()).getName() + "\n";
 			l++;
 		}
 		

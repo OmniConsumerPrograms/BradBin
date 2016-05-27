@@ -30,14 +30,24 @@ public class MenuManager implements IManager<IMenuSystem>
 	{
 		return menuSet.get(ID);
 	}
-
-	public boolean has(IMenuSystem t)
+	
+	public IMenuSystem remove(int ID)
 	{
-		return menuSet.contains(t);
+		return menuSet.remove(ID);
+	}
+	
+	public void replace(IMenuSystem ms, int ID)
+	{
+		menuSet.set(ID, ms);
 	}
 
-	public int indexOf(IMenuSystem t)
+	public boolean has(IMenuSystem ms)
 	{
-		return menuSet.indexOf(t);
+		return menuSet.contains(ms);
+	}
+
+	public int indexOf(IMenuSystem ms)
+	{
+		return menuSet.indexOf(ms);
 	}
 }

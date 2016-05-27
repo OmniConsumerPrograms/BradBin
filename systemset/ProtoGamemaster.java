@@ -23,14 +23,17 @@ public class ProtoGamemaster
 	IEvent[][][] eventSet;
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
-	int prefixSwitch;
+	IBin<IItem> itemHolder;
+	int groupID;
+	int ID;
 	
 	public ProtoGamemaster()
 	{
 		eventSet = new IEvent[10][10][10];
 		weaponHolder = new Holder<IWeapon>();
 		equipmentHolder = new Holder<IEquipment>();
-		prefixSwitch = -1;
+		itemHolder = new Holder<IItem>();
+		groupID = -1;
 		buildEventSet();
 	}
 	
@@ -73,9 +76,10 @@ public class ProtoGamemaster
 		eventSet[6][1][6] = new AddPrefixError(this);
 		eventSet[7][0][0] = new ItemDrop(this);
 		eventSet[7][0][6] = new ItemDropError(this);
-		eventSet[7][3][0] = new EndEvent(this);
-		eventSet[7][3][3] = new EndEvent(this);
-		eventSet[7][3][4] = new EndEvent(this);
+		eventSet[7][3][0] = new ItemUsed(this);
+		eventSet[7][3][3] = new EndEvent(this); // Equip
+		eventSet[7][3][4] = new EndEvent(this); // Unequip
+		eventSet[7][3][5] = new ItemDiscard(this);
 		
 		for(int index = 0; index < buildSet.length; index++)
 		{
@@ -146,6 +150,18 @@ public class ProtoGamemaster
 		System.exit(0);
 	}
 	
+	public void itemUsed()
+	{
+		System.out.println(((IUsable) IVM.get(ID).get()).getName() + " was used");
+		IVM.remove(ID);
+	}
+	
+	public void itemDiscard()
+	{
+		System.out.println(((IUsable) IVM.get(ID).get()).getName() + " was discarded!");
+		IVM.remove(ID);
+	}
+	
 	public void itemDrop()
 	{
 		Random r = new Random();
@@ -166,7 +182,7 @@ public class ProtoGamemaster
 					System.out.println(type + ":" + rID);
 					System.out.println(WM.get(rID).getName());
 					weaponHolder.place(WM.get(rID));
-					prefixSwitch = 0;
+					groupID = 0;
 					callEvent(610);
 					IVM.set(weaponHolder);
 					System.out.println(weaponHolder.get().getName() + ": Has been placed in Inventory");
@@ -176,7 +192,7 @@ public class ProtoGamemaster
 					System.out.println(type + ":" + rID);
 					System.out.println(EM.get(rID).getName());
 					equipmentHolder.place(EM.get(rID));
-					prefixSwitch = 1;
+					groupID = 1;
 					callEvent(610);
 					IVM.set(equipmentHolder);
 					System.out.println(equipmentHolder.get().getName() + ": Has been placed in Inventory");
@@ -189,16 +205,16 @@ public class ProtoGamemaster
 		{
 			callEvent(706);
 		}
-		prefixSwitch = -1;
+		groupID = -1;
 	}
 	
 	public void addPrefix()
 	{
-		if(prefixSwitch == 0)
+		if(groupID == 0)
 		{
 			weaponHolder.place(WG.getRandomPrefix(weaponHolder.get()));
 		}
-		else if(prefixSwitch == 1)
+		else if(groupID == 1)
 		{
 			equipmentHolder.place(EG.getRandomPrefix(equipmentHolder.get()));
 		}
@@ -208,11 +224,11 @@ public class ProtoGamemaster
 	
 	public void fixDurability()
 	{
-		if(prefixSwitch == 0)
+		if(groupID == 0)
 		{
 			weaponHolder.place(WG.fix(weaponHolder.get()));
 		}
-		else if(prefixSwitch == 1)
+		else if(groupID == 1)
 		{
 			equipmentHolder.place(EG.fix(equipmentHolder.get()));
 		}

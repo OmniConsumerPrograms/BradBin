@@ -32,6 +32,16 @@ public class EquipmentManager implements IManager<IEquipment>
 		return itemList.get(ID);
 	}
 	
+	public IEquipment remove(int ID)
+	{
+		return itemList.remove(ID);
+	}
+	
+	public void replace(IEquipment item, int ID)
+	{
+		itemList.set(ID, item);
+	}
+	
 	public boolean has(IEquipment item)
 	{
 		if(itemList.contains(item))

@@ -9,6 +9,10 @@ public interface IManager<T>
 	
 	public T get(int ID);
 	
+	public T remove(int ID);
+	
+	public void replace(T t, int ID);
+	
 	public boolean has(T t);
 	
 	public int indexOf(T t);
