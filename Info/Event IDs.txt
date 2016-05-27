@@ -115,7 +115,7 @@ N - Battle Manager/Party Manager - Gamemaster
 2 - random number +		 	- Load Game
 3 - random number -		 	- Equip
 4 - boosted stats			- Unequip
-5 - random effect			- drop
+5 - random effect			- discard
 6 - error			 		- error
 7 - effect mis-match error	- effect mis-match error
 8 - event override		 	- event override
