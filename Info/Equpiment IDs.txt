@@ -1,30 +1,31 @@
-01 - Paper Armor
-02 - Magic Shirt
-03 - Pot Lid
-04 - Rubber Gloves
-05 - Golden Ring
-06 - Hard Hat
-07 - Wooden Shield
-08 - Tin Helmet
-09 - Chainmail
-10 - Iron Gauntlet
-11 - Iron Shield
-12 - Iron Chest Plate
-13 - Magical Vest
-14 - Scalemail
-15 - Great Helm
-16 - Kite Shield
-17 - Dragonmail
-18 - Platemail
-19 - Steel Chest Plate
-20 - Large Shield
-21 - Mythril Chest Plate
-22 - Mythril Sheild
-23 - Spectre vest
-24 - Spectre cloak
-25 - Plasteel Armor
-26 - Plasteel Shield
-27 - Plasma Shield
-28 - Neutronium Armor
-29 - Phased Cloak
-30 - Omotanium DDS
+d - ID - Name	             - phdef - mgdef - durab - Speed - wght - value - eID
+* - 01 - Paper Armor         - 3     - 2     - 5     - 1     - 2    - 5     - 210
+* - 02 - Magic Shirt         - 2     - 4     - 8     - 4     - 1    - 5     - 210
+* - 03 - Pot Lid             - 6     - 2     - 8     - 1     - 5    - 10    - 210
+* - 04 - Rubber Gloves       - 3     - 8     - 8     - 2     - 2    - 8     - 210
+* - 05 - Golden Ring         - 4     - 10    - 10    - 2     - 2    - 12    - 210
+* - 06 - Hard Hat            - 10    - 5     - 12    - 2     - 2    - 22    - 210
+* - 07 - Wooden Shield       - 12    - 6     - 15    - 1     - 4    - 28    - 210
+* - 08 - Tin Helmet          - 15    - 8     - 18    - 1     - 5    - 35    - 210
+* - 09 - Chainmail           - 12    - 12    - 15    - 2     - 4    - 38    - 210
+* - 10 - Iron Gauntlet       - 16    - 8     - 18    - 2     - 7    - 42    - 210
+* - 11 - Iron Shield         - 22    - 10    - 20    - 1     - 12   - 48    - 210
+* - 12 - Iron Chest Plate    - 25    - 12    - 24    - 1     - 15   - 55    - 210
+* - 13 - Magical Vest        - 10    - 30    - 20    - 5     - 5    - 50    - 210
+* - 14 - Scalemail           - 24    - 24    - 22    - 2     - 6    - 52    - 210
+* - 15 - Great Helm          - 22    - 10    - 20    - 1     - 10   - 60    - 210
+* - 16 - Kite Shield         - 28    - 12    - 22    - 1     - 14   - 65    - 210
+* - 17 - Dragonmail          - 28    - 28    - 24    - 1     - 7    - 70    - 210
+* - 18 - Platemail           - 32    - 32    - 26    - 1     - 12   - 75    - 210
+* - 19 - Steel Chest Plate   - 35    - 16    - 28    - 1     - 14   - 78    - 210
+* - 20 - Large Shield        - 34    - 10    - 24    - 1     - 16   - 76    - 210
+* - 21 - Mythril Chest Plate - 40    - 25    - 26    - 1     - 10   - 90    - 210
+* - 22 - Mythril Sheild      - 42    - 20    - 28    - 1     - 12   - 95    - 210
+* - 23 - Spectre vest        - 18    - 42    - 24    - 5     - 6    - 90    - 210
+* - 24 - Spectre cloak       - 20    - 48    - 22    - 6     - 5    - 100   - 210
+* - 25 - Plasteel Armor      - 50    - 20    - 30    - 2     - 10   - 200   - 210
+* - 26 - Plasteel Shield     - 60    - 35    - 34    - 1     - 12   - 250   - 210
+* - 27 - Plasma Shield       - 70    - 70    - 40    - 3     - 10   - 500   - 210
+* - 28 - Neutronium Armor    - 80    - 50    - 50    - 1     - 16   - 600   - 210
+* - 29 - Phased Cloak        - 50    - 90    - 50    - 6     - 8    - 700   - 210
+* - 30 - Omotanium PDS       - 100   - 100   - 60    - 5     - 5    - 1000  - 210

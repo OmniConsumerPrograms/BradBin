@@ -103,6 +103,57 @@ public class EquipmentGenerator implements IItemGenerator<IEquipment>
 			case 13:
 				equipment = new MagicalVest(1);
 				break;
+			case 14:
+				equipment = new Scalemail(1);
+				break;
+			case 15:
+				equipment = new GreatHelm(1);
+				break;
+			case 16:
+				equipment = new KiteShield(1);
+				break;
+			case 17:
+				equipment = new Dragonmail(1);
+				break;
+			case 18:
+				equipment = new Platemail(1);
+				break;
+			case 19:
+				equipment = new SteelChestPlate(1);
+				break;
+			case 20:
+				equipment = new LargeShield(1);
+				break;
+			case 21:
+				equipment = new MythrilChestPlate(1);
+				break;
+			case 22:
+				equipment = new MythrilSheild(1);
+				break;
+			case 23:
+				equipment = new SpectreVest(1);
+				break;
+			case 24:
+				equipment = new SpectreCloak(1);
+				break;
+			case 25:
+				equipment = new PlasteelArmor(1);
+				break;
+			case 26:
+				equipment = new PlasteelShield(1);
+				break;
+			case 27:
+				equipment = new PlasmaShield(1);
+				break;
+			case 28:
+				equipment = new NeutroniumArmor(1);
+				break;
+			case 29:
+				equipment = new PhasedCloak(1);
+				break;
+			case 30:
+				equipment = new OmotaniumPDS(1);
+				break;
 			default:
 				equipment = new PaperArmor(99);
 				break;

@@ -77,7 +77,7 @@ public class ProtoGamemaster
 		eventSet[7][0][0] = new ItemDrop(this);
 		eventSet[7][0][6] = new ItemDropError(this);
 		eventSet[7][3][0] = new ItemUsed(this);
-		eventSet[7][3][3] = new EndEvent(this); // Equip
+		eventSet[7][3][3] = new Equip(this); // Equip
 		eventSet[7][3][4] = new EndEvent(this); // Unequip
 		eventSet[7][3][5] = new ItemDiscard(this);
 		
@@ -148,6 +148,16 @@ public class ProtoGamemaster
 	{
 		System.out.println("Exiting system");
 		System.exit(0);
+	}
+	
+	public void equip()
+	{
+		
+	}
+	
+	public void unequip()
+	{
+		
 	}
 	
 	public void itemUsed()
