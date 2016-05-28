@@ -194,7 +194,7 @@ public class ProtoGamemaster
 					weaponHolder.place(WM.get(rID));
 					groupID = 0;
 					callEvent(610);
-					IVM.set(weaponHolder);
+					IVM.set(new Holder<IWeapon>(weaponHolder.get()));
 					System.out.println(weaponHolder.get().getName() + ": Has been placed in Inventory");
 					break;
 				case 2:
@@ -204,7 +204,7 @@ public class ProtoGamemaster
 					equipmentHolder.place(EM.get(rID));
 					groupID = 1;
 					callEvent(610);
-					IVM.set(equipmentHolder);
+					IVM.set(new Holder<IEquipment>(equipmentHolder.get()));
 					System.out.println(equipmentHolder.get().getName() + ": Has been placed in Inventory");
 					break;
 				default:
