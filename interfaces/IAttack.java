@@ -5,13 +5,22 @@ package interfaces;
 
 import java.util.Random;
 
-public interface IAttack {
+public interface IAttack 
+{
 	
-	abstract String getAttackName();
+	public String getAttackName();
 	
-	abstract void setAttackName(String attackName);
+	public void setAttackName(String attackName);
+	
+	public char getRange();
+	
+	public int getID();
+	
+	public int getEventID();
+	
+	public int getSkillCost();
 
-	abstract void toAttack(ICharacter hero, ICharacter villain);
+	public void toAttack(ICharacter hero, ICharacter villain);
 	
-	abstract boolean validAttack(ICharacter hero, Random gen);
+	public boolean validAttack(ICharacter hero, Random gen);
 }

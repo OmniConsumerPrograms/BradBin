@@ -32,7 +32,7 @@ public class Heavy extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return "Heavier " + equipment.getType();
+		return "Heavier " + equipment.getEquipmentType();
 	}
 
 	public int getEventID()

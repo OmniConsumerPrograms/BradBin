@@ -3,7 +3,7 @@
 
 package interfaces;
 
-public interface IHero extends ICharacter
+public interface IHero extends ICharacter, ILevel
 {
 	public void level3Attack();
 	
@@ -14,8 +14,6 @@ public interface IHero extends ICharacter
 	public int getXP();
 	
 	public void setXP(int xp);
-	
-	public void levelUP(IHero hero);
 	
 	public String charString();
 	

@@ -32,7 +32,7 @@ public class Guarding extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return equipment.getType() + " plus Guards";
+		return equipment.getEquipmentType() + " plus Guards";
 	}
 
 	public int getEventID()

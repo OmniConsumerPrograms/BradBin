@@ -32,7 +32,7 @@ public class Arcane extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return equipment.getType() + " with a side of Arcane";
+		return equipment.getEquipmentType() + " with a side of Arcane";
 	}
 
 	public int getEventID()

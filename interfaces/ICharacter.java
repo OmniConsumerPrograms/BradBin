@@ -17,6 +17,14 @@ public interface ICharacter
 	
 	public void setHP(int hp);
 	
+	public int getSPMax();
+	
+	public void setSPMax(int sp);
+	
+	public int getSP();
+	
+	public void setSP(int sp);
+	
 	public int getAttackMin();
 	
 	public void setAttackMin(int attackMin);
@@ -37,9 +45,9 @@ public interface ICharacter
 	
 	public void setMagDefense(int magDefense);
 	
-	public int getAccuracy();
+	public double getAccuracy();
 	
-	public void setAccuracy(int accuracy);
+	public void setAccuracy(double accuracy);
 	
 	public boolean isAlive();
 	

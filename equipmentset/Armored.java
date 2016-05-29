@@ -32,7 +32,7 @@ public class Armored extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return equipment.getType() + " with more armor";
+		return equipment.getEquipmentType() + " with more armor";
 	}
 
 	public int getEventID()

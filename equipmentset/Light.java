@@ -32,7 +32,7 @@ public class Light extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return "Lighten " + equipment.getType();
+		return "Lighten " + equipment.getEquipmentType();
 	}
 
 	public int getEventID()

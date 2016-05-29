@@ -32,7 +32,7 @@ public class Spiritual extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return equipment.getName() + " is a magical " + equipment.getType();
+		return equipment.getName() + " is a magical " + equipment.getEquipmentType();
 	}
 
 	public int getEventID()

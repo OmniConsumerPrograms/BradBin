@@ -126,12 +126,29 @@ Mid			- 2x			- 1
 High		- 5x			- 2
 Max			- 10x or 100%	- 3
 
-ID | name			| effect type					| effect | EvID | prefixLimit
-1  | Potion			| healing HP					| 10%	 | 100	| 4
-5  | Elixir			| restoring MP					| 10%	 | 140	| 4
-9  | Med-kit		| restoring HP/MP				| 20%	 | 120	| 4
-13 | Revival tag	| reviving from OK at 25% hp	| 25%	 | 780	| 4
-17 | Repair kit		| restoring durability			| 10%	 | 600	| 4
-21 | Dis-poison		| cures poison					| 100%	 | 740	| 0
-22 | Dis-rage		| cures rage					| 100%	 | 750	| 0
-23 | Dis-panic		| cures panic					| 100%	 | 760	| 0
+ID | name					| effect type					| effect | EvID | prefixLimit
+1  | Potion					| healing HP					| 10%	 | 100	| 4
+5  | Elixir					| restoring MP					| 10%	 | 140	| 4
+9  | Med-kit				| restoring HP/MP				| 20%	 | 120	| 4
+13 | Revival tag			| reviving from OK at 25% hp	| 25%	 | 780	| 4
+17 | Repair kit				| restoring durability			| 10%	 | 600	| 4
+21 | Dis-poison				| cures poison					| 100%	 | 740	| 0
+22 | Dis-rage				| cures rage					| 100%	 | 750	| 0
+23 | Dis-panic				| cures panic					| 100%	 | 760	| 0
+24 | Dis-confusion			| cures confusion				| 100%	 | 770	| 0
+25 | Drink of the Fist		| 
+26 | Drink of the Mind		| 
+27 | Drink of the Wall		| 
+28 | Drink of the Photon	| 
+29 | Drink of the Realm		| 
+30 | Drink of the Bullseye	| 
+31 | Smoke Bomb				| 
+32 | Time Bomb				| 
+33 | Dis-nerf				| 
+34 | Dis-buff				| 
+35 | Drink of Health		| 
+36 | Drink of Magic			| 
+37 | Drink of the Body		| 
+38 | Drink of the Gods		| 
+39 | Holy Hand-grenade		| 
+40 | Black hole in a bottle	| 

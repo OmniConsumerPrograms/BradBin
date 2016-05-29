@@ -3,9 +3,11 @@
 
 package systemset;
 
+import interfaces.IEquipment;
 import interfaces.IItem;
 import interfaces.IMenuSystem;
 import interfaces.IUsable;
+import interfaces.IWeapon;
 
 import java.util.*;
 
@@ -41,7 +43,7 @@ public class InventoryMenu implements IMenuSystem
 			System.out.println(PGM.IVM.toString());
 			System.out.println("1: Equip Weapon/Equipment    2: Unequip Weapon/Equipment");
 			System.out.println("3: Use Item                  4: discard object");
-			System.out.println("5: Continue game");
+			System.out.println("5: Get object details          6: Continue game");
 			menuNumber = userInput.nextInt();
 			
 			switch(menuNumber)
@@ -139,6 +141,40 @@ public class InventoryMenu implements IMenuSystem
 					}
 					break;
 				case 5:
+					while(trip != 1)
+					{
+						System.out.println(PGM.IVM.toString());
+						System.out.println("Select weapon, equipment, or Item to be looked at");
+						oID = userInput.nextInt() - 1;
+						
+						if(oID < 0)
+							trip = 1;
+						else if(oID >= 0 && oID < PGM.IVM.size())
+						{
+							String temp = ((IUsable) PGM.IVM.get(oID).get()).getType();
+							if(temp.equals("Weapon"))
+							{
+								WeaponData getter = new WeaponData();
+								System.out.println(getter.getData((IWeapon) PGM.IVM.get(oID).get()));
+							}
+							else if(temp.equals("Equipment"))
+							{
+								EquipmentData getter = new EquipmentData();
+								System.out.println(getter.getData((IEquipment) PGM.IVM.get(oID).get()));
+							}
+							else // Item
+							{
+								ItemData getter = new ItemData();
+								System.out.println(getter.getData((IItem) PGM.IVM.get(oID).get()));
+							}
+							trip = 1;
+						}
+						else
+							System.out.println("Trying to look at some thing that is there.");
+					}
+					trip = 0;
+					break;
+				case 6:
 					return 909;
 			}
 		}

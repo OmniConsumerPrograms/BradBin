@@ -9,11 +9,11 @@ public interface ILevel
 	
 	public int getLevel();
 	
-	public void levelCheck(IHero hero);
+	public void levelCheck();
 	
 	public void setLevelCap(int levelCap);
 	
 	public int getLevelCap();
 	
-	public void levelUp(IHero Hero);
+	public void levelUp();
 }

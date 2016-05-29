@@ -32,7 +32,7 @@ public class Hard extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return "Harden " + equipment.getType();
+		return "Harden " + equipment.getEquipmentType();
 	}
 
 	public int getEventID()

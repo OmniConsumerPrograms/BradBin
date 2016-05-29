@@ -32,7 +32,7 @@ public class Warding extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return equipment.getType() + ", now with wards";
+		return equipment.getEquipmentType() + ", now with wards";
 	}
 
 	public int getEventID()

@@ -32,7 +32,7 @@ public class Enchanted extends PrefixSystem
 
 	public String getEquipmentType()
 	{
-		return equipment.getType() + " was enchanted by a magical sticker";
+		return equipment.getEquipmentType() + " was enchanted by a magical sticker";
 	}
 
 	public int getEventID()
