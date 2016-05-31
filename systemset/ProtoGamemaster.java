@@ -4,22 +4,26 @@
 package systemset;
 
 import java.util.*;
+
+import characterset.PartyManager;
 import equipmentset.*;
 import eventset.*;
 import interfaces.*;
 import weaponset.*;
 import itemset.*;
 
+@SuppressWarnings("rawtypes")
 public class ProtoGamemaster
 {
-	EquipmentManager EM;
-	EquipmentGenerator EG;
-	WeaponManager WM;
-	WeaponGenerator WG;
-	ItemManager IM;
-	ItemGenerator IG;
-	InventoryManager IVM;
-	MenuManager MM;
+	IManager<IEquipment> EM;
+	IItemGenerator<IEquipment> EG;
+	IManager<IWeapon> WM;
+	IItemGenerator<IWeapon> WG;
+	IManager<IItem> IM;
+	IGenerator IG;
+	IManager<IBin> IVM;
+	IManager<IMenuSystem> MM;
+	IManager<IHero> PM;
 	IEvent[][][] eventSet;
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
@@ -315,6 +319,7 @@ public class ProtoGamemaster
 		MM = new MenuManager();
 		MM.set(new PauseMenu(this));
 		MM.set(new InventoryMenu(this));
+		PM = new PartyManager();
 		callEvent(899);
 	}
 }
