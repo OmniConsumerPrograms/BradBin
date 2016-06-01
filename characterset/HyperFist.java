@@ -60,7 +60,7 @@ public class HyperFist implements IAttack
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax())) * 3;
+			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1)) * 3;
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");

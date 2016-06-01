@@ -9,6 +9,8 @@ import interfaces.IHero;
 import interfaces.IWeapon;
 import weaponset.BareHands;
 import java.util.ArrayList;
+
+import equipmentset.NilEquipment;
 import interfaces.IAttack;
 
 public class MuscleWizard implements IHero
@@ -60,7 +62,7 @@ public class MuscleWizard implements IHero
 	private void setupEquipmentSet()
 	{
 		for(int index = 0; index < equipmentSet.length; index++)
-			equipmentSet[index] = null;
+			equipmentSet[index] = new NilEquipment(1);
 	}
 	
 	private void buildLevelTrack()
@@ -69,6 +71,32 @@ public class MuscleWizard implements IHero
 		{
 			levelTrack[index] = (index + 1) * 20;
 		}
+	}
+	
+	public void setWeapon(IWeapon weapon)
+	{
+		this.weapon = weapon;
+	}
+	
+	public IWeapon getWeapon()
+	{
+		return weapon;
+	}
+	
+	public void setEquipment(IEquipment equipment, int index)
+	{
+		if(index >= 0 && index < 3)
+			equipmentSet[index] = equipment;
+		else
+			System.out.println("Error 736");
+	}
+	
+	public IEquipment getEquipment(int index)
+	{
+		if(index >= 0 && index < 3)
+			return equipmentSet[index];
+		
+		return new NilEquipment(1);
 	}
 	
 	public String getName()
@@ -134,21 +162,6 @@ public class MuscleWizard implements IHero
 	public String charString()
 	{
 		return name + " : " + HP + ":HP";
-	}
-	
-	@Override
-	public String toString()
-	{
-		String s = "";
-		
-		s += name + "\n";
-		s += level + " lv\n";
-		s += HP + "/" + HPMax + "HP\n";
-		s += "Stats\nAttack: " + attackMax + "-" + attackMin + "\n";
-		s += "Speed: " + speed + " - Accuracy: " + accuracy + "\n";
-		s += "Phycal Defense: " + phyDefense + " - Magical Defense: " + magDefense + "\n";
-		
-		return s;
 	}
 	
 	public void attack(ICharacter incomingCharacter, int choiceInput)

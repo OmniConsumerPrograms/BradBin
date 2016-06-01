@@ -43,7 +43,7 @@ public class InventoryMenu implements IMenuSystem
 			System.out.println(PGM.IVM.toString());
 			System.out.println("1: Equip Weapon/Equipment    2: Unequip Weapon/Equipment");
 			System.out.println("3: Use Item                  4: discard object");
-			System.out.println("5: Get object details          6: Continue game");
+			System.out.println("5: Get object details        6: Continue game");
 			menuNumber = userInput.nextInt();
 			
 			switch(menuNumber)
@@ -61,11 +61,55 @@ public class InventoryMenu implements IMenuSystem
 						{
 							System.out.println(((IUsable) PGM.IVM.get(oID).get()).getName());
 							trip = 1;
+							
+							if(((IUsable) PGM.IVM.get(oID).get()).getType().equals("Weapon"))
+							{
+								PGM.weaponHolder.place((IWeapon) PGM.IVM.remove(oID).get());
+								PGM.groupID = 0;
+							}
+							else
+							{
+								PGM.equipmentHolder.place((IEquipment) PGM.IVM.remove(oID).get());
+								PGM.groupID = 1;
+							}
 						}
 						else
 							System.out.println("Trying to equip an Item.");
 					}
 					trip = 0;
+					while(trip != 1)
+					{
+						System.out.println(PGM.PM);
+						System.out.println("Select party member to equip weapon or equipment");
+						oID = userInput.nextInt();
+						
+						if(oID < 0)
+							trip = 1;
+						else if(oID >= 0 && oID < PGM.PM.size())
+						{
+							PGM.heroHolder.place(PGM.PM.get(oID));
+							trip = 1;
+						}
+						else
+							System.out.println("That is not a party member.");
+					}
+					trip = 0;
+					while(trip != 1 && PGM.groupID == 1)
+					{
+						System.out.println("Select witch equipment slot to place it");
+						System.out.println("1: " + PGM.heroHolder.get().getEquipment(0).getName() + "2: " + PGM.heroHolder.get().getEquipment(1).getName() + "3: " + PGM.heroHolder.get().getEquipment(2).getName());
+						oID = userInput.nextInt();
+						
+						if(oID < 0)
+							trip = 1;
+						else if(oID >= 1 && oID < 4)
+						{
+							PGM.ID = oID;
+							trip = 1;
+						}
+						else
+							System.out.println("That is not a slot");
+					}
 					if(oID >= 0)
 						PGM.callEvent(733);
 					break;

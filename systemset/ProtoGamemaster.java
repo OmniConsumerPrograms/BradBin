@@ -5,6 +5,8 @@ package systemset;
 
 import java.util.*;
 
+import characterset.Fist;
+import characterset.MuscleWizard;
 import characterset.PartyManager;
 import equipmentset.*;
 import eventset.*;
@@ -28,6 +30,7 @@ public class ProtoGamemaster
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
 	IBin<IItem> itemHolder;
+	IBin<IHero> heroHolder;
 	int groupID;
 	int ID;
 	
@@ -37,6 +40,7 @@ public class ProtoGamemaster
 		weaponHolder = new Holder<IWeapon>();
 		equipmentHolder = new Holder<IEquipment>();
 		itemHolder = new Holder<IItem>();
+		heroHolder = new Holder<IHero>();
 		groupID = -1;
 		buildEventSet();
 	}
@@ -81,8 +85,8 @@ public class ProtoGamemaster
 		eventSet[7][0][0] = new ItemDrop(this);
 		eventSet[7][0][6] = new ItemDropError(this);
 		eventSet[7][3][0] = new ItemUsed(this);
-		eventSet[7][3][3] = new Equip(this); // Equip
-		eventSet[7][3][4] = new EndEvent(this); // Unequip
+		eventSet[7][3][3] = new Equip(this);
+		eventSet[7][3][4] = new Unequip(this);
 		eventSet[7][3][5] = new ItemDiscard(this);
 		
 		for(int index = 0; index < buildSet.length; index++)
@@ -91,6 +95,7 @@ public class ProtoGamemaster
 			eventSet[8][index + 1][6] = buildErrorSet[index];
 		}
 
+		eventSet[8][0][0] = new StartEvent(this);
 		eventSet[8][9][9] = new EndEvent(this);
 		eventSet[9][0][0] = new RunAdventureLoop(this);
 		eventSet[9][0][1] = new SaveGame(this);
@@ -156,7 +161,10 @@ public class ProtoGamemaster
 	
 	public void equip()
 	{
-		
+		if(groupID == 0)
+			heroHolder.get().setWeapon(weaponHolder.get());
+		else if(groupID == 1)
+			heroHolder.get().setEquipment(equipmentHolder.get(), ID - 1);
 	}
 	
 	public void unequip()
@@ -320,6 +328,9 @@ public class ProtoGamemaster
 		MM.set(new PauseMenu(this));
 		MM.set(new InventoryMenu(this));
 		PM = new PartyManager();
+		ArrayList<IAttack> temp = new ArrayList<IAttack>();
+		temp.add(new Fist());
+		PM.set(new MuscleWizard(temp));
 		callEvent(899);
 	}
 }

@@ -6,6 +6,7 @@ package characterset;
 import java.util.*;
 import interfaces.IHero;
 import interfaces.IManager;
+import systemset.CharacterData;
 
 public class PartyManager implements IManager<IHero>
 {
@@ -28,7 +29,7 @@ public class PartyManager implements IManager<IHero>
 		Scanner userIn = new Scanner(System.in);
 		int partyMemberNumber = 0;
 		
-		if(partyLimit < size())
+		if(partyLimit > size())
 			party.add(hero);
 		else
 		{
@@ -65,5 +66,21 @@ public class PartyManager implements IManager<IHero>
 	public boolean has(IHero hero)
 	{
 		return party.contains(hero);
+	}
+	
+	@Override
+	public String toString()
+	{
+		String s = "";
+		CharacterData getter = new CharacterData();
+		
+		for(int index = 0; index < size(); index++)
+		{
+			System.out.println("Party member: " + index);
+			System.out.println(getter.getData(party.get(index)));
+			System.out.println("~~~");
+		}
+		
+		return s;
 	}
 }

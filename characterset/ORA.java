@@ -60,7 +60,7 @@ public class ORA implements IAttack
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax())) * 5;
+			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1)) * 5;
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");

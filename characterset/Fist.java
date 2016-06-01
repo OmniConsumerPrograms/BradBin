@@ -60,7 +60,7 @@ public class Fist implements IAttack
 		
 		if(test)
 		{
-			damage = hero.getAttackMin() + r.nextInt(hero.getAttackMax());
+			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1));
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");

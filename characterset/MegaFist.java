@@ -60,7 +60,7 @@ public class MegaFist implements IAttack
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax())) * 2;
+			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1)) * 2;
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");

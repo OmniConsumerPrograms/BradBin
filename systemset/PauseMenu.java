@@ -34,7 +34,8 @@ public class PauseMenu implements IMenuSystem
 		{
 			System.out.println(menuType());
 			System.out.println("1: Access Inventory    2: Load game             3: Save game and continue");
-			System.out.println("4: Save game and quit  5: Quit with out saving  6: Continue game");
+			System.out.println("4: Save game and quit  5: Quit with out saving  6: Rest game");
+			System.out.println("7: Check party         8: Continue game");
 			menuNumber = userInput.nextInt();
 			
 			switch(menuNumber)
@@ -55,6 +56,20 @@ public class PauseMenu implements IMenuSystem
 					PGM.callEvent(990);
 					break;
 				case 6:
+					String temp = "";
+					System.out.println("Are you sure you want to restart game? (Y/N)");
+					userInput.next();
+					temp = userInput.next();
+					if(temp.equalsIgnoreCase("y"))
+					{	
+						PGM.callEvent(800);
+						break;
+					}
+					else
+						break;
+				case 7:
+					System.out.println(PGM.PM);
+				case 8:
 					return 909;
 			}
 		}
