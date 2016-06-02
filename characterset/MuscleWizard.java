@@ -49,8 +49,8 @@ public class MuscleWizard implements IHero
 		magDefense = 5;
 		exp = 0;
 		level = 1;
-		levelCap = 10;
-		levelTrack = new int[10];
+		levelCap = 12;
+		levelTrack = new int[levelCap];
 		skillList = skills;
 		equipmentSet = new IEquipment[3];
 		weapon = new BareHands(1);
@@ -214,17 +214,14 @@ public class MuscleWizard implements IHero
 		
 		switch(level)
 		{
-			case 3:
-				level3Attack();
+			case 4:
+				level4Attack();
 				break;
-			case 6:
-				level6Attack();
+			case 8:
+				level8Attack();
 				break;
-			case 9:
-				level9Attack();
-				break;
-			case 10:
-				level10Attack();
+			case 12:
+				level12Attack();
 				break;
 		}
 	}
@@ -284,22 +281,17 @@ public class MuscleWizard implements IHero
 		phyDefense = phy;
 	}
 	
-	public void level3Attack()
-	{
-		skillList.add(new Fist());
-	}
-	
-	public void level6Attack()
+	public void level4Attack()
 	{
 		skillList.add(new MegaFist());
 	}
 	
-	public void level9Attack()
+	public void level8Attack()
 	{
 		skillList.add(new HyperFist());
 	}
 	
-	public void level10Attack()
+	public void level12Attack()
 	{
 		skillList.add(new ORA());
 	}

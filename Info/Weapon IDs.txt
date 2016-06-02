@@ -19,22 +19,23 @@ d - ID - Name					- range	- dam	- durab	- Speed	- acc	- wght	- value	- eID
 * - 18 - Mace					- S		- 22	- 18	- 15	- 100	- 10	- 45	- 300
 * - 19 - Lance					- M		- 22	- 20	- 35	- 80	- 10	- 42	- 300
 * - 20 - Katana					- S		- 25	- 22	- 40	- 100	- 7		- 48	- 300
-  - 21 - Arquebus				- L		- 24	- 16	- 70	- 60	- 9		- 55	- 300
-  - 22 - Magic Staff			- S		- 20	- 12	- 50	- 100	- 6		- 60	- 300
-  - 23 - Blunderbuss			- M		- 28	- 14	- 60	- 50	- 8		- 75	- 300
-  - 24 - Claymore				- S		- 32	- 30	- 40	- 100	- 12	- 150	- 300
-  - 25 - Excalibur				- S		- 35	- 30	- 40	- 100	- 11	- 300	- 300
-  - 26 - Gungnir				- M		- 35	- 35	- 60	- 100	- 10	- 300	- 300
-  - 27 - Spear of Longinus		- M		- 38	- 38	- 75	- 90	- 9		- 400	- 300
-  - 28 - Bow of Destiny			- L		- 40	- 40	- 80	- 80	- 8		- 450	- 300
+* - 21 - Arquebus				- L		- 24	- 16	- 70	- 60	- 9		- 55	- 300
+* - 22 - Magic Staff			- S		- 20	- 12	- 50	- 100	- 6		- 60	- 300
+* - 23 - Blunderbuss			- M		- 28	- 14	- 60	- 50	- 8		- 75	- 300
+* - 24 - Claymore				- S		- 32	- 30	- 40	- 100	- 12	- 150	- 300
+* - 25 - Excalibur				- S		- 35	- 30	- 40	- 100	- 11	- 300	- 300
+* - 26 - Gungnir				- M		- 35	- 35	- 60	- 100	- 10	- 300	- 300
+* - 27 - Spear of Longinus		- M		- 38	- 38	- 75	- 90	- 9		- 400	- 300
+* - 28 - Bow of Destiny			- L		- 40	- 40	- 80	- 80	- 8		- 450	- 300
 * - 29 - EggBlaster				- L		- 42	- 42	- 80	- 90	- 8		- 500	- 300
-  - 30 - Plasteel Sword			- S		- 45	- 35	- 60	- 100	- 10	- 600	- 300
-  - 31 - Rifle					- L		- 46	- 30	- 80	- 90	- 7		- 600	- 300
-  - 32 - Pistol					- M		- 45	- 30	- 90	- 90	- 5		- 600	- 300
-  - 34 - Golden Gun				- L		- 50	- 40	- 80	- 90	- 6		- 777	- 300
-  - 35 - Phase-Plasma Rifle		- L		- 58	- 45	- 55	- 90	- 12	- 800	- 300
-  - 36 - Charged Particle Sword	- S		- 62	- 45	- 75	- 100	- 10	- 850	- 300
-  - 37 - Rail-Gun				- L		- 68	- 50	- 60	- 90	- 12	- 900	- 300
-  - 38 - Phase-Plasma Cutter	- M		- 72	- 50	- 50	- 80	- 12	- 950	- 300
-  - 39 - Anti-Matter Cannon		- L		- 75	- 50	- 80	- 80	- 12	- 1000	- 300
-  - 40 - Omotanium Blaster		- L		- 80	- 50	- 90	- 100	- 10	- 2000	- 300
+* - 30 - Plasteel Sword			- S		- 45	- 35	- 60	- 100	- 10	- 600	- 300
+* - 31 - Rifle					- L		- 46	- 30	- 80	- 90	- 7		- 600	- 300
+* - 32 - Pistol					- M		- 45	- 30	- 90	- 90	- 5		- 600	- 300
+* - 33 - Golden Gun				- L		- 50	- 40	- 80	- 90	- 6		- 777	- 300
+* - 34 - Rocket Launcher		- L		- 65	- 25	- 25	- 75	- 15	- 800	- 300
+* - 35 - Phase-Plasma Rifle		- L		- 58	- 45	- 55	- 90	- 12	- 800	- 300
+* - 36 - Charged Particle Sword	- S		- 62	- 45	- 75	- 100	- 10	- 850	- 300
+* - 37 - Rail-Gun				- L		- 68	- 50	- 60	- 90	- 12	- 900	- 300
+* - 38 - Phase-Plasma Cutter	- M		- 72	- 50	- 50	- 80	- 12	- 950	- 300
+* - 39 - Anti-Matter Cannon		- L		- 75	- 50	- 80	- 80	- 12	- 1000	- 300
+* - 40 - Omotanium Blaster		- L		- 80	- 50	- 90	- 100	- 10	- 2000	- 300
