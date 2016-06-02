@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class FixDurability implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 600;
 	
-	public FixDurability(ProtoGamemaster PGM)
+	public FixDurability(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.fixDurability();
+		GM.fixDurability();
 	}
 	
 	public int getEventID()

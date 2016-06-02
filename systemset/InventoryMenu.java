@@ -15,13 +15,13 @@ public class InventoryMenu implements IMenuSystem
 {
 	private static Scanner userInput;
 	private String menuType = "Inventory";
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int oID = 0;
 	private int trip = 0;
 	
-	public InventoryMenu(ProtoGamemaster PGM)
+	public InventoryMenu(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 		userInput = new Scanner(System.in);
 	}
 	
@@ -30,17 +30,17 @@ public class InventoryMenu implements IMenuSystem
 		return menuType;
 	}
 	
-	public int runMenu(ProtoGamemaster P)
+	public int runMenu(Gamemaster P)
 	{	
 		int menuNumber = 0;
 		
 		if(P != null)
-			this.PGM = P;
+			this.GM = P;
 		
 		while(true)
 		{
 			System.out.println(menuType());
-			System.out.println(PGM.IVM.toString());
+			System.out.println(GM.IVM.toString());
 			System.out.println("1: Equip Weapon/Equipment    2: Unequip Weapon/Equipment");
 			System.out.println("3: Use Item                  4: discard object");
 			System.out.println("5: Get object details        6: Continue game");
@@ -73,26 +73,26 @@ public class InventoryMenu implements IMenuSystem
 	{
 		while(trip != 1)
 		{
-			System.out.println(PGM.IVM.toString());
+			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon or equipment");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < PGM.IVM.size() && !((IUsable) PGM.IVM.get(oID).get()).getType().equals("Item"))
+			else if(oID >= 0 && oID < GM.IVM.size() && !((IUsable) GM.IVM.get(oID).get()).getType().equals("Item"))
 			{
-				System.out.println(((IUsable) PGM.IVM.get(oID).get()).getName());
+				System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
 				trip = 1;
 				
-				if(((IUsable) PGM.IVM.get(oID).get()).getType().equals("Weapon"))
+				if(((IUsable) GM.IVM.get(oID).get()).getType().equals("Weapon"))
 				{
-					PGM.weaponHolder.place((IWeapon) PGM.IVM.remove(oID).get());
-					PGM.groupID = 0;
+					GM.weaponHolder.place((IWeapon) GM.IVM.remove(oID).get());
+					GM.groupID = 0;
 				}
 				else
 				{
-					PGM.equipmentHolder.place((IEquipment) PGM.IVM.remove(oID).get());
-					PGM.groupID = 1;
+					GM.equipmentHolder.place((IEquipment) GM.IVM.remove(oID).get());
+					GM.groupID = 1;
 				}
 			}
 			else
@@ -102,15 +102,15 @@ public class InventoryMenu implements IMenuSystem
 		
 		while(trip != 1)
 		{
-			System.out.println(PGM.PM);
+			System.out.println(GM.PM);
 			System.out.println("Select party member to equip weapon or equipment");
 			oID = userInput.nextInt();
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < PGM.PM.size())
+			else if(oID >= 0 && oID < GM.PM.size())
 			{
-				PGM.heroHolder.place(PGM.PM.get(oID));
+				GM.heroHolder.place(GM.PM.get(oID));
 				trip = 1;
 			}
 			else
@@ -118,39 +118,39 @@ public class InventoryMenu implements IMenuSystem
 		}
 		trip = 0;
 		
-		while(trip != 1 && PGM.groupID == 1)
+		while(trip != 1 && GM.groupID == 1)
 		{
 			System.out.println("Select witch equipment slot to place it");
-			System.out.println("1: " + PGM.heroHolder.get().getEquipment(0).getName() + "2: " + PGM.heroHolder.get().getEquipment(1).getName() + "3: " + PGM.heroHolder.get().getEquipment(2).getName());
+			System.out.println("1: " + GM.heroHolder.get().getEquipment(0).getName() + "2: " + GM.heroHolder.get().getEquipment(1).getName() + "3: " + GM.heroHolder.get().getEquipment(2).getName());
 			oID = userInput.nextInt();
 			
 			if(oID < 0)
 				trip = 1;
 			else if(oID >= 1 && oID < 4)
 			{
-				PGM.ID = oID;
+				GM.ID = oID;
 				trip = 1;
 			}
 			else
 				System.out.println("That is not a slot");
 		}
 		if(oID >= 0)
-			PGM.callEvent(733);
+			GM.callEvent(733);
 	}
 	
 	private void unequip()
 	{
 		while(trip != 1)
 		{
-			System.out.println(PGM.IVM.toString());
+			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon or equipment");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < PGM.IVM.size() && !((IUsable) PGM.IVM.get(oID).get()).getType().equals("Item"))
+			else if(oID >= 0 && oID < GM.IVM.size() && !((IUsable) GM.IVM.get(oID).get()).getType().equals("Item"))
 			{
-				System.out.println(((IUsable) PGM.IVM.get(oID).get()).getName());
+				System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
 				trip = 1;
 			}
 			else
@@ -158,22 +158,22 @@ public class InventoryMenu implements IMenuSystem
 		}
 		trip = 0;
 		if(oID >= 0)
-			PGM.callEvent(734);
+			GM.callEvent(734);
 	}
 	
 	private void use()
 	{
 		while(trip != 1)
 		{
-			System.out.println(PGM.IVM.toString());
+			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon or equipment");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < PGM.IVM.size() && ((IUsable) PGM.IVM.get(oID).get()).getType().equals("Item"))
+			else if(oID >= 0 && oID < GM.IVM.size() && ((IUsable) GM.IVM.get(oID).get()).getType().equals("Item"))
 			{
-				System.out.println(((IUsable) PGM.IVM.get(oID).get()).getName());
+				System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
 				trip = 1;
 			}
 			else
@@ -182,10 +182,10 @@ public class InventoryMenu implements IMenuSystem
 		trip = 0;
 		if(oID >= 0)
 		{
-			PGM.itemHolder.place((IItem) PGM.IVM.get(oID).get());
-			PGM.ID = oID;
-			PGM.groupID = 2;
-			PGM.callEvent(730);
+			GM.itemHolder.place((IItem) GM.IVM.get(oID).get());
+			GM.ID = oID;
+			GM.groupID = 2;
+			GM.callEvent(730);
 		}
 	}
 	
@@ -193,25 +193,25 @@ public class InventoryMenu implements IMenuSystem
 	{
 		while(trip != 1)
 		{
-			System.out.println(PGM.IVM.toString());
+			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon, equipment, or Item to be discard");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < PGM.IVM.size())
+			else if(oID >= 0 && oID < GM.IVM.size())
 			{
-				System.out.println(((IUsable) PGM.IVM.get(oID).get()).getName());
+				System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
 				trip = 1;
 			}
 			else
 				System.out.println("Trying to discard some thing you don't have");
 		}
 		trip = 0;
-		if(oID >= 0 && oID < PGM.IVM.size())
+		if(oID >= 0 && oID < GM.IVM.size())
 		{
-			PGM.ID = oID;
-			PGM.callEvent(735);
+			GM.ID = oID;
+			GM.callEvent(735);
 		}
 	}
 	
@@ -219,29 +219,29 @@ public class InventoryMenu implements IMenuSystem
 	{
 		while(trip != 1)
 		{
-			System.out.println(PGM.IVM.toString());
+			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon, equipment, or Item to be looked at");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < PGM.IVM.size())
+			else if(oID >= 0 && oID < GM.IVM.size())
 			{
-				String temp = ((IUsable) PGM.IVM.get(oID).get()).getType();
+				String temp = ((IUsable) GM.IVM.get(oID).get()).getType();
 				if(temp.equals("Weapon"))
 				{
 					WeaponData getter = new WeaponData();
-					System.out.println(getter.getData((IWeapon) PGM.IVM.get(oID).get()));
+					System.out.println(getter.getData((IWeapon) GM.IVM.get(oID).get()));
 				}
 				else if(temp.equals("Equipment"))
 				{
 					EquipmentData getter = new EquipmentData();
-					System.out.println(getter.getData((IEquipment) PGM.IVM.get(oID).get()));
+					System.out.println(getter.getData((IEquipment) GM.IVM.get(oID).get()));
 				}
 				else // Item
 				{
 					ItemData getter = new ItemData();
-					System.out.println(getter.getData((IItem) PGM.IVM.get(oID).get()));
+					System.out.println(getter.getData((IItem) GM.IVM.get(oID).get()));
 				}
 				trip = 1;
 			}

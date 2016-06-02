@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class ItemUsed implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 730;
 	
-	public ItemUsed(ProtoGamemaster PGM)
+	public ItemUsed(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.itemUsed();
+		GM.itemUsed();
 	}
 	
 	public int getEventID()

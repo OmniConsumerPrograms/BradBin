@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class ItemDiscard implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 735;
 	
-	public ItemDiscard(ProtoGamemaster PGM)
+	public ItemDiscard(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.itemDiscard();
+		GM.itemDiscard();
 	}
 	
 	public int getEventID()

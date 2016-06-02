@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class ItemDrop implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 700;
 	
-	public ItemDrop(ProtoGamemaster PGM)
+	public ItemDrop(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.itemDrop();
+		GM.itemDrop();
 	}
 	
 	public int getEventID()

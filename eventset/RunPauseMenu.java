@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class RunPauseMenu implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 960;
 	
-	public RunPauseMenu(ProtoGamemaster PGM)
+	public RunPauseMenu(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.runPauseMenu();
+		GM.runPauseMenu();
 	}
 	
 	public int getEventID()

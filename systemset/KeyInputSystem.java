@@ -5,40 +5,40 @@ import java.awt.event.KeyListener;
 
 public class KeyInputSystem implements KeyListener
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	
-	public KeyInputSystem(ProtoGamemaster PGM)
+	public KeyInputSystem(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void keyTyped(KeyEvent e)
 	{
 		if(e.getKeyCode() == KeyEvent.VK_P)
-			PGM.callEvent(960);
+			GM.callEvent(960);
 		else if(e.getKeyCode() == KeyEvent.VK_I)
-			PGM.callEvent(970);
+			GM.callEvent(970);
 		else
-			PGM.callEvent(909);
+			GM.callEvent(909);
 	}
    
 	public void keyPressed(KeyEvent e)
 	{
 		if(e.getKeyCode() == KeyEvent.VK_P)
-			PGM.callEvent(960);
+			GM.callEvent(960);
 		else if(e.getKeyCode() == KeyEvent.VK_I)
-			PGM.callEvent(970);
+			GM.callEvent(970);
 		else
-			PGM.callEvent(909);
+			GM.callEvent(909);
 	}
    
 	public void keyReleased(KeyEvent e)
 	{
 		if(e.getKeyCode() == KeyEvent.VK_P)
-			PGM.callEvent(960);
+			GM.callEvent(960);
 		else if(e.getKeyCode() == KeyEvent.VK_I)
-			PGM.callEvent(970);
+			GM.callEvent(970);
 		else
-			PGM.callEvent(909);
+			GM.callEvent(909);
 	}
 }

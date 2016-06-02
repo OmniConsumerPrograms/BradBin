@@ -3,11 +3,11 @@
 
 package interfaces;
 
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public interface IMenuSystem
 {
 	public String menuType();
 	
-	public int runMenu(ProtoGamemaster PGM);
+	public int runMenu(Gamemaster GM);
 }

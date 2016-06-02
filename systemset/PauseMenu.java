@@ -10,11 +10,11 @@ public class PauseMenu implements IMenuSystem
 {
 	private static Scanner userInput;
 	private String menuType = "Pause";
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	
-	public PauseMenu(ProtoGamemaster PGM)
+	public PauseMenu(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 		userInput = new Scanner(System.in);
 	}
 	
@@ -23,12 +23,12 @@ public class PauseMenu implements IMenuSystem
 		return menuType;
 	}
 	
-	public int runMenu(ProtoGamemaster P)
+	public int runMenu(Gamemaster P)
 	{	
 		int menuNumber = 0;
 				
 		if(P != null)
-			this.PGM = P;
+			this.GM = P;
 		
 		while(true)
 		{
@@ -41,19 +41,19 @@ public class PauseMenu implements IMenuSystem
 			switch(menuNumber)
 			{
 				case 1:
-					PGM.callEvent(970);
+					GM.callEvent(970);
 					break;
 				case 2:
-					PGM.callEvent(902);
+					GM.callEvent(902);
 					return 909;
 				case 3:
-					PGM.callEvent(901);
+					GM.callEvent(901);
 					return 909;
 				case 4:
-					PGM.callEvent(991);
+					GM.callEvent(991);
 					break;
 				case 5:
-					PGM.callEvent(990);
+					GM.callEvent(990);
 					break;
 				case 6:
 					String temp = "";
@@ -62,13 +62,13 @@ public class PauseMenu implements IMenuSystem
 					temp = userInput.next();
 					if(temp.equalsIgnoreCase("y"))
 					{	
-						PGM.callEvent(800);
+						GM.callEvent(800);
 						break;
 					}
 					else
 						break;
 				case 7:
-					System.out.println(PGM.PM);
+					System.out.println(GM.PM);
 				case 8:
 					return 909;
 			}

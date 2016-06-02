@@ -15,7 +15,7 @@ import weaponset.*;
 import itemset.*;
 
 @SuppressWarnings("rawtypes")
-public class ProtoGamemaster
+public class Gamemaster
 {
 	IManager<IEquipment> EM;
 	IItemGenerator<IEquipment> EG;
@@ -34,7 +34,7 @@ public class ProtoGamemaster
 	int groupID;
 	int ID;
 	
-	public ProtoGamemaster()
+	public Gamemaster()
 	{
 		eventSet = new IEvent[10][10][10];
 		weaponHolder = new Holder<IWeapon>();

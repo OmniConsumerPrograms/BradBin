@@ -4,22 +4,22 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class SaveAndQuit implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 991;
 	
-	public SaveAndQuit(ProtoGamemaster PGM)
+	public SaveAndQuit(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.save();
-		PGM.exit();
+		GM.save();
+		GM.exit();
 	}
 	
 	public int getEventID()

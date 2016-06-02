@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class BuildDungeonError implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 866;
 	
-	public BuildDungeonError(ProtoGamemaster PGM)
+	public BuildDungeonError(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.error(eventID);
+		GM.error(eventID);
 	}
 	
 	public int getEventID()

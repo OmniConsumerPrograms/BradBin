@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class AddPrefix implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 610;
 	
-	public AddPrefix(ProtoGamemaster PGM)
+	public AddPrefix(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.addPrefix();
+		GM.addPrefix();
 	}
 	
 	public int getEventID()

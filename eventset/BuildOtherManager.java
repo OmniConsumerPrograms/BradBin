@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class BuildOtherManager implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 890;
 	
-	public BuildOtherManager(ProtoGamemaster PGM)
+	public BuildOtherManager(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.buildOtherManagers();
+		GM.buildOtherManagers();
 	}
 	
 	public int getEventID()

@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class BuildFloors implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 850;
 	
-	public BuildFloors(ProtoGamemaster PGM)
+	public BuildFloors(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.buildFloors();
+		GM.buildFloors();
 	}
 	
 	public int getEventID()

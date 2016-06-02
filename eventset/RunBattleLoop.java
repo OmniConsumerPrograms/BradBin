@@ -4,21 +4,21 @@
 package eventset;
 
 import interfaces.IEvent;
-import systemset.ProtoGamemaster;
+import systemset.Gamemaster;
 
 public class RunBattleLoop implements IEvent
 {
-	private ProtoGamemaster PGM;
+	private Gamemaster GM;
 	private int eventID = 910;
 	
-	public RunBattleLoop(ProtoGamemaster PGM)
+	public RunBattleLoop(Gamemaster GM)
 	{
-		this.PGM = PGM;
+		this.GM = GM;
 	}
 	
 	public void run()
 	{
-		PGM.runBattleLoop();
+		GM.runBattleLoop();
 	}
 	
 	public int getEventID()
