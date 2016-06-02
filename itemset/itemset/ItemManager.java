@@ -37,9 +37,9 @@ public class ItemManager implements IManager<IItem>
 		return itemList.remove(ID);
 	}
 	
-	public void replace(IItem item, int ID)
+	public IItem replace(IItem item, int ID)
 	{
-		itemList.set(ID, item);
+		return itemList.set(ID, item);
 	}
 	
 	public boolean has(IItem item)

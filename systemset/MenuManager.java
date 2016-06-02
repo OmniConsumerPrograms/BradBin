@@ -36,9 +36,9 @@ public class MenuManager implements IManager<IMenuSystem>
 		return menuSet.remove(ID);
 	}
 	
-	public void replace(IMenuSystem ms, int ID)
+	public IMenuSystem replace(IMenuSystem ms, int ID)
 	{
-		menuSet.set(ID, ms);
+		return menuSet.set(ID, ms);
 	}
 
 	public boolean has(IMenuSystem ms)

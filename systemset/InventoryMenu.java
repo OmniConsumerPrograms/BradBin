@@ -41,6 +41,7 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(menuType());
 			System.out.println(GM.IVM.toString());
+			System.out.println("\n~~~Inventory Menu~~~");
 			System.out.println("1: Equip Weapon/Equipment    2: Unequip Weapon/Equipment");
 			System.out.println("3: Use Item                  4: discard object");
 			System.out.println("5: Get object details        6: Continue game");
@@ -74,7 +75,7 @@ public class InventoryMenu implements IMenuSystem
 		while(trip != 1)
 		{
 			System.out.println(GM.IVM.toString());
-			System.out.println("Select weapon or equipment");
+			System.out.println("\nSelect weapon or equipment");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)
@@ -121,7 +122,7 @@ public class InventoryMenu implements IMenuSystem
 		while(trip != 1 && GM.groupID == 1)
 		{
 			System.out.println("Select witch equipment slot to place it");
-			System.out.println("1: " + GM.heroHolder.get().getEquipment(0).getName() + "2: " + GM.heroHolder.get().getEquipment(1).getName() + "3: " + GM.heroHolder.get().getEquipment(2).getName());
+			System.out.println("1: " + GM.heroHolder.get().getEquipment(0).getName() + " 2: " + GM.heroHolder.get().getEquipment(1).getName() + " 3: " + GM.heroHolder.get().getEquipment(2).getName());
 			oID = userInput.nextInt();
 			
 			if(oID < 0)
@@ -134,6 +135,8 @@ public class InventoryMenu implements IMenuSystem
 			else
 				System.out.println("That is not a slot");
 		}
+		trip = 0;
+		
 		if(oID >= 0)
 			GM.callEvent(733);
 	}
@@ -142,21 +145,62 @@ public class InventoryMenu implements IMenuSystem
 	{
 		while(trip != 1)
 		{
-			System.out.println(GM.IVM.toString());
-			System.out.println("Select weapon or equipment");
-			oID = userInput.nextInt() - 1;
+			System.out.println(GM.PM);
+			System.out.println("Select party member to unequip weapon or equipment");
+			oID = userInput.nextInt();
 			
 			if(oID < 0)
 				trip = 1;
-			else if(oID >= 0 && oID < GM.IVM.size() && !((IUsable) GM.IVM.get(oID).get()).getType().equals("Item"))
+			else if(oID >= 0 && oID < GM.PM.size())
 			{
-				System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
+				GM.heroHolder.place(GM.PM.get(oID));
 				trip = 1;
 			}
 			else
-				System.out.println("Trying to unequip an Item.");
+				System.out.println("That is not a Party member.");
 		}
 		trip = 0;
+		
+		while(trip != 1)
+		{
+			System.out.println("What is it that you want to unquip?\n1: Weapon\n2: Equipment");
+			oID = userInput.nextInt();
+			
+			if(oID <= 0)
+				trip = 1;
+			else if(oID == 1)
+			{
+				GM.groupID = 0;
+				trip = 1;
+			}
+			else if(oID == 2)
+			{
+				GM.groupID = 1;
+				trip = 1;
+			}
+			else
+				System.out.println("What is that? I do not think that is such a thing.");
+		}
+		trip = 0;
+		
+		while(trip != 1 && GM.groupID == 1)
+		{
+			System.out.println("Select witch equipment slot to place it");
+			System.out.println("1: " + GM.heroHolder.get().getEquipment(0).getName() + " 2: " + GM.heroHolder.get().getEquipment(1).getName() + " 3: " + GM.heroHolder.get().getEquipment(2).getName());
+			oID = userInput.nextInt();
+			
+			if(oID < 0)
+				trip = 1;
+			else if(oID >= 1 && oID < 4)
+			{
+				GM.ID = oID;
+				trip = 1;
+			}
+			else
+				System.out.println("That is not a slot");
+		}
+		trip = 0;
+		
 		if(oID >= 0)
 			GM.callEvent(734);
 	}

@@ -11,7 +11,7 @@ public interface IManager<T>
 	
 	public T remove(int ID);
 	
-	public void replace(T t, int ID);
+	public T replace(T t, int ID);
 	
 	public boolean has(T t);
 	

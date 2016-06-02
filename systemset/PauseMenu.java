@@ -69,6 +69,7 @@ public class PauseMenu implements IMenuSystem
 						break;
 				case 7:
 					System.out.println(GM.PM);
+					break;
 				case 8:
 					return 909;
 			}

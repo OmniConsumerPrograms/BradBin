@@ -31,8 +31,10 @@ public class Gamemaster
 	IBin<IEquipment> equipmentHolder;
 	IBin<IItem> itemHolder;
 	IBin<IHero> heroHolder;
+	IBin<ICharacter> targetHolder;
 	int groupID;
 	int ID;
+	int gameMode;
 	
 	public Gamemaster()
 	{
@@ -88,6 +90,7 @@ public class Gamemaster
 		eventSet[7][3][3] = new Equip(this);
 		eventSet[7][3][4] = new Unequip(this);
 		eventSet[7][3][5] = new ItemDiscard(this);
+		eventSet[7][3][6] = new ItemError(this);
 		
 		for(int index = 0; index < buildSet.length; index++)
 		{
@@ -136,6 +139,7 @@ public class Gamemaster
 	@SuppressWarnings("resource")
 	public void runAdventureLoop()
 	{
+		gameMode = 900;
 		Scanner input = new Scanner(System.in);
 		String inputData = "";
 		
@@ -162,19 +166,43 @@ public class Gamemaster
 	public void equip()
 	{
 		if(groupID == 0)
-			heroHolder.get().setWeapon(weaponHolder.get());
+		{
+			if(heroHolder.get().getWeapon().getID() == 0)
+				heroHolder.get().setWeapon(weaponHolder.get());
+			else
+			{
+				Holder<IWeapon> temp = new Holder<IWeapon>(heroHolder.get().replaceWeapon(weaponHolder.get()));
+				IVM.set(temp);
+			}
+		}
 		else if(groupID == 1)
-			heroHolder.get().setEquipment(equipmentHolder.get(), ID - 1);
+		{
+			if(heroHolder.get().getEquipment(ID - 1).getID() == 0)
+				heroHolder.get().setEquipment(equipmentHolder.get(), ID - 1);
+			else
+			{
+				Holder<IEquipment> temp  = new Holder<IEquipment>(heroHolder.get().replaceEquipment(equipmentHolder.get(), ID - 1));
+				IVM.set(temp);
+			}
+		}
+		else
+			callEvent(736);
 	}
 	
 	public void unequip()
 	{
-		
+		if(groupID == 0)
+			IVM.set(new Holder<IWeapon>(heroHolder.get().replaceWeapon(new BareHands(1))));
+		else if(groupID == 1)
+			IVM.set(new Holder<IEquipment>(heroHolder.get().replaceEquipment(new NilEquipment(1), ID - 1)));
+		else
+			callEvent(736);
 	}
 	
 	public void itemUsed()
 	{
 		System.out.println(((IUsable) IVM.get(ID).get()).getName() + " was used");
+		callEvent(itemHolder.get().getEventID());
 		IVM.remove(ID);
 	}
 	
@@ -260,7 +288,7 @@ public class Gamemaster
 	
 	public void runBattleLoop()
 	{
-		
+		gameMode = 910;
 	}
 	
 	public void save()
@@ -324,13 +352,18 @@ public class Gamemaster
 	public void buildOtherManagers()
 	{
 		// builds Party, Menu, Battle, and any other managers to be
+		// Menu
 		MM = new MenuManager();
 		MM.set(new PauseMenu(this));
 		MM.set(new InventoryMenu(this));
+		
+		// Party
 		PM = new PartyManager();
 		ArrayList<IAttack> temp = new ArrayList<IAttack>();
 		temp.add(new Fist());
 		PM.set(new MuscleWizard(temp));
+		
+		//End
 		callEvent(899);
 	}
 }

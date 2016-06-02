@@ -56,4 +56,8 @@ public interface ICharacter
 	public void attack(ICharacter incomingCharacter, int choiceInput);
 	
 	public boolean validAttackChoice(int x);
+	
+	public int getStatus();
+	
+	public void setStatus(int eID);
 }

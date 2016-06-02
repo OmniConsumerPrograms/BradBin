@@ -10,12 +10,12 @@ import systemset.CharacterData;
 
 public class PartyManager implements IManager<IHero>
 {
-	private ArrayList<IHero> party;
+	private ArrayList<IHero> party; 
 	private int partyLimit = 4;
 	
 	public PartyManager()
 	{
-		party = new ArrayList<IHero>(4);
+		party = new ArrayList<IHero>(partyLimit);
 	}
 	
 	public int size()
@@ -33,7 +33,7 @@ public class PartyManager implements IManager<IHero>
 			party.add(hero);
 		else
 		{
-			System.out.println("You are at your party limit, chose some one to dismiss");
+			System.out.println("You are at your party limit, chose someone to dismiss");
 			for(int index = 0; index < size(); index++)
 				System.out.println(index + ": Name " + party.get(index).getName());
 			System.out.print("chose: ");
@@ -53,9 +53,9 @@ public class PartyManager implements IManager<IHero>
 		return party.remove(index);
 	}
 	
-	public void replace(IHero hero, int index)
+	public IHero replace(IHero hero, int index)
 	{
-		party.set(index, hero);
+		return party.set(index, hero);
 	}
 	
 	public int indexOf(IHero hero)

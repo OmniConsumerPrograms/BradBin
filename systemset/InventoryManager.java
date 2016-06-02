@@ -9,10 +9,11 @@ import interfaces.IBin;
 public class InventoryManager implements IManager<IBin>
 {
 	private ArrayList<IBin> inventory;
+	private int capacity = 20;
 	
 	public InventoryManager()
 	{
-		inventory = new ArrayList<IBin>();
+		inventory = new ArrayList<IBin>(capacity);
 	}
 	
 	public int size()
@@ -20,9 +21,24 @@ public class InventoryManager implements IManager<IBin>
 		return inventory.size();
 	}
 	
+	@SuppressWarnings("resource")
 	public void set(IBin object)
 	{
-		inventory.add(object);
+		Scanner userIn = new Scanner(System.in);
+		int userSelection = 0;
+		
+		if(size() < capacity)
+			inventory.add(object);
+		else
+		{
+			System.out.println("Inventory is at capacity\nDo you want to replace an Item with this one?");
+			for(int index = 0; index < size(); index++)
+				System.out.println((index + 1) + ": " + ((IUsable) inventory.get(index).get()).getName());
+			System.out.print("selection: ");
+			userSelection = userIn.nextInt() - 1;
+			
+			replace(object, userSelection);
+		}
 	}
 	
 	public IBin get(int ID)
@@ -35,9 +51,9 @@ public class InventoryManager implements IManager<IBin>
 		return inventory.remove(ID);
 	}
 	
-	public void replace(IBin object, int ID)
+	public IBin replace(IBin object, int ID)
 	{
-		inventory.set(ID, object);
+		return inventory.set(ID, object);
 	}
 	
 	public boolean has(IBin object)
@@ -58,6 +74,8 @@ public class InventoryManager implements IManager<IBin>
 	{
 		String s = "";
 		int l = 1;
+		
+		System.out.println("Capacity: " + size() + "/" + capacity);
 		
 		for(int index = 0; index < inventory.size(); index++)
 		{

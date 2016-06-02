@@ -15,28 +15,30 @@ import interfaces.IAttack;
 
 public class MuscleWizard implements IHero
 {
-	String name;
-	int HPMax;
-	int HP;
-	int SPMax;
-	int SP;
-	int attackMin;
-	int attackMax;
-	int speed;
-	int phyDefense;
-	int magDefense;
-	double accuracy;
-	int exp;
-	int[] levelTrack;
-	int level;
+	private String name;
+	private int status;
+	private int HPMax;
+	private int HP;
+	private int SPMax;
+	private int SP;
+	private int attackMin;
+	private int attackMax;
+	private int speed;
+	private int phyDefense;
+	private int magDefense;
+	private double accuracy;
+	private int exp;
+	private int[] levelTrack;
+	private int level;
 	int levelCap;
-	ArrayList<IAttack> skillList;
-	IEquipment[] equipmentSet;
-	IWeapon weapon;
+	private ArrayList<IAttack> skillList;
+	private IEquipment[] equipmentSet;
+	private IWeapon weapon;
 	
 	public MuscleWizard(ArrayList<IAttack> skills)
 	{
 		name = "Muscle Wizard";
+		status = 000;
 		HPMax = 20;
 		HP = HPMax;
 		SPMax = 10;
@@ -57,6 +59,16 @@ public class MuscleWizard implements IHero
 		
 		setupEquipmentSet();
 		buildLevelTrack();
+	}
+	
+	public int getStatus()
+	{
+		return status;
+	}
+	
+	public void setStatus(int eID)
+	{
+		status = eID;
 	}
 	
 	private void setupEquipmentSet()
@@ -83,6 +95,13 @@ public class MuscleWizard implements IHero
 		return weapon;
 	}
 	
+	public IWeapon replaceWeapon(IWeapon weapon)
+	{
+		IWeapon temp = this.weapon;
+		this.weapon = weapon;
+		return temp;
+	}
+	
 	public void setEquipment(IEquipment equipment, int index)
 	{
 		if(index >= 0 && index < 3)
@@ -97,6 +116,13 @@ public class MuscleWizard implements IHero
 			return equipmentSet[index];
 		
 		return new NilEquipment(1);
+	}
+	
+	public IEquipment replaceEquipment(IEquipment equipment, int index)
+	{
+		IEquipment temp = equipmentSet[index];
+		equipmentSet[index] = equipment;
+		return temp;
 	}
 	
 	public String getName()
@@ -126,32 +152,32 @@ public class MuscleWizard implements IHero
 	
 	public int getAttackMin()
 	{
-		return attackMin;
+		return attackMin + weapon.getAttack();
 	}
 	
 	public int getAttackMax()
 	{
-		return attackMax;
+		return attackMax + weapon.getAttack();
 	}
 	
 	public int getSpeed()
 	{
-		return speed;
+		return speed + weapon.getSpeed() + equipmentSet[0].getSpeed() + equipmentSet[1].getSpeed() + equipmentSet[2].getSpeed();
 	}
 	
 	public int getPhyDefense()
 	{
-		return phyDefense;
+		return phyDefense + equipmentSet[0].getPhysicalDefense() + equipmentSet[1].getPhysicalDefense() + equipmentSet[2].getPhysicalDefense();
 	}
 	
 	public int getMagDefense()
 	{
-		return magDefense;
+		return magDefense + equipmentSet[0].getMagicalDefense() + equipmentSet[1].getMagicalDefense() + equipmentSet[2].getMagicalDefense();
 	}
 	
 	public double getAccuracy()
 	{
-		return accuracy;
+		return accuracy + weapon.getAccuracy();
 	}
 	
 	public boolean isAlive()
@@ -161,7 +187,7 @@ public class MuscleWizard implements IHero
 	
 	public String charString()
 	{
-		return name + " : " + HP + ":HP";
+		return name + " : " + HP + "/" + HPMax + ":HP : " + SP + "/" + SPMax + ":SP";
 	}
 	
 	public void attack(ICharacter incomingCharacter, int choiceInput)
@@ -309,6 +335,16 @@ public class MuscleWizard implements IHero
 	public void attackListString()
 	{
 		for(IAttack a : skillList)
-			System.out.println(a);
+			System.out.println(a.getAttackName());
+	}
+	
+	public String skillListToString()
+	{
+		String s = "";
+		
+		for(IAttack a : skillList)
+			s = a.getAttackName();
+		
+		return s;
 	}
 }

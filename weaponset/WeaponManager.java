@@ -37,9 +37,9 @@ public class WeaponManager implements IManager<IWeapon>
 		return itemList.remove(ID);
 	}
 	
-	public void replace(IWeapon item, int ID)
+	public IWeapon replace(IWeapon item, int ID)
 	{
-		itemList.set(ID, item);
+		return itemList.set(ID, item);
 	}
 	
 	public boolean has(IWeapon item)

@@ -33,9 +33,9 @@ public class AttackManager implements IManager<IAttack>
 		return attackList.remove(ID);
 	}
 	
-	public void replace(IAttack attack, int ID)
+	public IAttack replace(IAttack attack, int ID)
 	{
-		attackList.set(ID, attack);
+		return attackList.set(ID, attack);
 	}
 	
 	public boolean has(IAttack attack)
