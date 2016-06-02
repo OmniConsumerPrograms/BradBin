@@ -25,7 +25,7 @@ D - 23 - Dis-Panic
 D - 24 - Dis-Confusion
 * - 25 - Drink of the Fist
 * - 26 - Drink of the Mind
-* - 27 - Drink of the Wall
+D - 27 - Drink of the Wall
 * - 28 - Drink of the Photon
 * - 29 - Drink of the Realm
 * - 30 - Drink of the Bullseye
