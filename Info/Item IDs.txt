@@ -25,17 +25,17 @@ D - 23 - Dis-Panic
 D - 24 - Dis-Confusion
 * - 25 - Drink of the Fist
 * - 26 - Drink of the Mind
-* - 27 - Drink of the Wall
+D - 27 - Drink of the Wall
 * - 28 - Drink of the Photon
 * - 29 - Drink of the Realm
 * - 30 - Drink of the Bullseye
-* - 31 - Smoke Bomb
-* - 32 - Time Bomb
+B - 31 - Smoke Bomb
+B - 32 - Time Bomb
 D - 33 - Dis-nerf
 D - 34 - Dis-buff
 * - 35 - Drink of Health
 * - 36 - Drink of Magic
 * - 37 - Drink of the Body
 * - 38 - Drink of the Gods
-* - 39 - Holy Hand-grenade
-* - 40 - Black hole in a bottle
+B - 39 - Holy Hand-grenade
+B - 40 - Black hole in a bottle
