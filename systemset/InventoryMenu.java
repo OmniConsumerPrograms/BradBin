@@ -210,7 +210,7 @@ public class InventoryMenu implements IMenuSystem
 		while(trip != 1)
 		{
 			System.out.println(GM.IVM.toString());
-			System.out.println("Select weapon or equipment");
+			System.out.println("Select item");
 			oID = userInput.nextInt() - 1;
 			
 			if(oID < 0)

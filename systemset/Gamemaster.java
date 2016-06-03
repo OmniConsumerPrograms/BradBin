@@ -80,17 +80,32 @@ public class Gamemaster
 								  new BuildSaveManagerError(this),
 								  new BuildOtherManagerError(this)};
 		
+		eventSet[1][0][0] = new RestoresHP(this);
+		eventSet[1][0][1] = new RestoresHP(this);
+		eventSet[1][1][0] = new AddHP(this);
+		eventSet[1][1][1] = new AddHP(this);
+		eventSet[1][2][0] = new RestoresHPSP(this);
+		eventSet[1][2][1] = new RestoresHPSP(this);
+		eventSet[1][3][0] = new AddHPSP(this);
+		eventSet[1][3][1] = new AddHPSP(this);
+		eventSet[1][4][0] = new RestoresSP(this);
+		eventSet[1][4][1] = new RestoresSP(this);
+		eventSet[1][5][0] = new AddSP(this);
+		eventSet[1][5][1] = new AddSP(this);
 		eventSet[6][0][0] = new FixDurability(this);
 		eventSet[6][0][6] = new FixDurabilityError(this);
 		eventSet[6][1][0] = new AddPrefix(this);
 		eventSet[6][1][6] = new AddPrefixError(this);
 		eventSet[7][0][0] = new ItemDrop(this);
 		eventSet[7][0][6] = new ItemDropError(this);
+		eventSet[7][1][0] = new ItemBoxAction(this);
+		eventSet[7][2][0] = new UserAddedItem(this);
 		eventSet[7][3][0] = new ItemUsed(this);
 		eventSet[7][3][3] = new Equip(this);
 		eventSet[7][3][4] = new Unequip(this);
 		eventSet[7][3][5] = new ItemDiscard(this);
 		eventSet[7][3][6] = new ItemError(this);
+		eventSet[7][8][0] = new CureKO(this);
 		
 		for(int index = 0; index < buildSet.length; index++)
 		{
@@ -104,6 +119,8 @@ public class Gamemaster
 		eventSet[9][0][1] = new SaveGame(this);
 		eventSet[9][0][2] = new LoadGame(this);
 		eventSet[9][0][9] = new EndEvent(this);
+		eventSet[9][3][0] = new RandomEncounter(this);
+		eventSet[9][5][0] = new BossEncounter(this);
 		eventSet[9][6][0] = new RunPauseMenu(this);
 		eventSet[9][7][0] = new RunInventoryMenu(this);
 		eventSet[9][9][0] = new EndGame(this);
@@ -365,5 +382,60 @@ public class Gamemaster
 		
 		//End
 		callEvent(899);
+	}
+
+	public void randomEncounter()
+	{
+		
+	}
+
+	public void bossEncounter()
+	{
+		
+	}
+
+	public void userAddedItem()
+	{
+		
+	}
+
+	public void itemBoxAction()
+	{
+		
+	}
+
+	public void cureKO()
+	{
+		
+	}
+
+	public void restoresHP()
+	{
+				
+	}
+
+	public void addHP()
+	{
+		
+	}
+
+	public void restoresHPSP()
+	{
+		
+	}
+
+	public void addHPSP()
+	{
+		
+	}
+
+	public void restoresSP()
+	{
+		
+	}
+
+	public void addSP()
+	{
+		
 	}
 }

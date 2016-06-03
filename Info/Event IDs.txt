@@ -8,12 +8,12 @@ D - 040 - Confusion
   - 050	- KO
 
 1-HP/MP change (Party Manager)
-  - 100 - restores HP
-  - 110 - adds HP+
-  - 120 - restores HP & MP 
-  - 130 - adds HP+ & MP+
-  - 140 - restores MP
-  - 150 - adds MP+
+* - 100 - restores HP
+* - 110 - adds HP+
+* - 120 - restores HP & MP 
+* - 130 - adds HP+ & MP+
+* - 140 - restores MP
+* - 150 - adds MP+
 
 2-Stat Boosts (Party Manager)
   - 200 - Attack boost
@@ -61,27 +61,27 @@ D - 530 - Nullifies Stat Boosts
 D - 570 - Boss weakness override
 
 6-Item modifications (Gamemaster)
-* - 600 - Fix durability
+S - 600 - Fix durability
 * - 610 - Add prefix
 D - 620 - Remove prefix
-  - 630 - Re-roll item
-  - 640 - Re-roll weapon
-  - 650 - Re-roll equipment
-  - 660 - Add item
-  - 670 - Add weapon
-  - 680 - Add equipment
-  - 690 - Fix Busted prefix
+D - 630 - Re-roll item
+D - 640 - Re-roll weapon
+D - 650 - Re-roll equipment
+D - 660 - Add item
+D - 670 - Add weapon
+D - 680 - Add equipment
+S - 690 - Fix Busted prefix
 
 7-Item actions (Gamemaster)
 * - 700 - item drop
-  - 710 - item box
-  - 720 - user added item
+* - 710 - item box
+* - 720 - user added item
 * - 730 - item used
 D - 740 - cure Poison
 D - 750 - cure Rage
 D - 760 - cure Panic
 D - 770 - cure Confusion
-  - 780 - cure KO
+* - 780 - cure KO
 D - 790 - cure all
 
 8-Start up (Gamemaster)
@@ -100,9 +100,9 @@ D - 790 - cure all
 * - 900 - Adventure state
 * - 910 - Battle state
 D - 920 - floor change
-  - 930 - random encounter
+* - 930 - random encounter
 D - 940 - fix encounter
-  - 950 - boss encounter
+* - 950 - boss encounter
 * - 960 - pause menu
 * - 970 - Inventory menu
 D - 980 - Auto-next floor
