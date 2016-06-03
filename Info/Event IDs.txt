@@ -19,7 +19,7 @@ D - 040 - Confusion
   - 200 - Attack boost
   - 210 - Defence boost
   - 220 - Attack Speed boost
-  - 230 - Magic Attack boost
+D - 230 - Magic Attack boost
   - 240 - Magic Defence boost
   - 250 - Speed boost
   - 260 - Accuracy boost
@@ -28,15 +28,15 @@ D - 040 - Confusion
 
 3-Attack actions (Battle Manager)
   - 300 - Attack, weapon, Normal
-  - 310 - Attack, weapon, Magic
+D - 310 - Attack, weapon, Magic
   - 320 - Attack, skill, normal
   - 330 - Attack, skill, magic
-  - 340 - Attack, item, Normal
-  - 350 - Attack, item, magic
-  - 360 - Attack, box, mimic
-  - 370 - Attack, box, booby-trap
-  - 380 - Attack, floor, booby-trap
-  - 390 - Attack, floor, trapdoor
+D - 340 - Attack, item, Normal
+D - 350 - Attack, item, magic
+D - 360 - Attack, box, mimic
+D - 370 - Attack, box, booby-trap
+D - 380 - Attack, floor, booby-trap
+D - 390 - Attack, floor, trapdoor
 
 4-Stat nerfs / Status effects (Battle Manager)
 D - 400 - nerf Attack
@@ -58,12 +58,12 @@ D - 530 - Nullifies Stat Boosts
   - 540 - Battle won
   - 550 - Battle lost
   - 560 - Force end of battle
-  - 570 - Boss weakness override
+D - 570 - Boss weakness override
 
 6-Item modifications (Gamemaster)
 * - 600 - Fix durability
 * - 610 - Add prefix
-  - 620 - Remove prefix
+D - 620 - Remove prefix
   - 630 - Re-roll item
   - 640 - Re-roll weapon
   - 650 - Re-roll equipment
@@ -98,14 +98,14 @@ D - 790 - cure all
 
 9-Gamemaster Events (Gamemaster)
 * - 900 - Adventure state
-  - 910 - Battle state
+* - 910 - Battle state
 D - 920 - floor change
   - 930 - random encounter
 D - 940 - fix encounter
   - 950 - boss encounter
 * - 960 - pause menu
 * - 970 - Inventory menu
-  - 980 - Auto-next floor
+D - 980 - Auto-next floor
 * - 990 - End of Game
 
 1s place is for case for the event
