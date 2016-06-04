@@ -7,7 +7,7 @@ import interfaces.IEquipment;
 
 public class Hard extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 5;
 	private double effectBoost = 10.0;
 	
 	public Hard(IEquipment equipment)
@@ -18,6 +18,11 @@ public class Hard extends PrefixSystem
 	public String getType()
 	{
 		return "Equipment";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 	
 	public int getID()
@@ -37,7 +42,7 @@ public class Hard extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + equipment.getEventID();
+		return 1 + equipment.getEventID();
 	}
 
 	public int getDurability()

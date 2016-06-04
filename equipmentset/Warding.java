@@ -7,7 +7,7 @@ import interfaces.IEquipment;
 
 public class Warding extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 10;
 	private double effectBoost = 40.0;
 	
 	public Warding(IEquipment equipment)
@@ -18,6 +18,11 @@ public class Warding extends PrefixSystem
 	public String getType()
 	{
 		return "Equipment";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 	
 	public int getID()
@@ -37,7 +42,7 @@ public class Warding extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + equipment.getEventID();
+		return 1 + equipment.getEventID();
 	}
 
 	public int getDurability()

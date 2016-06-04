@@ -16,7 +16,7 @@ public class DrinkOfTheWall implements IItem
 	{
 		ID = 27;
 		effect = 5.0;
-		eventID = 214;
+		eventID = 210;
 	}
 	
 	public String getType()

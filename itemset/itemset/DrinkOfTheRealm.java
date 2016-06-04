@@ -16,7 +16,7 @@ public class DrinkOfTheRealm implements IItem
 	{
 		ID = 29;
 		effect = 5.0;
-		eventID = 244;
+		eventID = 240;
 	}
 	
 	public String getType()

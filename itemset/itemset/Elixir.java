@@ -16,7 +16,7 @@ public class Elixir implements IItem
 	{
 		ID = 5;
 		effect = 10.0;
-		eventID = 150;
+		eventID = 140;
 	}
 	
 	public String getType()

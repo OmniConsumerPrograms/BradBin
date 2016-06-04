@@ -28,20 +28,28 @@ public class InventoryManager implements IManager<IBin>
 		int userSelection = 0;
 		
 		if(size() < capacity)
+		{
 			inventory.add(object);
+			System.out.println(((IUsable) object.get()).getName() + ": Has been placed in Inventory");
+		}
 		else
 		{
 			System.out.println("Inventory is at capacity\nDo you want to replace an Item with this one?");
 			System.out.println("0: " + ((IUsable) object.get()).getName());
+			
 			for(int index = 0; index < size(); index++)
 				System.out.println((index + 1) + ": " + ((IUsable) inventory.get(index).get()).getName());
+			
 			System.out.print("selection: ");
 			userSelection = userIn.nextInt() - 1;
 			
 			if(userSelection == -1)
 				System.out.println("Item " + ((IUsable) object.get()).getName() + " was discarded");
 			else
-				replace(object, userSelection);
+			{
+				IBin temp = replace(object, userSelection);
+				System.out.println(((IUsable) object.get()).getName() + " has replace " + ((IUsable) temp.get()).getName());
+			}
 		}
 	}
 	

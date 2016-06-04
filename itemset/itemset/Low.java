@@ -15,6 +15,11 @@ public class Low extends PrefixSystem
 		super.item = item;
 	}
 	
+	public int getPrefixID()
+	{
+		return prefixID;
+	}
+	
 	public String getType()
 	{
 		return "Item";

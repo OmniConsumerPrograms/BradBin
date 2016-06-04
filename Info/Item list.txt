@@ -136,12 +136,12 @@ ID | name					| effect type					| effect | EvID | prefixLimit
 22 | Dis-rage				| cures rage					| 100%	 | 750	| 0
 23 | Dis-panic				| cures panic					| 100%	 | 760	| 0
 24 | Dis-confusion			| cures confusion				| 100%	 | 770	| 0
-25 | Drink of the Fist		| Boosts attack					| 5%	 | 204
-26 | Drink of the Mind		| Boosts magic attack			| 5%	 | 234
-27 | Drink of the Wall		| Boosts defence				| 5%	 | 214
-28 | Drink of the Photon	| Boosts attack speed			| 5%	 | 224
-29 | Drink of the Realm		| Boosts magic defence			| 5%	 | 244
-30 | Drink of the Bullseye	| Boosts accuracy				| 5%	 | 264
+25 | Drink of the Fist		| Boosts attack					| 5%	 | 200
+26 | Drink of the Mind		| Boosts magic attack			| 5%	 | 230
+27 | Drink of the Wall		| Boosts defence				| 5%	 | 210
+28 | Drink of the Photon	| Boosts attack speed			| 5%	 | 220
+29 | Drink of the Realm		| Boosts magic defence			| 5%	 | 240
+30 | Drink of the Bullseye	| Boosts accuracy				| 5%	 | 260
 31 | Smoke Bomb				| Escape battle					| 50%	 | 500
 32 | Time Bomb				| stops enemy attack			| 50%	 | 510
 33 | Dis-nerf				| cures nerf					| 100%	 | 520

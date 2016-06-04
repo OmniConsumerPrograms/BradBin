@@ -1,0 +1,31 @@
+Prefix Item
+d - ID - Name
+* - 00 - Low
+* - 01 - Mid
+* - 02 - High
+* - 03 - Max
+
+Prefix Weapon
+d - ID - Name
+* - 01 - Awesome
+* - 02 - Awful
+* - 03 - Busted
+* - 04 - Dull
+* - 05 - Furious
+* - 06 - Godly
+* - 07 - Heavy
+* - 08 - Legendary
+* - 09 - Light
+ 
+Prefix Equipment
+d - ID - Name
+* - 01 - Arcane
+* - 02 - Armored
+* - 03 - Enchanted
+* - 04 - Guarding
+* - 05 - Hard
+* - 06 - Heavy
+* - 07 - Light
+* - 08 - Magical
+* - 09 - Spiritual
+* - 10 - Warding

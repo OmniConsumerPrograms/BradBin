@@ -7,7 +7,7 @@ import interfaces.IWeapon;
 
 public class Light extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 9;
 	private double effectBoost = 30.0;
 	
 	public Light(IWeapon weapon)
@@ -18,6 +18,11 @@ public class Light extends PrefixSystem
 	public String getType()
 	{
 		return "Weapon";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 
 	public int getID()
@@ -32,7 +37,7 @@ public class Light extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + weapon.getEventID();
+		return 1 + weapon.getEventID();
 	}
 
 	public String getAttackType()

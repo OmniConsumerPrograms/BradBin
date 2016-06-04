@@ -16,7 +16,7 @@ public class DrinkOfThePhoton implements IItem
 	{
 		ID = 28;
 		effect = 5.0;
-		eventID = 224;
+		eventID = 250;
 	}
 	
 	public String getType()

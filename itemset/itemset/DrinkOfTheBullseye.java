@@ -16,7 +16,7 @@ public class DrinkOfTheBullseye implements IItem
 	{
 		ID = 30;
 		effect = 5.0;
-		eventID = 264;
+		eventID = 260;
 	}
 	
 	public String getType()

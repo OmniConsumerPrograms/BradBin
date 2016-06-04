@@ -7,7 +7,7 @@ import interfaces.IWeapon;
 
 public class Legendary extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 8;
 	private double effectBoost = 40.0;
 	
 	public Legendary(IWeapon weapon)
@@ -18,6 +18,11 @@ public class Legendary extends PrefixSystem
 	public String getType()
 	{
 		return "Weapon";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 
 	public int getID()
@@ -32,7 +37,7 @@ public class Legendary extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + weapon.getEventID();
+		return 1 + weapon.getEventID();
 	}
 
 	public String getAttackType()

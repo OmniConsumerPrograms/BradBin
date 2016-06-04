@@ -3,6 +3,8 @@
 
 package systemset;
 
+import interfaces.IBin;
+import interfaces.ICharacter;
 import interfaces.IEquipment;
 import interfaces.IItem;
 import interfaces.IMenuSystem;
@@ -11,6 +13,7 @@ import interfaces.IWeapon;
 
 import java.util.*;
 
+@SuppressWarnings("unused")
 public class InventoryMenu implements IMenuSystem
 {
 	private static Scanner userInput;
@@ -217,17 +220,41 @@ public class InventoryMenu implements IMenuSystem
 				trip = 1;
 			else if(oID >= 0 && oID < GM.IVM.size() && ((IUsable) GM.IVM.get(oID).get()).getType().equals("Item"))
 			{
-				System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
-				trip = 1;
+				if(((IUsable) GM.IVM.get(oID).get()).getEventID() / 100 != 5)
+				{
+					System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
+					GM.itemHolder.place((IItem) GM.IVM.get(oID).get());
+					GM.ID = oID;
+					trip = 1;
+				}
+				else
+					System.out.println("Trying to use a combat item outside of battle");
 			}
 			else
 				System.out.println("Trying to use an equipment and weapon.");
 		}
 		trip = 0;
+		
+		while(trip != 1)
+		{
+			System.out.println(GM.PM);
+			System.out.println("Select a party member to use item on.");
+			oID = userInput.nextInt();
+			
+			if(oID < 0)
+				trip = 1;
+			else if(oID >= 0 && oID < GM.PM.size())
+			{
+				GM.heroHolder.place(GM.PM.get(oID));
+				trip = 1;
+			}
+			else
+				System.out.println("Thats not a party member.");
+		}
+		trip = 0;
+		
 		if(oID >= 0)
 		{
-			GM.itemHolder.place((IItem) GM.IVM.get(oID).get());
-			GM.ID = oID;
 			GM.groupID = 2;
 			GM.callEvent(730);
 		}

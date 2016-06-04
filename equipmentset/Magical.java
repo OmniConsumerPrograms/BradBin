@@ -7,7 +7,7 @@ import interfaces.IEquipment;
 
 public class Magical extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 8;
 	private double effectBoost = 20.0;
 	
 	public Magical(IEquipment equipment)
@@ -18,6 +18,11 @@ public class Magical extends PrefixSystem
 	public String getType()
 	{
 		return "Equipment";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 	
 	public int getID()
@@ -37,7 +42,7 @@ public class Magical extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + equipment.getEventID();
+		return 1 + equipment.getEventID();
 	}
 
 	public int getDurability()

@@ -7,7 +7,7 @@ import interfaces.IWeapon;
 
 public class Furious extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 5;
 	private double effectBoost = 10.0;
 	
 	public Furious(IWeapon weapon)
@@ -18,6 +18,11 @@ public class Furious extends PrefixSystem
 	public String getType()
 	{
 		return "Weapon";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 
 	public int getID()
@@ -32,7 +37,7 @@ public class Furious extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + weapon.getEventID();
+		return 1 + weapon.getEventID();
 	}
 
 	public String getAttackType()

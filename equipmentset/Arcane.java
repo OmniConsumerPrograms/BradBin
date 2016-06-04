@@ -20,6 +20,11 @@ public class Arcane extends PrefixSystem
 		return "Equipment";
 	}
 	
+	public int getPrefixID()
+	{
+		return prefixID;
+	}
+	
 	public int getID()
 	{
 		return equipment.getID();
@@ -37,7 +42,7 @@ public class Arcane extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + equipment.getEventID();
+		return 1 + equipment.getEventID();
 	}
 
 	public int getDurability()

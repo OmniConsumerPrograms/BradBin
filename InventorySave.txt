@@ -1,0 +1,20 @@
+Weapon : 23 : 8
+Equipment : 16 : 5
+Weapon : 13 : 9
+Item : 11 : 2
+Equipment : 8 : 6
+Weapon : 17 : 3
+Item : 21
+Item : 8 : 3
+Equipment : 5 : 2
+Equipment : 14 : 9
+Weapon : 17 : 3
+Weapon : 23 : 5
+Equipment : 14 : 4
+Weapon : 33 : 9
+Weapon : 23 : 9
+Item : 7 : 2
+Equipment : 13 : 1
+Weapon : 20 : 1
+Weapon : 40 : 7
+Item : 8 : 3

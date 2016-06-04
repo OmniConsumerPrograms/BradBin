@@ -1,11 +1,11 @@
 Event IDs
 0-Status effects and running status (Party Manager)
-  - 000 - Normal
+C - 000 - Normal
 D - 010	- Poison
 D - 020	- Rage
 D - 030	- Panic
 D - 040 - Confusion
-  - 050	- KO
+C - 050	- KO
 
 1-HP/MP change (Party Manager)
 * - 100 - restores HP
@@ -16,21 +16,21 @@ D - 040 - Confusion
 * - 150 - adds MP+
 
 2-Stat Boosts (Party Manager)
-  - 200 - Attack boost
-  - 210 - Defence boost
-  - 220 - Attack Speed boost
+* - 200 - Attack boost
+* - 210 - Defence boost
+D - 220 - Attack Speed boost
 D - 230 - Magic Attack boost
-  - 240 - Magic Defence boost
-  - 250 - Speed boost
-  - 260 - Accuracy boost
-  - 270 - Boost all
-  - 280 - Boost durability
+* - 240 - Magic Defence boost
+* - 250 - Speed boost
+* - 260 - Accuracy boost
+* - 270 - Boost all
+D - 280 - Boost durability
 
 3-Attack actions (Battle Manager)
-  - 300 - Attack, weapon, Normal
+B - 300 - Attack, weapon, Normal
 D - 310 - Attack, weapon, Magic
-  - 320 - Attack, skill, normal
-  - 330 - Attack, skill, magic
+B - 320 - Attack, skill, normal
+B - 330 - Attack, skill, magic
 D - 340 - Attack, item, Normal
 D - 350 - Attack, item, magic
 D - 360 - Attack, box, mimic
@@ -47,12 +47,12 @@ D - 440 - causes Poison
 D - 450 - causes Rage
 D - 460 - causes Panic
 D - 470 - causes Confusion
-  - 480 - causes OK
+* - 480 - causes OK
 D - 490 - nerf all stats
 
 5-Battle events (Battle Manager)
   - 500 - Escape battle
-  - 510 - Stops enemies attack
+D - 510 - Stops enemies attack
 D - 520 - Nullifies Stat Nerfs
 D - 530 - Nullifies Stat Boosts
   - 540 - Battle won
@@ -67,9 +67,9 @@ D - 620 - Remove prefix
 D - 630 - Re-roll item
 D - 640 - Re-roll weapon
 D - 650 - Re-roll equipment
-D - 660 - Add item
-D - 670 - Add weapon
-D - 680 - Add equipment
+* - 660 - Add item
+* - 670 - Add weapon
+* - 680 - Add equipment
 S - 690 - Fix Busted prefix
 
 7-Item actions (Gamemaster)

@@ -15,7 +15,7 @@ public class RevivalTag implements IItem
 	public RevivalTag()
 	{
 		ID = 13;
-		effect = 25.0;
+		effect = 10.0;
 		eventID = 780;
 	}
 	

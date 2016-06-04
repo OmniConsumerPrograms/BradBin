@@ -15,6 +15,11 @@ public class High extends PrefixSystem
 		super.item = item;
 	}
 	
+	public int getPrefixID()
+	{
+		return prefixID;
+	}
+	
 	public int getID()
 	{
 		return prefixID + item.getID();

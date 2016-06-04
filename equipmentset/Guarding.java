@@ -7,7 +7,7 @@ import interfaces.IEquipment;
 
 public class Guarding extends PrefixSystem
 {
-	private int prefixID = 1;
+	private int prefixID = 4;
 	private double effectBoost = 20.0;
 	
 	public Guarding(IEquipment equipment)
@@ -18,6 +18,11 @@ public class Guarding extends PrefixSystem
 	public String getType()
 	{
 		return "Equipment";
+	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
 	}
 	
 	public int getID()
@@ -37,7 +42,7 @@ public class Guarding extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + equipment.getEventID();
+		return 1 + equipment.getEventID();
 	}
 
 	public int getDurability()

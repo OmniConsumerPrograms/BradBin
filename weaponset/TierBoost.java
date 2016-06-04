@@ -21,6 +21,11 @@ public class TierBoost extends PrefixSystem
 		return "Weapon";
 	}
 	
+	public int getPrefixID()
+	{
+		return prefixID;
+	}
+	
 	public int getID()
 	{
 		return prefixID + weapon.getID();

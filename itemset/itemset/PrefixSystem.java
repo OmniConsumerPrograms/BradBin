@@ -4,8 +4,9 @@
 package itemset;
 
 import interfaces.IItem;
+import interfaces.IPrefix;
 
-public abstract class PrefixSystem implements IItem
+public abstract class PrefixSystem implements IItem, IPrefix
 {
 	protected IItem item;
 }

@@ -19,6 +19,11 @@ public class Awesome extends PrefixSystem
 	{
 		return "Weapon";
 	}
+	
+	public int getPrefixID()
+	{
+		return prefixID;
+	}
 
 	public int getID()
 	{
@@ -32,7 +37,7 @@ public class Awesome extends PrefixSystem
 
 	public int getEventID()
 	{
-		return prefixID + weapon.getEventID();
+		return 1 + weapon.getEventID();
 	}
 
 	public String getAttackType()

@@ -216,36 +216,44 @@ public class WeaponGenerator implements IItemGenerator<IWeapon>
 			return weapon;
 		
 		Random r = new Random();
-		int rID = r.nextInt(prefixNumber);
+		int rID = r.nextInt(prefixNumber) + 1;
 		
-		switch(rID)
+		return getPrefix(weapon, rID);
+	}
+	
+	public IWeapon getPrefix(IWeapon weapon, int ID)
+	{
+		if(weapon.getPFLimit() == 0)
+			return weapon;
+		
+		switch(ID)
 		{
-			case 0:
-				weapon = new Busted(weapon);
-				break;
 			case 1:
-				weapon = new Dull(weapon);
-				break;
-			case 2:
 				weapon = new Awesome(weapon);
 				break;
+			case 2:
+				weapon = new Awful(weapon);
+				break;
 			case 3:
-				weapon = new Godly(weapon);
+				weapon = new Busted(weapon);
 				break;
 			case 4:
-				weapon = new Awful(weapon);
+				weapon = new Dull(weapon);
 				break;
 			case 5:
 				weapon = new Furious(weapon);
 				break;
 			case 6:
-				weapon = new Light(weapon);
+				weapon = new Godly(weapon);
 				break;
 			case 7:
 				weapon = new Heavy(weapon);
 				break;
 			case 8:
 				weapon = new Legendary(weapon);
+				break;
+			case 9:
+				weapon = new Light(weapon);
 				break;
 			default:
 				weapon = new Busted(weapon);

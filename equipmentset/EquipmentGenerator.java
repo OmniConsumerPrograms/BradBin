@@ -186,36 +186,47 @@ public class EquipmentGenerator implements IItemGenerator<IEquipment>
 			return equipment;
 		
 		Random r = new Random();
-		int rID = r.nextInt(prefixNumber);
+		int rID = r.nextInt(prefixNumber) + 1;
 		
-		switch(rID)
+		return getPrefix(equipment, rID);
+	}
+	
+	public IEquipment getPrefix(IEquipment equipment, int ID)
+	{
+		if(equipment.getPFLimit() == 0)
+			return equipment;
+		
+		switch(ID)
 		{
-			case 0:
-				equipment = new Hard(equipment);
-				break;
 			case 1:
-				equipment = new Guarding(equipment);
+				equipment = new Arcane(equipment);
 				break;
 			case 2:
 				equipment = new Armored(equipment);
 				break;
 			case 3:
-				equipment = new Warding(equipment);
+				equipment = new Enchanted(equipment);
 				break;
 			case 4:
-				equipment = new Light(equipment);
+				equipment = new Guarding(equipment);
 				break;
 			case 5:
-				equipment = new Heavy(equipment);
+				equipment = new Hard(equipment);
 				break;
 			case 6:
-				equipment = new Spiritual(equipment);
+				equipment = new Heavy(equipment);
 				break;
 			case 7:
-				equipment = new Magical(equipment);
+				equipment = new Light(equipment);
 				break;
 			case 8:
-				equipment = new Enchanted(equipment);
+				equipment = new Magical(equipment);
+				break;
+			case 9:
+				equipment = new Spiritual(equipment);
+				break;
+			case 10:
+				equipment = new Warding(equipment);
 				break;
 			default:
 				equipment = new Arcane(equipment);

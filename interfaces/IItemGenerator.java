@@ -10,4 +10,6 @@ public interface IItemGenerator<T> extends IGenerator
 	public T getRandomPrefix(T t);
 	
 	public T fix(T t);
+	
+	public T getPrefix(T t, int ID);
 }
