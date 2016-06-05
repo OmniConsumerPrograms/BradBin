@@ -4,7 +4,6 @@
 package systemset;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.*;
 
@@ -13,6 +12,7 @@ import characterset.MuscleWizard;
 import characterset.PartyManager;
 import equipmentset.*;
 import eventset.*;
+import floorset.*;
 import interfaces.*;
 import weaponset.*;
 import itemset.*;
@@ -29,6 +29,8 @@ public class Gamemaster
 	IManager<IBin> IVM;
 	IManager<IMenuSystem> MM;
 	IManager<IHero> PM;
+	SQLManager floorSave;
+	IDungeon DM;
 	IEvent[][][] eventSet;
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
@@ -179,10 +181,22 @@ public class Gamemaster
 		
 		while(true)
 		{
-			System.out.println("P: Pause\nI: Inventory\nD: Item Drop\nA: Add an Item\nR: Get a random prefix\nK: autoKO");
+			DM.printMaze(DM.getFloorNo());
+			System.out.println("1: Move Up    2: Move Down    3: Move Left    4: Move Right");
+			System.out.println("P: Pause           I: Inventory               D: Item Drop");
+			System.out.println("A: Add an Item     R: Get a random prefix     K: autoKO");
 			inputData = input.nextLine();
-						
-			if(inputData.equalsIgnoreCase("P"))
+				
+			if(inputData.matches("[1-4]"))
+			{
+				DM.move(Integer.parseInt(inputData));
+				
+				if(DM.randomCounter() <= 1)
+					callEvent(930);
+				else if(DM.getFloorNo() == 3)
+					callEvent(950);
+			}
+			else if(inputData.equalsIgnoreCase("P"))
 				callEvent(960);
 			else if(inputData.equalsIgnoreCase("I"))
 				callEvent(970);
@@ -302,12 +316,12 @@ public class Gamemaster
 	
 	public void randomEncounter()
 	{
-		
+		System.out.println("A random Encounter!");
 	}
 
 	public void bossEncounter()
 	{
-		
+		System.out.println("Its the Boss!");
 	}
 
 	@SuppressWarnings("resource")
@@ -631,8 +645,9 @@ public class Gamemaster
 		try
 		{
 			out = new PrintStream(new File("InventorySave.txt"));
+			DM.saveDungeon();
 		}
-		catch(IOException ioe)
+		catch(Exception e)
 		{
 			callEvent(906);
 		}
@@ -662,8 +677,9 @@ public class Gamemaster
 		try
 		{
 			in = new Scanner(new File("InventorySave.txt"));
+			DM.restoreDungeon();
 		}
-		catch(IOException ioe)
+		catch(Exception e)
 		{
 			callEvent(906);
 		}
@@ -734,6 +750,7 @@ public class Gamemaster
 	
 	public void buildDungeon()
 	{
+		DM = new DungeonManager();
 		callEvent(870);
 	}
 	
@@ -745,7 +762,7 @@ public class Gamemaster
 	
 	public void buildSaveManager()
 	{
-		// builds SaveManager
+		floorSave = new SQLManager();
 		callEvent(890);
 	}
 	

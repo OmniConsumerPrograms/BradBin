@@ -4,14 +4,12 @@
 package interfaces;
 
 public interface IFloor
-{
-	public char type();
+{	
+	public int getFloorID();
 	
-	public int getID();
+	public int[][] getFloor();
 	
-	public int[][] floor();
+	public void setFloorID(int ID);
 	
-	public double getRandomEncounter();
-	
-	public int getEnemyLevel();
+	public void setFloor(int[][] floor);
 }

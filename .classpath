@@ -3,5 +3,6 @@
 	<classpathentry excluding="itemset/|itemset/" kind="src" path=""/>
 	<classpathentry kind="src" path="itemset"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/Fox/School dump/CSCD classes/CScD 350/main project/sqlite-jdbc-3.8.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
