@@ -1,5 +1,5 @@
-// Brad Howard
-// OCP extra Hero
+//OCP 
+//Rogue
 
 package characterset;
 
@@ -9,12 +9,13 @@ import interfaces.IHeal;
 import interfaces.IHero;
 import interfaces.IWeapon;
 import weaponset.BareHands;
+
 import java.util.ArrayList;
 
 import equipmentset.NilEquipment;
 import interfaces.IAttack;
 
-public class MuscleWizard implements IHero
+public class Rogue implements IHero
 {
 	private String name;
 	private int status;
@@ -39,22 +40,22 @@ public class MuscleWizard implements IHero
 	private IEquipment[] equipmentSet;
 	private IWeapon weapon;
 	
-	public MuscleWizard(ArrayList<IAttack> skills)
+	public Rogue(ArrayList<IAttack> skills)
 	{
-		name = "Muscle Wizard";
+		name = "Rogue";
 		status = 000;
 		HPMax = 130;
 		HP = HPMax;
-		SPMax = 80;
+		SPMax = 100;
 		SP = SPMax;
-		attackMax = 40;
-		attackMin = 30;
+		attackMax = 30;
+		attackMin = 35;
+		healMin = 25;
 		healMax = 30;
-		healMin = 20;
 		speed = 2;
-		accuracy = 50.0;
-		phyDefense = 20;
-		magDefense = 15;
+		accuracy = 60.0;
+		phyDefense = 15;
+		magDefense = 10;
 		exp = 0;
 		level = 1;
 		levelCap = 12;
@@ -62,7 +63,7 @@ public class MuscleWizard implements IHero
 		skillList = skills;
 		
 		healList = new ArrayList<IHeal>();
-		healList.add(new Flex());
+		healList.add(new Bandage());
 		
 		equipmentSet = new IEquipment[3];
 		weapon = new BareHands(1);
@@ -192,7 +193,9 @@ public class MuscleWizard implements IHero
 	
 	public boolean isAlive()
 	{
-		return HP != 0;
+		if( this.HP > 0)
+			return true;
+		return false;
 	}
 	
 	public String charString()
@@ -203,6 +206,11 @@ public class MuscleWizard implements IHero
 	public void attack(ICharacter incomingCharacter, int choiceInput)
 	{
 		skillList.get(choiceInput).toAttack(this, incomingCharacter);
+	}
+	
+	public void heal(ICharacter incomingCharacter, int choiceInput)
+	{
+		healList.get(choiceInput).toHeal(this, incomingCharacter);
 	}
 	
 	public boolean validAttackChoice(int x)
@@ -274,7 +282,10 @@ public class MuscleWizard implements IHero
 	
 	public void setHP(int hp)
 	{
-		HP = hp;
+		if( hp > this.getHPMax() )
+			this.HP = this.getHPMax();
+		else
+			this.HP = hp;
 	}
 	
 	public void setSPMax(int sp)
@@ -302,6 +313,22 @@ public class MuscleWizard implements IHero
 		attackMin = min;
 	}
 	
+	public int getHealMin() {
+		return healMin;
+	}
+
+	public void setHealMin(int healMin) {
+		this.healMin = healMin;
+	}
+
+	public int getHealMax() {
+		return healMax;
+	}
+
+	public void setHealMax(int healMax) {
+		this.healMax = healMax;
+	}
+	
 	public void setAccuracy(double acc)
 	{
 		accuracy = acc;
@@ -319,17 +346,18 @@ public class MuscleWizard implements IHero
 	
 	public void level4Attack()
 	{
-		skillList.add(new MegaFist());
+		skillList.add(new SinisterStrike());
 	}
 	
 	public void level8Attack()
 	{
-		skillList.add(new HyperFist());
+		skillList.add(new Gourge());
+		healList.add(new GreaterBandage());
 	}
 	
 	public void level12Attack()
 	{
-		skillList.add(new ORA());
+		skillList.add(new Eviscerate());
 	}
 	
 	public int getXP()
@@ -358,44 +386,29 @@ public class MuscleWizard implements IHero
 		return s;
 	}
 
-	public int getHealMin()
-	{
-		return healMin;
-	}
-
-	public void setHealMin(int healMin)
-	{
-		this.healMin = healMin;
-	}
-
-	public int getHealMax()
-	{
-		return healMax;
-	}
-
-	public void setHealMax(int healMax)
-	{
-		this.healMax = healMax;
-	}
-
-	public void heal(ICharacter healer, int choiceInput)
-	{
-		healList.get(choiceInput).toHeal(this, healer);
-	}
-
-	public int getSkillListSize()
-	{
-		return skillList.size();
-	}
-
-	public int getHealListSize()
-	{
-		return healList.size();
-	}
-
-	public void healListString()
+	public void healListString() 
 	{
 		for(IHeal a : healList)
-			System.out.println( a.getHealName());
+			System.out.println( a.getHealName() );
+	}
+	
+	public String healListToString()
+	{
+		String s = "";
+		
+		for(IHeal a : healList)
+			s = a.getHealName();
+		
+		return s;
+	}
+
+	@Override
+	public int getSkillListSize() {
+		return this.skillList.size();
+	}
+
+	@Override
+	public int getHealListSize() {
+		return this.healList.size();
 	}
 }

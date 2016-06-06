@@ -1,3 +1,6 @@
+//OCP
+//Druid attack
+
 package characterset;
 
 import java.util.Random;
@@ -5,7 +8,7 @@ import java.util.Random;
 import interfaces.IAttack;
 import interfaces.ICharacter;
 
-public class ORA implements IAttack
+public class MoonFire implements IAttack
 {
 	private int ID;
 	private int eventID;
@@ -13,12 +16,12 @@ public class ORA implements IAttack
 	private String name;
 	private char range;
 	
-	public ORA()
+	public MoonFire()
 	{
-		ID = 4;
+		ID = 1;
 		eventID = 330;
-		name = "ORA ORA ORA";
-		skillCost = 16;
+		name = "Moon Fire";
+		skillCost = 2;
 		range = 'Q';
 	}
 	
@@ -60,7 +63,8 @@ public class ORA implements IAttack
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1)) * 5;
+			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1));
+			damage = damage * 2;
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");

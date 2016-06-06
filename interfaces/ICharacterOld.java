@@ -3,7 +3,7 @@
 
 package interfaces;
 
-public interface ICharacter
+public interface ICharacterOld
 {
 	public String getName();
 	
@@ -33,14 +33,6 @@ public interface ICharacter
 	
 	public void setAttackMax(int attackMax);
 	
-	public int getHealMin();
-	
-	public void setHealMin(int healMin);
-	
-	public int getHealMax();
-	
-	public void setHealMax(int healMax);
-	
 	public int getSpeed();
 	
 	public void setSpeed(int speed);
@@ -61,17 +53,11 @@ public interface ICharacter
 	
 	public String charString();
 	
-	public void attack(ICharacter incomingCharacter, int choiceInput);
-	
-	public void heal(ICharacter healer, int choiceInput);
+	public void attack(ICharacterOld incomingCharacter, int choiceInput);
 	
 	public boolean validAttackChoice(int x);
 	
 	public int getStatus();
 	
 	public void setStatus(int eID);
-	
-	public int getSkillListSize();
-	
-	public int getHealListSize();
 }

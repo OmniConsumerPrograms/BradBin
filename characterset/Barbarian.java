@@ -1,20 +1,20 @@
-// Brad Howard
-// OCP extra Hero
+//OCP 
+//Barbarian
 
 package characterset;
 
 import interfaces.ICharacter;
 import interfaces.IEquipment;
-import interfaces.IHeal;
-import interfaces.IHero;
+import interfaces.IVillain;
 import interfaces.IWeapon;
 import weaponset.BareHands;
+
 import java.util.ArrayList;
 
 import equipmentset.NilEquipment;
 import interfaces.IAttack;
 
-public class MuscleWizard implements IHero
+public class Barbarian implements IVillain
 {
 	private String name;
 	private int status;
@@ -24,8 +24,6 @@ public class MuscleWizard implements IHero
 	private int SP;
 	private int attackMin;
 	private int attackMax;
-	private int healMin;
-	private int healMax;
 	private int speed;
 	private int phyDefense;
 	private int magDefense;
@@ -35,35 +33,28 @@ public class MuscleWizard implements IHero
 	private int level;
 	int levelCap;
 	private ArrayList<IAttack> skillList;
-	private ArrayList<IHeal> healList;
 	private IEquipment[] equipmentSet;
 	private IWeapon weapon;
 	
-	public MuscleWizard(ArrayList<IAttack> skills)
+	public Barbarian(ArrayList<IAttack> skills)
 	{
-		name = "Muscle Wizard";
+		name = "Barbarian";
 		status = 000;
-		HPMax = 130;
+		HPMax = 150;
 		HP = HPMax;
-		SPMax = 80;
+		SPMax = 100;
 		SP = SPMax;
-		attackMax = 40;
-		attackMin = 30;
-		healMax = 30;
-		healMin = 20;
+		attackMax = 25;
+		attackMin = 20;
 		speed = 2;
 		accuracy = 50.0;
 		phyDefense = 20;
-		magDefense = 15;
+		magDefense = 5;
 		exp = 0;
 		level = 1;
 		levelCap = 12;
 		levelTrack = new int[levelCap];
 		skillList = skills;
-		
-		healList = new ArrayList<IHeal>();
-		healList.add(new Flex());
-		
 		equipmentSet = new IEquipment[3];
 		weapon = new BareHands(1);
 		
@@ -192,7 +183,9 @@ public class MuscleWizard implements IHero
 	
 	public boolean isAlive()
 	{
-		return HP != 0;
+		if( this.HP > 0)
+			return true;
+		return false;
 	}
 	
 	public String charString()
@@ -274,7 +267,10 @@ public class MuscleWizard implements IHero
 	
 	public void setHP(int hp)
 	{
-		HP = hp;
+		if( hp > this.getHPMax() )
+			this.HP = this.getHPMax();
+		else
+			this.HP = hp;
 	}
 	
 	public void setSPMax(int sp)
@@ -319,17 +315,17 @@ public class MuscleWizard implements IHero
 	
 	public void level4Attack()
 	{
-		skillList.add(new MegaFist());
+		skillList.add(new CrushingBlow());
 	}
 	
 	public void level8Attack()
 	{
-		skillList.add(new HyperFist());
+		skillList.add(new Execute());
 	}
 	
 	public void level12Attack()
 	{
-		skillList.add(new ORA());
+		skillList.add(new Whirlwind());
 	}
 	
 	public int getXP()
@@ -358,44 +354,49 @@ public class MuscleWizard implements IHero
 		return s;
 	}
 
-	public int getHealMin()
-	{
-		return healMin;
+	@Override
+	public int getHealMin() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public void setHealMin(int healMin)
-	{
-		this.healMin = healMin;
+	@Override
+	public void setHealMin(int healMin) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	public int getHealMax()
-	{
-		return healMax;
+	@Override
+	public int getHealMax() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public void setHealMax(int healMax)
+	@Override
+	public void setHealMax(int healMax) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int skillListSize()
 	{
-		this.healMax = healMax;
+		return this.skillList.size();		
 	}
 
-	public void heal(ICharacter healer, int choiceInput)
-	{
-		healList.get(choiceInput).toHeal(this, healer);
+	@Override
+	public int getSkillListSize() {
+		return this.skillList.size();
 	}
 
-	public int getSkillListSize()
+	@Override
+	public int getHealListSize() 
 	{
-		return skillList.size();
+		return 0;
 	}
 
-	public int getHealListSize()
-	{
-		return healList.size();
-	}
-
-	public void healListString()
-	{
-		for(IHeal a : healList)
-			System.out.println( a.getHealName());
+	@Override
+	public void heal(ICharacter healer, int choiceInput) {
+		// TODO Auto-generated method stub
+		
 	}
 }

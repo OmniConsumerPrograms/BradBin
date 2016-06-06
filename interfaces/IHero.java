@@ -19,6 +19,8 @@ public interface IHero extends ICharacter, ILevel
 	
 	public void attackListString();
 	
+	public void healListString();
+	
 	public String skillListToString();
 	
 	public void setEquipment(IEquipment equipment, int index);
