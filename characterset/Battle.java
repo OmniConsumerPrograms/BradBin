@@ -33,7 +33,7 @@ public class Battle implements IBattle
 		
 		boolean done = false;
       
-		while (checkPartiesAlive() && done == false) 
+		while (checkPartiesAlive() && done == false && GM.getGameMode() == 910) 
 		{
 			int currGoodPos = heroes.getTurn();
 			int currBadPos = villains.getTurn();
@@ -44,7 +44,7 @@ public class Battle implements IBattle
 			HeroTurn turnHero = new HeroTurn(GM);
 			VillainTurn turnVillain = new VillainTurn(GM);
          
-			if (currentHero.getSpeed() >= currentVillain.getSpeed()) 
+			if (currentHero.getSpeed() >= currentVillain.getSpeed() && GM.getGameMode() == 910) 
 			{
 				done = turnHero.executeTurn(heroes, villains); 
             
@@ -58,7 +58,7 @@ public class Battle implements IBattle
 				}   
                               
 			}     
-			else 
+			else if(GM.getGameMode() == 910)
 			{                    
 				turnVillain.executeTurn(villains, heroes);
 
@@ -74,9 +74,9 @@ public class Battle implements IBattle
             
 			}
 		}      
-		printResult();
+		//printResult();
         //return 1;
-		return 540;
+		return 909;
 		
         
 	}

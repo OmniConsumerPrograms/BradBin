@@ -57,7 +57,11 @@ public abstract class BattleTurn
 		if( menuChoice == 3)
 		{
 			GM.callEvent(970);
-			menuChoice = menu(currentAttacker);
+	         
+			if(GM.getGameMode() == 910)
+				menuChoice = menu(currentAttacker);
+			else
+				return true;
 		}
 		
 		while (menuChoice == 4) 
@@ -68,7 +72,10 @@ public abstract class BattleTurn
 			System.out.println("The Villains: ");
 			defenders.partyString();
          
-			menuChoice = menu(currentAttacker);
+			if(GM.getGameMode() == 910)
+				menuChoice = menu(currentAttacker);
+			else
+				return true;
 		}
 		
 		if( menuChoice == 5)
