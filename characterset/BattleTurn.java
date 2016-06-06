@@ -2,9 +2,18 @@ package characterset;
 
 import interfaces.ICharacter;
 import interfaces.IParty;
+import systemset.Gamemaster;
 
+@SuppressWarnings("unused")
 public abstract class BattleTurn 
 {
+	private Gamemaster GM;
+	
+	public BattleTurn(Gamemaster GM)
+	{
+		this.GM = GM;
+	}
+	
 	abstract int chooseAttack(ICharacter hero);
 	abstract int chooseHeal(ICharacter hero);
 	abstract int chooseEnemy(IParty villains);
@@ -13,12 +22,13 @@ public abstract class BattleTurn
 	
 	final boolean executeTurn(IParty attackers, IParty defenders) 
 	{
+		int menuChoice = -1;
 		int attackersPos = attackers.getTurn();
 		int defendersPos = defenders.getTurn();
       
 		ICharacter currentAttacker = attackers.getChar(attackersPos);
       
-		int menuChoice = menu(currentAttacker);
+		menuChoice = menu(currentAttacker);
             
 		if (menuChoice == 1) 
 		{
@@ -31,13 +41,24 @@ public abstract class BattleTurn
 		
 		if(menuChoice == 2)
 		{
-			int choice = chooseHeal(currentAttacker);
-			int curAttackersPos = chooseAlly(attackers);
-			ICharacter currentDefender = attackers.getChar(curAttackersPos);
-			executeHeal( currentAttacker, currentDefender, choice);
 			
+			int i;
+			for(i = 0; i < 2; i++)
+			{
+				int choice = chooseHeal(currentAttacker);
+				System.out.println(choice);
+				int curAttackersPos = chooseAlly(attackers);
+				System.out.println(curAttackersPos);
+				ICharacter currentDefender = attackers.getChar(curAttackersPos);
+				executeHeal( currentAttacker, currentDefender, choice);
+			}
 		}
 		
+		if( menuChoice == 3)
+		{
+			GM.callEvent(970);
+			menuChoice = menu(currentAttacker);
+		}
 		
 		while (menuChoice == 4) 
 		{
@@ -48,21 +69,18 @@ public abstract class BattleTurn
 			defenders.partyString();
          
 			menuChoice = menu(currentAttacker);
-		}    
+		}
+		
+		if( menuChoice == 5)
+		{
+			GM.callEvent(960);
+			menuChoice = menu(currentAttacker);
+		}
           
 		advanceTurnOrder(attackers, defenders);
       	return false;
 	}
-/*   
-	private int chooseAlly(IParty attackers) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	private void executeHeal(ICharacter currentAttacker	ICharacter currentDefender, int choice) {
-		// TODO Auto-generated method stub
-		
-	}
-*/
+
 	public int menu(ICharacter currentAttacker) 
 	{
 		int i = 1;

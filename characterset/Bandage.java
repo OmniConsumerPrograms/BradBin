@@ -10,6 +10,7 @@ import interfaces.IParty;
 import java.util.Scanner;
 import java.util.Random;
 
+@SuppressWarnings({"resource", "unused"})
 public class Bandage implements IHeal
 {
 	private int ID;

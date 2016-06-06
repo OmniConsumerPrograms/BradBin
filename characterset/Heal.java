@@ -10,6 +10,7 @@ import interfaces.IParty;
 import java.util.Scanner;
 import java.util.Random;
 
+@SuppressWarnings({"resource", "unused"})
 public class Heal implements IHeal
 {
 	private int ID;
@@ -77,5 +78,23 @@ public class Heal implements IHeal
 	
 		System.out.println("Your " + getHealName() + " healed your " + healThisGuy.getName() + " for " + healAmt + "hp");
 		System.out.println(healThisGuy.getName() + " now has " + healThisGuy.getHP() + "hp");
+	
+		hero.setSP(hero.getSP()- this.getSkillCost());
+		/*
+		int healAmt, curHP;
+		Random gen = new Random();
+		Scanner user = new Scanner(System.in);
+
+		healAmt = Math.abs(gen.nextInt(hero.getHealMax()) - hero.getHealMin()) + 1 + hero.getHealMin();
+
+		curHP = healThisGuy.getHP();
+		healThisGuy.setHP(curHP + healAmt);
+	
+		System.out.println("Your " + getHealName() + " healed your " + healThisGuy.getName() + " for " + healAmt + "hp");
+		System.out.println(healThisGuy.getName() + " now has " + healThisGuy.getHP() + "hp");
+		*/
+		
+		
+		
 	}
 }

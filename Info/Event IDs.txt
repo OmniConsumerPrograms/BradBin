@@ -51,13 +51,13 @@ D - 470 - causes Confusion
 D - 490 - nerf all stats
 
 5-Battle events (Battle Manager)
-  - 500 - Escape battle
+* - 500 - Escape battle
 D - 510 - Stops enemies attack
 D - 520 - Nullifies Stat Nerfs
 D - 530 - Nullifies Stat Boosts
-  - 540 - Battle won
-  - 550 - Battle lost
-  - 560 - Force end of battle
+* - 540 - Battle won
+* - 550 - Battle lost
+* - 560 - Force end of battle
 D - 570 - Boss weakness override
 
 6-Item modifications (Gamemaster)

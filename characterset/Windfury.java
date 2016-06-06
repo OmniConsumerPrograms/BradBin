@@ -63,7 +63,7 @@ public class Windfury implements IAttack
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1));
+			damage = (hero.getAttackMin() + Math.abs(r.nextInt(hero.getAttackMax()) - hero.getAttackMin() + 1));
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");
@@ -74,6 +74,8 @@ public class Windfury implements IAttack
 			System.out.println(hero.getName() + " missed!");
 			System.out.println(villain.getName() + " has " + villain.getHP() + "hp.");
 		}
+		hero.setSP(hero.getSP()- this.getSkillCost());
+
 	}
 
 	public boolean validAttack(ICharacter hero, Random gen)

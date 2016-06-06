@@ -3,11 +3,17 @@ package characterset;
 
 import interfaces.ICharacter;
 import interfaces.IParty;
+import systemset.Gamemaster;
 
 import java.util.*;
 
 public class VillainTurn extends BattleTurn 
 {
+	public VillainTurn(Gamemaster GM)
+	{
+		super(GM);
+	}
+
 	protected Random randomGenerator = new Random();
    
 	public int chooseAttack(ICharacter currentAttacker)
@@ -33,7 +39,8 @@ public class VillainTurn extends BattleTurn
 		if (currentDefender.isAlive() == false) 
 		{
 			System.out.println(currentDefender.getName() + " was killed!\n");     
-			defenders.removeChar(currentDefendersPos);                  
+			defenders.getChar(currentDefendersPos).setStatus(050);
+			//defenders.removeChar(currentDefendersPos);                  
 		}
    	}
 

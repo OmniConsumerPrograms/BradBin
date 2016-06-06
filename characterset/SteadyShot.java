@@ -63,7 +63,7 @@ public class SteadyShot implements IAttack
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1));
+			damage = (hero.getAttackMin() + Math.abs(r.nextInt(hero.getAttackMax()) - hero.getAttackMin() + 1));
 			damage = damage * 2;
 			villain.setHP(villain.getHP() - damage);
 			
@@ -75,6 +75,8 @@ public class SteadyShot implements IAttack
 			System.out.println(hero.getName() + " missed!");
 			System.out.println(villain.getName() + " has " + villain.getHP() + "hp.");
 		}
+		hero.setSP(hero.getSP()- this.getSkillCost());
+
 	}
 
 	public boolean validAttack(ICharacter hero, Random gen)

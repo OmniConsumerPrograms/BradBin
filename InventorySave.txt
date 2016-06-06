@@ -1,5 +1,11 @@
 Item : 17
-Equipment : 1 : 4
-Equipment : 30 : 6
-Weapon : 22 : 3
-Item : 11 : 2
+Weapon : 28 : 6
+Item : 14 : 1
+Weapon : 25 : 8
+Equipment : 5 : 3
+Item : 20 : 3
+Equipment : 10 : 7
+Equipment : 3 : 6
+Item : 30
+Weapon : 35 : 5
+Item : 40

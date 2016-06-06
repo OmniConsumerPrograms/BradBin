@@ -220,7 +220,14 @@ public class InventoryMenu implements IMenuSystem
 				trip = 1;
 			else if(oID >= 0 && oID < GM.IVM.size() && ((IUsable) GM.IVM.get(oID).get()).getType().equals("Item"))
 			{
-				if(((IUsable) GM.IVM.get(oID).get()).getEventID() / 100 != 5)
+				if(GM.getGameMode() == 900 && ((IUsable) GM.IVM.get(oID).get()).getEventID() / 100 != 5)
+				{
+					System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
+					GM.itemHolder.place((IItem) GM.IVM.get(oID).get());
+					GM.ID = oID;
+					trip = 1;
+				}
+				else if(((IUsable) GM.IVM.get(oID).get()).getEventID() / 100 == 5)
 				{
 					System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
 					GM.itemHolder.place((IItem) GM.IVM.get(oID).get());
@@ -235,7 +242,7 @@ public class InventoryMenu implements IMenuSystem
 		}
 		trip = 0;
 		
-		while(trip != 1)
+		while(trip != 1 && GM.itemHolder.get().getEventID() / 100 != 5)
 		{
 			System.out.println(GM.PM);
 			System.out.println("Select a party member to use item on.");

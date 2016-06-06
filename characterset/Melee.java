@@ -8,6 +8,7 @@ import java.util.Random;
 import interfaces.IAttack;
 import interfaces.ICharacter;
 
+@SuppressWarnings("unused")
 public class Melee implements IAttack
 {
 	private int ID;
@@ -21,7 +22,7 @@ public class Melee implements IAttack
 		ID = 1;
 		eventID = 330;
 		name = "Melee";
-		skillCost = 2;
+		skillCost = 1;
 		range = 'Q';
 	}
 	
@@ -58,6 +59,7 @@ public class Melee implements IAttack
 	public void toAttack(ICharacter hero, ICharacter villain)
 	{
 		int damage;
+		double dmg;
 		Random r = new Random();
 		boolean test = validAttack(hero, r);
 		
@@ -74,6 +76,8 @@ public class Melee implements IAttack
 			System.out.println(hero.getName() + " missed!");
 			System.out.println(villain.getName() + " has " + villain.getHP() + "hp.");
 		}
+		hero.setSP(hero.getSP()- this.getSkillCost());
+
 	}
 
 	public boolean validAttack(ICharacter hero, Random gen)

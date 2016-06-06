@@ -40,7 +40,7 @@ public class Demon implements IVillain
 	{
 		name = "Demon";
 		status = 000;
-		HPMax = 150;
+		HPMax = 175;
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;

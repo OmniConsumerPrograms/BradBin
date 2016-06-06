@@ -60,6 +60,7 @@ public class MuscleWizard implements IHero
 		levelCap = 12;
 		levelTrack = new int[levelCap];
 		skillList = skills;
+		skillList.add(new Fist());
 		
 		healList = new ArrayList<IHeal>();
 		healList.add(new Flex());

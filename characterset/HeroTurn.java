@@ -4,23 +4,30 @@ import interfaces.ICharacter;
 import interfaces.IHero;
 import interfaces.IParty;
 import interfaces.IVillain;
+import systemset.Gamemaster;
 
 import java.util.*;
 
+@SuppressWarnings({"resource", "unused"})
 public class HeroTurn extends BattleTurn
 {
 	protected Random randomGenerator = new Random();
-   
-   	public int chooseAttack(ICharacter curAttacker)
+	
+	public HeroTurn(Gamemaster GM)
+	{
+		super(GM);
+	}
+	
+	public int chooseAttack(ICharacter curAttacker)
    	{
    		int choice = -1;
    		boolean done = false;
    		IHero hero = (IHero)curAttacker;
-   		Scanner user = new Scanner(System.in);
+		Scanner user = new Scanner(System.in);
    		
    		System.out.println("Choose an attack: ");
    		hero.attackListString();      
-      
+   		
    		do 
    		{
    			try 
@@ -97,7 +104,6 @@ public class HeroTurn extends BattleTurn
       {
          System.out.println("Who would you like to heal?");
          allies.partyString();
-         System.out.println("did the party print?");
                
          try 
          {
@@ -123,11 +129,11 @@ public class HeroTurn extends BattleTurn
 	   while (done == false && choice < 1 && choice > 3);          
 	   {
 		   System.out.println(hero.getName() + "s turn. Make a selection");    
-		   System.out.println("1. Attack  \n2. Heal \n3. Use Item  \n4. Party Stats");
+		   System.out.println("1. Attack  \n2. Heal \n3. Use Item  \n4. Party Stats\n 5. Pause");
 		   try 
 		   {
 			   choice = user.nextInt();
-			   if( choice >= 1 && choice <= 4 )
+			   if( choice >= 1 && choice <= 5 )
 				   ;//done = true;
 			   else
 				   System.out.println( "***Invalid entry, please try again***" );              

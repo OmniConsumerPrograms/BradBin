@@ -5,6 +5,7 @@ package characterset;
 
 import interfaces.IAttack;
 import interfaces.IHero;
+import interfaces.IHeroGenerator;
 import interfaces.IParty;
 
 import java.util.ArrayList;
@@ -20,7 +21,8 @@ import characterset.Rogue;
 import characterset.Shaman;
 import characterset.Warrior;
 
-public class HeroGenerator 
+@SuppressWarnings("resource")
+public class HeroGenerator implements IHeroGenerator
 {
 	private ArrayList<IHero> heroes;
 	
@@ -30,28 +32,31 @@ public class HeroGenerator
 	      
 		IHero tempChar;
 	      
-		tempChar = new Hunter(null);
+		tempChar = new Hunter(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 	      
-		tempChar = new Rogue(null);
+		tempChar = new Rogue(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 	      	
-		tempChar = new Priest(null);
+		tempChar = new Priest(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 	      
-		tempChar = new Warrior(null);
+		tempChar = new Warrior(new ArrayList<IAttack>());
 			heroes.add(tempChar);	      
 		
-		tempChar = new Druid(null);
+		tempChar = new Druid(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 		
-		tempChar = new Paladin(null);
+		tempChar = new Paladin(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 	      
-		tempChar = new Mage(null);
+		tempChar = new Mage(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 		
-		tempChar = new Shaman(null);
+		tempChar = new Shaman(new ArrayList<IAttack>());
+			heroes.add(tempChar);
+			
+		tempChar = new MuscleWizard(new ArrayList<IAttack>());
 			heroes.add(tempChar);
 	}     
 	
@@ -105,7 +110,7 @@ public class HeroGenerator
 	            {
 					choice = user.nextInt();
 	              
-					if( choice >= 1 && choice <= 8 )
+					if( choice >= 1 && choice <= 9 )
 					{
 						done = true;
 						count++;
@@ -119,6 +124,7 @@ public class HeroGenerator
 	            	System.out.println("***Invalid entry, please try again***");
 	            }
 			}
+			
 			if (choice == 1) 
 				heroes.addChar(new Hunter(skillList));
 			else if (choice == 2) 
@@ -135,6 +141,8 @@ public class HeroGenerator
 	        	 heroes.addChar(new Mage(skillList)); 
 			else if (choice == 8) 
 	        	 heroes.addChar(new Shaman(skillList)); 
+			else if (choice == 9)
+				heroes.addChar(new MuscleWizard(skillList));
 		}      
 	      return (IParty) heroes; 
 	   }

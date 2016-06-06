@@ -40,12 +40,12 @@ public class Giant implements IVillain
 	{
 		name = "Giant";
 		status = 000;
-		HPMax = 150;
+		HPMax = 250;
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;
-		attackMax = 25;
-		attackMin = 20;
+		attackMax = 30;
+		attackMin = 25;
 		speed = 2;
 		accuracy = 50.0;
 		phyDefense = 20;

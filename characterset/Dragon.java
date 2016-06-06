@@ -40,12 +40,12 @@ public class Dragon implements IVillain
 	{
 		name = "Dragon";
 		status = 000;
-		HPMax = 150;
+		HPMax = 300;
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;
-		attackMax = 25;
-		attackMin = 20;
+		attackMax = 35;
+		attackMin = 30;
 		speed = 2;
 		accuracy = 50.0;
 		phyDefense = 20;

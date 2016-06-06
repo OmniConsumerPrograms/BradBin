@@ -7,9 +7,11 @@ import java.io.File;
 import java.io.PrintStream;
 import java.util.*;
 
-import characterset.Fist;
-import characterset.MuscleWizard;
+import characterset.Battle;
+import characterset.HeroGenerator;
+import characterset.Party;
 import characterset.PartyManager;
+import characterset.VillainGenerator;
 import equipmentset.*;
 import eventset.*;
 import floorset.*;
@@ -28,9 +30,12 @@ public class Gamemaster
 	IGenerator IG;
 	IManager<IBin> IVM;
 	IManager<IMenuSystem> MM;
+	IHeroGenerator HG;
+	IVillainGenerator VG;
 	IManager<IHero> PM;
 	SQLManager floorSave;
 	IDungeon DM;
+	IFloorManager FM;
 	IEvent[][][] eventSet;
 	IBin<IWeapon> weaponHolder;
 	IBin<IEquipment> equipmentHolder;
@@ -105,6 +110,10 @@ public class Gamemaster
 		eventSet[2][7][0] = new BoostAll(this);
 		eventSet[4][8][0] = new CausesKO(this);
 		eventSet[4][8][8] = new CausesKOOverride(this);
+		eventSet[5][0][0] = new BattleEscape(this);
+		eventSet[5][4][0] = new BattleWon(this);
+		eventSet[5][5][0] = new BattleLost(this);
+		eventSet[5][6][0] = new BattleForceEnd(this);
 		eventSet[6][0][0] = new FixDurability(this);
 		eventSet[6][0][6] = new FixDurabilityError(this);
 		eventSet[6][1][0] = new AddPrefix(this);
@@ -138,6 +147,9 @@ public class Gamemaster
 		eventSet[9][0][2] = new LoadGame(this);
 		eventSet[9][0][6] = new RunAdventureLoopError(this);
 		eventSet[9][0][9] = new EndEvent(this);
+		eventSet[9][1][0] = new RunBattleLoop(this);
+		eventSet[9][1][6] = new RunBattleLoopError(this);
+		eventSet[9][1][9] = new EndBattle(this);
 		eventSet[9][3][0] = new RandomEncounter(this);
 		eventSet[9][5][0] = new BossEncounter(this);
 		eventSet[9][6][0] = new RunPauseMenu(this);
@@ -149,6 +161,16 @@ public class Gamemaster
 	public void check()
 	{
 		System.out.println("Run is ok");
+	}
+	
+	public int getGameMode()
+	{
+		return gameMode;
+	}
+	
+	public void setGameMode(int eID)
+	{
+		gameMode = eID;
 	}
 	
 	public void error(int id)
@@ -179,7 +201,7 @@ public class Gamemaster
 		Scanner input = new Scanner(System.in);
 		String inputData = "";
 		
-		while(true)
+		while(gameMode == 900)
 		{
 			DM.printMaze(DM.getFloorNo());
 			System.out.println("1: Move Up    2: Move Down    3: Move Left    4: Move Right");
@@ -209,6 +231,111 @@ public class Gamemaster
 			else if(inputData.equalsIgnoreCase("K"))
 				callEvent(488);
 		}
+	}
+	
+	//@SuppressWarnings("resource")
+	public void runBattleLoop()
+	{
+		gameMode = 910;
+		IParty temp = new Party();
+		IBattle battle;
+		//Scanner input = new Scanner(System.in);
+		//String inputData = "";
+		
+		for(int index = 0; index < PM.size(); index++)
+			temp.addChar(PM.get(index));
+		
+		battle = new Battle(temp, this);
+		try
+		{
+			callEvent(battle.runBattle(gameMode));
+		}
+		catch(Exception e)
+		{
+			callEvent(916);
+		}
+		/*
+		while(gameMode == 910)
+		{
+			System.out.println("P: Pause       I: Inventory    D: Item Drop");
+			System.out.println("N: autoWin     M: autoLose     K: autoKO");
+			System.out.println("E: autoEscape  F: force End Battle");
+			inputData = input.nextLine();
+			
+			if(inputData.equalsIgnoreCase("P"))
+				callEvent(960);
+			else if(inputData.equalsIgnoreCase("I"))
+				callEvent(970);
+			else if(inputData.equalsIgnoreCase("D"))
+				callEvent(700);
+			else if(inputData.equalsIgnoreCase("N"))
+				callEvent(540);
+			else if(inputData.equalsIgnoreCase("M"))
+				callEvent(550);
+			else if(inputData.equalsIgnoreCase("K"))
+				callEvent(488);
+			else if(inputData.equalsIgnoreCase("E"))
+				callEvent(500);
+			else if(inputData.equalsIgnoreCase("F"))
+				callEvent(560);
+		}*/
+	}
+	
+	public void battleWon()
+	{
+		gameMode = 900;
+		System.out.println("Battle Won");
+		callEvent(700);
+	}
+	
+	@SuppressWarnings("resource")
+	public void battleLost()
+	{
+		gameMode = 990;
+		Scanner userIn = new Scanner(System.in);
+		int input = 0;
+		
+		System.out.println("The party was lost, all is dark...");
+		System.out.println("~ Game Over ~");
+		
+		while(gameMode == 990)
+		{
+			System.out.println("\n1: New Game\n2: Quit Game\n3: Load Game");
+			input = userIn.nextInt();
+			
+			switch(input)
+			{
+				case 1:
+					callEvent(800);
+					break;
+				case 2:
+					callEvent(990);
+					break;
+				case 3:
+					callEvent(902);
+					callEvent(919);
+					break;
+			}
+		}
+	}
+	
+	public void battleEscape()
+	{
+		Random r = new Random();
+		
+		if(r.nextInt(10) <= 2)
+		{
+			System.out.println("Your party has escape the battle");
+			callEvent(919);
+		}
+		else
+			System.out.println("You stumble...");
+	}
+	
+	public void battleForceEnd()
+	{
+		System.out.println("You just open the bottle with the black hole, the enemy party was sucked in.");
+		callEvent(919);
 	}
 	
 	public void exit()
@@ -282,8 +409,8 @@ public class Gamemaster
 			{
 				case 0:
 					rID = r.nextInt(items.length);
-					System.out.println(type + ":" + rID);
-					IVM.set(new Holder<IItem>(IM.get(rID)));
+					System.out.println(type + ":" + items[rID]);
+					IVM.set(new Holder<IItem>(IM.get(items[rID])));
 					break;
 				case 1:
 					rID = r.nextInt(WM.size());
@@ -317,11 +444,13 @@ public class Gamemaster
 	public void randomEncounter()
 	{
 		System.out.println("A random Encounter!");
+		callEvent(910);
 	}
 
 	public void bossEncounter()
 	{
 		System.out.println("Its the Boss!");
+		callEvent(910);
 	}
 
 	@SuppressWarnings("resource")
@@ -632,11 +761,6 @@ public class Gamemaster
 			callEvent(606);
 	}
 	
-	public void runBattleLoop()
-	{
-		gameMode = 910;
-	}
-	
 	public void save()
 	{
 		PrintStream out = null;
@@ -740,11 +864,14 @@ public class Gamemaster
 	
 	public void buildCharacterSet()
 	{
+		HG = new HeroGenerator();
+		VG = new VillainGenerator();
 		callEvent(850);
 	}
 	
 	public void buildFloors()
 	{
+		FM = new FloorManager();
 		callEvent(860);
 	}
 	
@@ -763,6 +890,8 @@ public class Gamemaster
 	public void buildSaveManager()
 	{
 		floorSave = new SQLManager();
+		
+		// Party Save
 		callEvent(890);
 	}
 	
@@ -775,10 +904,11 @@ public class Gamemaster
 		MM.set(new InventoryMenu(this));
 		
 		// Party
-		PM = new PartyManager();
-		ArrayList<IAttack> temp = new ArrayList<IAttack>();
-		temp.add(new Fist());
-		PM.set(new MuscleWizard(temp));
+		IParty temp = HG.chooseHeroes();
+		PM = new PartyManager(temp.size());
+		
+		for(int index = 0; index < temp.size(); index++)
+			PM.set((IHero) temp.getChar(index));
 		
 		//End
 		callEvent(899);

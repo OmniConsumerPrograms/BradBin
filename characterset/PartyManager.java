@@ -11,11 +11,12 @@ import systemset.CharacterData;
 public class PartyManager implements IManager<IHero>
 {
 	private ArrayList<IHero> party; 
-	private int partyLimit = 4;
+	private int partyLimit;
 	
-	public PartyManager()
+	public PartyManager(int size)
 	{
 		party = new ArrayList<IHero>(partyLimit);
+		partyLimit = size;
 	}
 	
 	public int size()

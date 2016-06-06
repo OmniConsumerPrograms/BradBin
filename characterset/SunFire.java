@@ -57,12 +57,15 @@ public class SunFire implements IAttack
 	public void toAttack(ICharacter hero, ICharacter villain)
 	{
 		int damage;
+		double dmg;
 		Random r = new Random();
 		boolean test = validAttack(hero, r);
 		
 		if(test)
 		{
-			damage = (hero.getAttackMin() + r.nextInt(hero.getAttackMax() - hero.getAttackMin() + 1));
+			damage = (hero.getAttackMin() + Math.abs(r.nextInt(hero.getAttackMax()) - hero.getAttackMin() + 1));
+			dmg = (double) damage * 1.5;
+			damage = (int)dmg;
 			villain.setHP(villain.getHP() - damage);
 			
 			System.out.println(hero.getName() + "'s " + getAttackName() + " hit " + villain.getName() + " for " + damage + "hp.");
@@ -73,6 +76,8 @@ public class SunFire implements IAttack
 			System.out.println(hero.getName() + " missed!");
 			System.out.println(villain.getName() + " has " + villain.getHP() + "hp.");
 		}
+		hero.setSP(hero.getSP()- this.getSkillCost());
+
 	}
 
 	public boolean validAttack(ICharacter hero, Random gen)

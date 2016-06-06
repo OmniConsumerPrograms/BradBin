@@ -55,6 +55,10 @@ public interface ICharacter
 	
 	public double getAccuracy();
 	
+	public void setXP(int xp);
+	
+	public int getXP();
+	
 	public void setAccuracy(double accuracy);
 	
 	public boolean isAlive();

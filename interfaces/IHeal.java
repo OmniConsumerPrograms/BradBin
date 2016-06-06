@@ -3,8 +3,6 @@
 
 package interfaces;
 
-import java.util.Random;
-
 public interface IHeal 
 {
 	public String getHealName();

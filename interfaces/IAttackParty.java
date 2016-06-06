@@ -1,12 +1,13 @@
 //OCP
-//Attack Interface
+//AttackParty Interface
 
 package interfaces;
 
 import java.util.Random;
 
-public interface IAttack 
+public interface IAttackParty
 {
+	
 	public String getAttackName();
 	
 	public void setAttackName(String attackName);
@@ -18,8 +19,6 @@ public interface IAttack
 	public int getEventID();
 	
 	public int getSkillCost();
-
-	public void toAttack(ICharacter hero, ICharacter villain);
-		
+	
 	public boolean validAttack(ICharacter hero, Random gen);
 }

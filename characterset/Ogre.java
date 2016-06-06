@@ -40,7 +40,7 @@ public class Ogre implements IVillain
 	{
 		name = "Ogre";
 		status = 000;
-		HPMax = 150;
+		HPMax = 225;
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;

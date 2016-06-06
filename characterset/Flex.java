@@ -17,7 +17,7 @@ public class Flex implements IHeal
 	{
 		ID = 1;
 		eventID = 330;
-		name = "Fist";
+		name = "Flex";
 		skillCost = 2;
 		range = 'Q';
 	}

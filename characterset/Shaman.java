@@ -50,8 +50,8 @@ public class Shaman implements IHero
 		SP = SPMax;
 		attackMax = 35;
 		attackMin = 40;
-		healMin = 35;
-		healMax = 40;
+		healMin = 40;
+		healMax = 45;
 		speed = 2;
 		accuracy = 60.0;
 		phyDefense = 30;
@@ -248,14 +248,21 @@ public class Shaman implements IHero
 	{
 		level++;
 		
-		setHPMax(HPMax * level);
-		setHP(HP * level);
-		setAccuracy(accuracy * (1 + 1 / ((double)level)));
-		setAttackMax((int)(attackMax * (1 + 1 / ((double)level))));
-		setAttackMin((int)(attackMin * (1 + 1 / ((double)level))));
-		setPhyDefense((int)(phyDefense * (1 + 1 / ((double)level))));
-		setMagDefense((int)(magDefense * (1 + 1 / ((double)level))));
-		
+		System.out.println("Congratulations!");
+		System.out.println(getName() + " has reached level " + getLevel());
+		setHPMax(getHPMax() + 25);
+		setHP( getHPMax());
+		System.out.println("Health increased to " + getHPMax() );
+		setAttackMin( getAttackMin() + 10);
+		setAttackMax(getAttackMax() + 10);
+		System.out.println("Attack increased to " + getAttackMin() + " - " + getAttackMax() );
+		setAccuracy(getAccuracy() + 4);
+		System.out.println("Accuracy increaded t0 " + getAccuracy());
+		setMagDefense(getMagDefense() + 11);
+		System.out.println("Magical Defense increased to " + getMagDefense());
+		setPhyDefense(getPhyDefense() + 11);
+		System.out.println("Physical Defense increased to " + getPhyDefense());
+	
 		switch(level)
 		{
 			case 4:
@@ -386,6 +393,7 @@ public class Shaman implements IHero
 		return s;
 	}
 
+	@Override
 	public void healListString() 
 	{
 		for(IHeal a : healList)
