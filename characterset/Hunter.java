@@ -48,8 +48,8 @@ public class Hunter implements IHero
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;
-		attackMax = 30;
-		attackMin = 35;
+		attackMin = 30;
+		attackMax = 35;
 		healMin = 25;
 		healMax = 30;
 		speed = 2;
@@ -221,6 +221,22 @@ public class Hunter implements IHero
 	public void setLevel(int level)
 	{
 		this.level = level;
+
+		for(int index = 1; index <= level; index++)
+		{
+			switch(index)
+			{
+				case 4:
+					level4Attack();
+					break;
+				case 8:
+					level8Attack();
+					break;
+				case 12:
+					level12Attack();
+					break;
+			}
+		}
 	}
 	
 	public int getLevel()
@@ -379,8 +395,12 @@ public class Hunter implements IHero
 	
 	public void attackListString()
 	{
+		int n = 1;
 		for(IAttack a : skillList)
-			System.out.println(a.getAttackName());
+		{
+			System.out.println(n + ": " + a.getAttackName());
+			n++;
+		}
 	}
 	
 	public String skillListToString()
@@ -388,7 +408,7 @@ public class Hunter implements IHero
 		String s = "";
 		
 		for(IAttack a : skillList)
-			s = a.getAttackName();
+			s += a.getAttackName() + "\n";
 		
 		return s;
 	}
@@ -396,8 +416,11 @@ public class Hunter implements IHero
 	@Override
 	public void healListString() 
 	{
+		int n = 1;
 		for(IHeal a : healList)
-			System.out.println( a.getHealName() );
+		{
+			System.out.println(n + ": " + a.getHealName());
+		}
 	}
 	
 	public String healListToString()
@@ -405,7 +428,7 @@ public class Hunter implements IHero
 		String s = "";
 		
 		for(IHeal a : healList)
-			s = a.getHealName();
+			s += a.getHealName() + "\n";
 		
 		return s;
 	}

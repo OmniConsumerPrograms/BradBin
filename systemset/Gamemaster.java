@@ -8,6 +8,7 @@ import java.io.PrintStream;
 import java.util.*;
 
 import characterset.Battle;
+import characterset.BossDragon;
 import characterset.HeroGenerator;
 import characterset.Party;
 import characterset.PartyManager;
@@ -22,6 +23,7 @@ import itemset.*;
 @SuppressWarnings("rawtypes")
 public class Gamemaster
 {
+	boolean DEBUG = false;
 	IManager<IEquipment> EM;
 	IItemGenerator<IEquipment> EG;
 	IManager<IWeapon> WM;
@@ -45,6 +47,8 @@ public class Gamemaster
 	int groupID;
 	int ID;
 	int gameMode;
+	int battleType;
+	int difficulty;
 	
 	public Gamemaster()
 	{
@@ -54,17 +58,21 @@ public class Gamemaster
 		itemHolder = new Holder<IItem>();
 		heroHolder = new Holder<IHero>();
 		groupID = -1;
+		difficulty = -1;
 		buildEventSet();
 	}
 	
 	public void callEvent(int eid)
 	{
+		if(DEBUG)
+		System.out.println("Event: " + eid);
+		
 		int errorCode = eid % 10;
 		eid /= 10;
 		int individual = eid % 10;
 		eid /= 10;
 		int group = eid % 10;
-		
+				
 		eventSet[group][individual][errorCode].run();
 	}
 	
@@ -90,6 +98,7 @@ public class Gamemaster
 								  new BuildSaveManagerError(this),
 								  new BuildOtherManagerError(this)};
 		
+		eventSet[0][7][0] = new BuildParty(this);
 		eventSet[1][0][0] = new RestoresHP(this);
 		eventSet[1][0][1] = new RestoresHP(this);
 		eventSet[1][1][0] = new AddHP(this);
@@ -141,6 +150,7 @@ public class Gamemaster
 		}
 
 		eventSet[8][0][0] = new StartEvent(this);
+		eventSet[8][0][6] = new StartError(this);
 		eventSet[8][9][9] = new EndEvent(this);
 		eventSet[9][0][0] = new RunAdventureLoop(this);
 		eventSet[9][0][1] = new SaveGame(this);
@@ -150,6 +160,7 @@ public class Gamemaster
 		eventSet[9][1][0] = new RunBattleLoop(this);
 		eventSet[9][1][6] = new RunBattleLoopError(this);
 		eventSet[9][1][9] = new EndBattle(this);
+		eventSet[9][2][0] = new RunStartMenu(this);
 		eventSet[9][3][0] = new RandomEncounter(this);
 		eventSet[9][5][0] = new BossEncounter(this);
 		eventSet[9][6][0] = new RunPauseMenu(this);
@@ -161,6 +172,16 @@ public class Gamemaster
 	public void check()
 	{
 		System.out.println("Run is ok");
+	}
+	
+	public int getGameDifficulty()
+	{
+		return difficulty;
+	}
+	
+	public void setGameDifficulty(int level)
+	{
+		difficulty = level;
 	}
 	
 	public int getGameMode()
@@ -181,6 +202,7 @@ public class Gamemaster
 	public void runStartUp()
 	{
 		callEvent(810);
+		callEvent(920);
 		callEvent(900);
 	}
 	
@@ -192,6 +214,11 @@ public class Gamemaster
 	public void runInventoryMenu()
 	{
 		MM.get(1).runMenu(this);
+	}
+	
+	public void runStartMenu()
+	{
+		MM.get(2).runMenu(this);
 	}
 	
 	@SuppressWarnings("resource")
@@ -213,7 +240,7 @@ public class Gamemaster
 			{
 				DM.move(Integer.parseInt(inputData));
 				
-				if(DM.randomCounter() <= 1)
+				if(DM.randomCounter() <= (1 + difficulty))
 					callEvent(930);
 				else if(DM.getFloorNo() == 3)
 					callEvent(950);
@@ -238,14 +265,24 @@ public class Gamemaster
 	{
 		gameMode = 910;
 		IParty temp = new Party();
-		IBattle battle;
+		IParty boss = new Party();
+		IBattle battle = null;
 		//Scanner input = new Scanner(System.in);
 		//String inputData = "";
 		
 		for(int index = 0; index < PM.size(); index++)
 			temp.addChar(PM.get(index));
 		
-		battle = new Battle(temp, this);
+		if(battleType == 930)
+			battle = new Battle(temp, this);
+		else if(battleType == 950)
+		{
+			boss.addChar(new BossDragon(new ArrayList<IAttack>()));
+			battle = new Battle(temp, boss, this);
+		}
+		else
+			callEvent(916);
+		
 		try
 		{
 			callEvent(battle.runBattle(gameMode));
@@ -253,6 +290,7 @@ public class Gamemaster
 		catch(Exception e)
 		{
 			callEvent(916);
+			callEvent(919);
 		}
 		/*
 		while(gameMode == 910)
@@ -281,11 +319,45 @@ public class Gamemaster
 		}*/
 	}
 	
+	@SuppressWarnings("resource")
 	public void battleWon()
 	{
 		gameMode = 900;
-		System.out.println("Battle Won");
-		callEvent(700);
+		System.out.println("\nBattle Won");
+		if(battleType == 950)
+		{
+			Scanner userIn = new Scanner(System.in);
+			int input = 0;
+			
+			gameMode = 990;
+			System.out.println("\nSmaug is no more, but there was no gold at the end of this dungeon...");
+			System.out.println("^ The end ^");
+			
+			while(gameMode == 990)
+			{
+				System.out.println("\n1: New Game\n2: Quit Game");
+				try
+				{
+					input = userIn.nextInt();
+				}
+				catch(InputMismatchException ime)
+				{
+					callEvent(906);
+				}
+				
+				switch(input)
+				{
+					case 1:
+						callEvent(800);
+						break;
+					case 2:
+						callEvent(990);
+						break;
+				}
+			}
+		}
+		else	
+			callEvent(700);
 	}
 	
 	@SuppressWarnings("resource")
@@ -295,13 +367,20 @@ public class Gamemaster
 		Scanner userIn = new Scanner(System.in);
 		int input = 0;
 		
-		System.out.println("The party was lost, all is dark...");
+		System.out.println("\nThe party was lost, all is dark...");
 		System.out.println("~ Game Over ~");
 		
 		while(gameMode == 990)
 		{
 			System.out.println("\n1: New Game\n2: Quit Game\n3: Load Game");
-			input = userIn.nextInt();
+			try
+			{
+				input = userIn.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				callEvent(906);
+			}
 			
 			switch(input)
 			{
@@ -323,7 +402,7 @@ public class Gamemaster
 	{
 		Random r = new Random();
 		
-		if(r.nextInt(10) <= 2)
+		if(r.nextInt(10) <= (3 - difficulty))
 		{
 			System.out.println("Your party has escape the battle");
 			callEvent(919);
@@ -398,10 +477,9 @@ public class Gamemaster
 		Random r = new Random();
 		int rID = 0;
 		int type = r.nextInt(3);
-		int[] items = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-					   11, 12, 13, 14, 15, 16 ,17 ,18 ,19, 20,
-					   25, 27, 28, 29, 30, 31, 35, 36, 37, 38,
-					   39, 40};
+		int[] items = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+					   12, 13, 14, 15, 16 ,17 ,18 ,19, 24, 26,
+					   27, 28, 29, 30, 34, 35, 36, 37, 38, 39};
 		
 		try
 		{
@@ -444,12 +522,14 @@ public class Gamemaster
 	public void randomEncounter()
 	{
 		System.out.println("A random Encounter!");
+		battleType = 930;
 		callEvent(910);
 	}
 
 	public void bossEncounter()
 	{
 		System.out.println("Its the Boss!");
+		battleType = 950;
 		callEvent(910);
 	}
 
@@ -594,12 +674,12 @@ public class Gamemaster
 
 	public void itemBoxAction()
 	{
-		
+		// Not going to be part of the Demo
 	}
 	
 	public void causesKO()
 	{
-		heroHolder.get().setStatus(050);
+		heroHolder.get().setStatus(50);
 	}
 	
 	@SuppressWarnings("resource")
@@ -622,9 +702,9 @@ public class Gamemaster
 	{
 		int hp = 0;
 		
-		if(heroHolder.get().getStatus() == 050)
+		if(heroHolder.get().getStatus() == 50)
 		{
-			heroHolder.get().setStatus(000);
+			heroHolder.get().setStatus(0);
 			hp = (int)(heroHolder.get().getHPMax() * (itemHolder.get().getEffect() / 100.0));
 			
 			if(hp <= heroHolder.get().getHPMax())
@@ -763,12 +843,14 @@ public class Gamemaster
 	
 	public void save()
 	{
-		PrintStream out = null;
+		PrintStream IVOut = null;
+		PrintStream POut = null;
 		String s = "";
 		
 		try
 		{
-			out = new PrintStream(new File("InventorySave.txt"));
+			IVOut = new PrintStream(new File("InventorySave.txt"));
+			POut = new PrintStream(new File("PartySave.txt"));
 			DM.saveDungeon();
 		}
 		catch(Exception e)
@@ -776,6 +858,7 @@ public class Gamemaster
 			callEvent(906);
 		}
 		
+		// Inventory Saving
 		for(int index = 0; index < IVM.size(); index++)
 		{
 			s += ((IUsable) IVM.get(index).get()).getType() + " : ";
@@ -784,23 +867,60 @@ public class Gamemaster
 			if(((IUsable)IVM.get(index).get()).getEventID() % 10 == 1)
 				s += " : " + ((IPrefix) IVM.get(index).get()).getPrefixID();
 			
-			out.println(s);
+			IVOut.println(s);
 			s = "";
 		}
+
+		s = "";
+		// Party Saving
+		for(int index = 0; index < PM.size(); index++)
+		{
+			POut.print(PM.get(index).getName() + " : ");
+			POut.print(PM.get(index).getStatus() + " : ");
+			POut.print(PM.get(index).getHP() + " : " + PM.get(index).getHPMax() + " : ");
+			POut.print(PM.get(index).getSP() + " : " + PM.get(index).getSPMax() + " : ");
+			POut.print(PM.get(index).getAttackMax() + " : " + PM.get(index).getAttackMin() + " : ");
+			POut.print(PM.get(index).getHealMax() + " : " + PM.get(index).getHealMin() + " : ");
+			POut.print(PM.get(index).getSpeed() + " : ");
+			POut.print(PM.get(index).getPhyDefense() + " : " + PM.get(index).getMagDefense() + " : ");
+			POut.print(PM.get(index).getAccuracy() + " : " + PM.get(index).getXP() + " : ");
+			POut.print(PM.get(index).getLevel() + " : ");
+			POut.print(PM.get(index).getWeapon().getID() + " : ");
+			
+			if(PM.get(index).getWeapon().getEventID() % 10 == 1)
+				POut.print(((IPrefix) PM.get(index).getWeapon()).getPrefixID() + " : ");
+			else
+				POut.print(0 + " : ");
+			
+			for(int edex = 0; edex < 3; edex++)
+			{
+				POut.print(PM.get(index).getEquipment(edex).getID() + " : ");
+				
+				if(PM.get(index).getEquipment(edex).getEventID() % 10 == 1)
+					POut.print(((IPrefix) PM.get(index).getEquipment(edex)).getPrefixID() + " : ");
+				else
+					POut.print(0 + " : ");
+			}
+			POut.println();
+		}
 		
-		out.close();
+		IVOut.close();
+		POut.close();
 		callEvent(909);
 	}
 	
 	public void load()
 	{
-		Scanner in = null;
+		IParty party = new Party();
+		Scanner IVIn = null;
+		Scanner PIn = null;
 		String s = "";
 		IVM = new InventoryManager();
 		
 		try
 		{
-			in = new Scanner(new File("InventorySave.txt"));
+			IVIn = new Scanner(new File("InventorySave.txt"));
+			PIn = new Scanner(new File("PartySave.txt"));
 			DM.restoreDungeon();
 		}
 		catch(Exception e)
@@ -808,9 +928,9 @@ public class Gamemaster
 			callEvent(906);
 		}
 		
-		while(in.hasNextLine())
+		while(IVIn.hasNextLine())
 		{
-			s = in.nextLine();
+			s = IVIn.nextLine();
 			String[] temp = s.split(" : ");
 			
 			if(temp[0].equals("Item"))
@@ -839,10 +959,70 @@ public class Gamemaster
 			else
 				callEvent(906);
 		}
+		
+		while(PIn.hasNextLine())
+		{
+			s = PIn.nextLine();
+			
+			String[] temp = s.split(" : ");
+			
+			IHero hero = HG.getHero(temp[0]);
+			
+			hero.setStatus(Integer.parseInt(temp[1]));
+			hero.setHP(Integer.parseInt(temp[2]));
+			hero.setHPMax(Integer.parseInt(temp[3]));
+			hero.setSP(Integer.parseInt(temp[4]));
+			hero.setSPMax(Integer.parseInt(temp[5]));
+			hero.setAttackMax(Integer.parseInt(temp[6]));
+			hero.setAttackMin(Integer.parseInt(temp[7]));;
+			hero.setHealMax(Integer.parseInt(temp[8]));
+			hero.setHealMin(Integer.parseInt(temp[9]));
+			hero.setSpeed(Integer.parseInt(temp[10]));
+			hero.setPhyDefense(Integer.parseInt(temp[11]));
+			hero.setMagDefense(Integer.parseInt(temp[12]));
+			hero.setAccuracy(Double.parseDouble(temp[13]));
+			hero.setXP(Integer.parseInt(temp[14]));
+			hero.setLevel(Integer.parseInt(temp[15]));
+			
+			weaponHolder.place(WM.get(Integer.parseInt(temp[16]) - 1));
+			
+			if(Integer.parseInt(temp[17]) != 0)
+				weaponHolder.place(WG.getPrefix(weaponHolder.get(), Integer.parseInt(temp[17])));
+				
+			hero.setWeapon(weaponHolder.get());
+			
+			equipmentHolder.place(EM.get(Integer.parseInt(temp[18]) - 1));
+
+			if(Integer.parseInt(temp[19]) != 0)
+				equipmentHolder.place(EG.getPrefix(equipmentHolder.get(), Integer.parseInt(temp[19])));
+			
+			hero.replaceEquipment(equipmentHolder.get(), 0);
+			
+			equipmentHolder.place(EM.get(Integer.parseInt(temp[20]) - 1));
+
+			if(Integer.parseInt(temp[21]) != 0)
+				equipmentHolder.place(EG.getPrefix(equipmentHolder.get(), Integer.parseInt(temp[21])));
+			
+			hero.replaceEquipment(equipmentHolder.get(), 1);
+			
+			equipmentHolder.place(EM.get(Integer.parseInt(temp[22]) - 1));
+
+			if(Integer.parseInt(temp[23]) != 0)
+				equipmentHolder.place(EG.getPrefix(equipmentHolder.get(), Integer.parseInt(temp[23])));
+			
+			hero.replaceEquipment(equipmentHolder.get(), 2);
+			
+			party.addChar(hero);
+		}
+		PM = new PartyManager(party.size());
+		
+		for(int index = 0; index < party.size(); index++)
+			PM.set((IHero) party.getChar(index));
 	}
 	
 	public void buildItemSet()
 	{
+		gameMode = 800;
 		IM = new ItemManager();
 		IG = new ItemGenerator(IM);
 		callEvent(IG.build());
@@ -895,21 +1075,23 @@ public class Gamemaster
 		callEvent(890);
 	}
 	
-	public void buildOtherManagers()
+	public void buildParty()
 	{
-		// builds Party, Menu, Battle, and any other managers to be
-		// Menu
-		MM = new MenuManager();
-		MM.set(new PauseMenu(this));
-		MM.set(new InventoryMenu(this));
-		
 		// Party
 		IParty temp = HG.chooseHeroes();
 		PM = new PartyManager(temp.size());
 		
 		for(int index = 0; index < temp.size(); index++)
 			PM.set((IHero) temp.getChar(index));
-		
+	}
+	
+	public void buildOtherManagers()
+	{
+		// Menu
+		MM = new MenuManager();
+		MM.set(new PauseMenu(this));
+		MM.set(new InventoryMenu(this));
+		MM.set(new StartMenu(this));
 		//End
 		callEvent(899);
 	}

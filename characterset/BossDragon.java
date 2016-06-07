@@ -1,12 +1,11 @@
 //OCP 
-//Rogue
+//Dragon
 
 package characterset;
 
 import interfaces.ICharacter;
 import interfaces.IEquipment;
-import interfaces.IHeal;
-import interfaces.IHero;
+import interfaces.IVillain;
 import interfaces.IWeapon;
 import weaponset.BareHands;
 
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import equipmentset.NilEquipment;
 import interfaces.IAttack;
 
-public class Rogue implements IHero
+public class BossDragon implements IVillain
 {
 	private String name;
 	private int status;
@@ -25,8 +24,6 @@ public class Rogue implements IHero
 	private int SP;
 	private int attackMin;
 	private int attackMax;
-	private int healMin;
-	private int healMax;
 	private int speed;
 	private int phyDefense;
 	private int magDefense;
@@ -36,35 +33,31 @@ public class Rogue implements IHero
 	private int level;
 	int levelCap;
 	private ArrayList<IAttack> skillList;
-	private ArrayList<IHeal> healList;
 	private IEquipment[] equipmentSet;
 	private IWeapon weapon;
 	
-	public Rogue(ArrayList<IAttack> skills)
+	public BossDragon(ArrayList<IAttack> skills)
 	{
-		name = "Rogue";
+		name = "Smaug";
 		status = 000;
-		HPMax = 130;
+		HPMax = 3000;
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;
-		attackMin = 30;
 		attackMax = 35;
-		healMin = 25;
-		healMax = 30;
+		attackMin = 30;
 		speed = 2;
-		accuracy = 60.0;
-		phyDefense = 15;
-		magDefense = 10;
+		accuracy = 50.0;
+		phyDefense = 20;
+		magDefense = 5;
 		exp = 0;
 		level = 1;
 		levelCap = 12;
 		levelTrack = new int[levelCap];
 		skillList = skills;
-		
-		healList = new ArrayList<IHeal>();
-		healList.add(new Bandage());
-		
+		skillList.add(new CrushingBlow());
+		skillList.add(new Execute());
+		skillList.add(new Whirlwind());
 		equipmentSet = new IEquipment[3];
 		weapon = new BareHands(1);
 		
@@ -208,11 +201,6 @@ public class Rogue implements IHero
 		skillList.get(choiceInput).toAttack(this, incomingCharacter);
 	}
 	
-	public void heal(ICharacter incomingCharacter, int choiceInput)
-	{
-		healList.get(choiceInput).toHeal(this, incomingCharacter);
-	}
-	
 	public boolean validAttackChoice(int x)
 	{
 		return true;
@@ -221,22 +209,6 @@ public class Rogue implements IHero
 	public void setLevel(int level)
 	{
 		this.level = level;
-
-		for(int index = 1; index <= level; index++)
-		{
-			switch(index)
-			{
-				case 4:
-					level4Attack();
-					break;
-				case 8:
-					level8Attack();
-					break;
-				case 12:
-					level12Attack();
-					break;
-			}
-		}
 	}
 	
 	public int getLevel()
@@ -264,21 +236,14 @@ public class Rogue implements IHero
 	{
 		level++;
 		
-		System.out.println("Congratulations!");
-		System.out.println(getName() + " has reached level " + getLevel());
-		setHPMax(getHPMax() + 25);
-		setHP( getHPMax());
-		System.out.println("Health increased to " + getHPMax() );
-		setAttackMin( getAttackMin() + 10);
-		setAttackMax(getAttackMax() + 10);
-		System.out.println("Attack increased to " + getAttackMin() + " - " + getAttackMax() );
-		setAccuracy(getAccuracy() + 4);
-		System.out.println("Accuracy increaded t0 " + getAccuracy());
-		setMagDefense(getMagDefense() + 11);
-		System.out.println("Magical Defense increased to " + getMagDefense());
-		setPhyDefense(getPhyDefense() + 11);
-		System.out.println("Physical Defense increased to " + getPhyDefense());
-	
+		setHPMax(HPMax * level);
+		setHP(HP * level);
+		setAccuracy(accuracy * (1 + 1 / ((double)level)));
+		setAttackMax((int)(attackMax * (1 + 1 / ((double)level))));
+		setAttackMin((int)(attackMin * (1 + 1 / ((double)level))));
+		setPhyDefense((int)(phyDefense * (1 + 1 / ((double)level))));
+		setMagDefense((int)(magDefense * (1 + 1 / ((double)level))));
+		
 		switch(level)
 		{
 			case 4:
@@ -336,22 +301,6 @@ public class Rogue implements IHero
 		attackMin = min;
 	}
 	
-	public int getHealMin() {
-		return healMin;
-	}
-
-	public void setHealMin(int healMin) {
-		this.healMin = healMin;
-	}
-
-	public int getHealMax() {
-		return healMax;
-	}
-
-	public void setHealMax(int healMax) {
-		this.healMax = healMax;
-	}
-	
 	public void setAccuracy(double acc)
 	{
 		accuracy = acc;
@@ -369,18 +318,19 @@ public class Rogue implements IHero
 	
 	public void level4Attack()
 	{
-		skillList.add(new SinisterStrike());
+		skillList.add(new CrushingBlow());
 	}
 	
 	public void level8Attack()
 	{
-		skillList.add(new Gourge());
-		healList.add(new GreaterBandage());
+		
+		skillList.add(new Execute());
 	}
 	
 	public void level12Attack()
 	{
-		skillList.add(new Eviscerate());
+		
+		skillList.add(new Whirlwind());
 	}
 	
 	public int getXP()
@@ -395,12 +345,8 @@ public class Rogue implements IHero
 	
 	public void attackListString()
 	{
-		int n = 1;
 		for(IAttack a : skillList)
-		{
-			System.out.println(n + ": " + a.getAttackName());
-			n++;
-		}
+			System.out.println(a.getAttackName());
 	}
 	
 	public String skillListToString()
@@ -408,38 +354,49 @@ public class Rogue implements IHero
 		String s = "";
 		
 		for(IAttack a : skillList)
-			s += a.getAttackName() + "\n";
+			s = a.getAttackName();
 		
 		return s;
 	}
 
 	@Override
-	public void healListString() 
-	{
-		int n = 1;
-		for(IHeal a : healList)
-		{
-			System.out.println(n + ": " + a.getHealName());
-		}
-	}
-	
-	public String healListToString()
-	{
-		String s = "";
-		
-		for(IHeal a : healList)
-			s += a.getHealName() + "\n";
-		
-		return s;
+	public int getHealMin() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
+	@Override
+	public void setHealMin(int healMin) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getHealMax() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setHealMax(int healMax) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	@Override
 	public int getSkillListSize() {
 		return this.skillList.size();
 	}
 
 	@Override
-	public int getHealListSize() {
-		return this.healList.size();
+	public int getHealListSize() 
+	{
+		return 0;
+	}
+
+	@Override
+	public void heal(ICharacter healer, int choiceInput) {
+		// TODO Auto-generated method stub
+		
 	}
 }

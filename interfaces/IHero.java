@@ -34,4 +34,6 @@ public interface IHero extends ICharacter, ILevel
 	public IWeapon getWeapon();
 	
 	public IWeapon replaceWeapon(IWeapon weapon);
+	
+	public String healListToString();
 }

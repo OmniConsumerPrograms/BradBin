@@ -29,7 +29,10 @@ public class WeaponManager implements IManager<IWeapon>
 	
 	public IWeapon get(int ID)
 	{
-		return itemList.get(ID);
+		if(ID >= 0 && ID < size())
+			return itemList.get(ID);
+		
+		return new BareHands(1);
 	}
 	
 	public IWeapon remove(int ID)

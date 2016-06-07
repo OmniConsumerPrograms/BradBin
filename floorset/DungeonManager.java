@@ -4,7 +4,7 @@
 package floorset;
 
 import java.util.ArrayList;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.Random;
 
 import interfaces.IDungeon;
@@ -69,7 +69,7 @@ public class DungeonManager implements IDungeon
 		IFloor curFloor = mazeList.get(curFloorNo-1); //curFloorNo used 1-basex index
 		int[][] curFloorMatrix = curFloor.getFloor();
 		
-		System.out.println("You are at floor: "+ curFloorNo);
+		System.out.println("\nYou are at floor: "+ curFloorNo);
 		
 		if(curPos == null)
 		{
@@ -124,7 +124,7 @@ public class DungeonManager implements IDungeon
 		}
 		if(floorPlan[x][y] == 0 || floorPlan[x][y] == '#')
 		{
-			System.out.println("Invalid Move. Move another direction");
+			System.out.println("\nInvalid Move. Move another direction");
 			curPos = prevPos;
 		}
 		else if(floorPlan[x][y] == 'O')
@@ -136,7 +136,7 @@ public class DungeonManager implements IDungeon
 				prevPos = null;
 			}
 			else
-				System.out.println("You are at the end of the dungeon.");
+				System.out.println("\nYou are at the end of the dungeon.");
 		}
 		else
 			curPos =  new Position(x,y);
@@ -157,6 +157,6 @@ public class DungeonManager implements IDungeon
 	{
 		mazeList = floorManager.getMazeList();
 		//shuffle list
-		Collections.shuffle(mazeList);
+		//Collections.shuffle(mazeList);
 	}
 }

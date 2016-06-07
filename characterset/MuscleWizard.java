@@ -193,7 +193,9 @@ public class MuscleWizard implements IHero
 	
 	public boolean isAlive()
 	{
-		return HP != 0;
+		if( this.HP > 0)
+			return true;
+		return false;
 	}
 	
 	public String charString()
@@ -214,6 +216,22 @@ public class MuscleWizard implements IHero
 	public void setLevel(int level)
 	{
 		this.level = level;
+		
+		for(int index = 1; index <= level; index++)
+		{
+			switch(index)
+			{
+				case 4:
+					level4Attack();
+					break;
+				case 8:
+					level8Attack();
+					break;
+				case 12:
+					level12Attack();
+					break;
+			}
+		}
 	}
 	
 	public int getLevel()
@@ -275,7 +293,10 @@ public class MuscleWizard implements IHero
 	
 	public void setHP(int hp)
 	{
-		HP = hp;
+		if( hp > this.getHPMax() )
+			this.HP = this.getHPMax();
+		else
+			this.HP = hp;
 	}
 	
 	public void setSPMax(int sp)
@@ -345,8 +366,12 @@ public class MuscleWizard implements IHero
 	
 	public void attackListString()
 	{
+		int n = 1;
 		for(IAttack a : skillList)
-			System.out.println(a.getAttackName());
+		{
+			System.out.println(n + ": " + a.getAttackName());
+			n++;
+		}
 	}
 	
 	public String skillListToString()
@@ -354,7 +379,7 @@ public class MuscleWizard implements IHero
 		String s = "";
 		
 		for(IAttack a : skillList)
-			s = a.getAttackName();
+			s += a.getAttackName() + "\n";
 		
 		return s;
 	}
@@ -394,9 +419,22 @@ public class MuscleWizard implements IHero
 		return healList.size();
 	}
 
-	public void healListString()
+	public void healListString() 
 	{
+		int n = 1;
 		for(IHeal a : healList)
-			System.out.println( a.getHealName());
+		{
+			System.out.println(n + ": " + a.getHealName());
+		}
+	}
+	
+	public String healListToString()
+	{
+		String s = "";
+		
+		for(IHeal a : healList)
+			s += a.getHealName() + "\n";
+		
+		return s;
 	}
 }

@@ -60,7 +60,12 @@ public class Flex implements IHeal
 		healAmt = Math.abs(gen.nextInt(hero.getHealMax()) - hero.getHealMin()) + 1 + hero.getHealMin();
 
 		curHP = healThisGuy.getHP();
-		healThisGuy.setHP(curHP + healAmt);
+		curHP += healAmt;
+		
+		if(curHP > healThisGuy.getHPMax())
+			healThisGuy.setHP(healThisGuy.getHPMax());
+		else
+			healThisGuy.setHP(curHP);
 	
 		System.out.println("Your " + getHealName() + " healed your " + healThisGuy.getName() + " for " + healAmt + "hp");
 		System.out.println(healThisGuy.getName() + " now has " + healThisGuy.getHP() + "hp");

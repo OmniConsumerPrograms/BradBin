@@ -6,6 +6,8 @@ D - 020	- Rage
 D - 030	- Panic
 D - 040 - Confusion
 C - 050	- KO
+D - 060 - Stopped
+* - 070 - Build Party
 
 1-HP/MP change (Party Manager)
 * - 100 - restores HP
@@ -99,7 +101,8 @@ D - 790 - cure all
 9-Gamemaster Events (Gamemaster)
 * - 900 - Adventure state
 * - 910 - Battle state
-D - 920 - floor change
+* - 920 - Start Menu
+O - 920 - floor change
 * - 930 - random encounter
 D - 940 - fix encounter
 * - 950 - boss encounter

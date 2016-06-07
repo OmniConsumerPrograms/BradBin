@@ -29,7 +29,10 @@ public class EquipmentManager implements IManager<IEquipment>
 	
 	public IEquipment get(int ID)
 	{
-		return itemList.get(ID);
+		if(ID >= 0 && ID < size())
+			return itemList.get(ID);
+		
+		return new NilEquipment(1);
 	}
 	
 	public IEquipment remove(int ID)

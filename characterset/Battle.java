@@ -25,10 +25,20 @@ public class Battle implements IBattle
 		this.villains = VG.generateVillains(heroes.size());
 		this.GM = GM;
 	}
+	
+
+	
+	public Battle(IParty heroes, IParty bossParty, Gamemaster GM)
+	{
+		this.heroes = heroes;
+		this.villains = bossParty;
+		this.GM = GM;
+	}
 //			int					int type
 	public int runBattle(int type)
 	{
-		System.out.println("You have encountered ");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("\nYou have encountered ");
 		this.villains.partyString();
 		
 		boolean done = false;

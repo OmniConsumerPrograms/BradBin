@@ -38,8 +38,8 @@ public class VillainTurn extends BattleTurn
 	{
 		if (currentDefender.isAlive() == false) 
 		{
-			System.out.println(currentDefender.getName() + " was killed!\n");     
-			defenders.getChar(currentDefendersPos).setStatus(050);
+			System.out.println("\n" + currentDefender.getName() + " was killed!\n");     
+			defenders.getChar(currentDefendersPos).setStatus(50);
 			//defenders.removeChar(currentDefendersPos);                  
 		}
    	}

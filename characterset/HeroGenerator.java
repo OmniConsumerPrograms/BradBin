@@ -76,8 +76,6 @@ public class HeroGenerator implements IHeroGenerator
 		boolean done = false;
 		Scanner user = new Scanner(System.in);
 		IParty heroes = new Party();
-		ArrayList<IAttack> skillList = new ArrayList<IAttack>();
-		skillList.add(new Melee());
 	      
 		while( done == false )
 		{  
@@ -126,26 +124,87 @@ public class HeroGenerator implements IHeroGenerator
 			}
 			
 			if (choice == 1) 
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
 				heroes.addChar(new Hunter(skillList));
-			else if (choice == 2) 
+			}
+			else if (choice == 2)
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
 	        	 heroes.addChar(new Rogue(skillList));
+			}
 			else if (choice == 3) 
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
 				heroes.addChar(new Priest(skillList));
+			}
 			else if (choice == 4) 
-	        	 heroes.addChar(new Warrior(skillList));   
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
+				heroes.addChar(new Warrior(skillList));   
+			}
 			else if (choice == 5) 
-	        	 heroes.addChar(new Druid(skillList));
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
+				heroes.addChar(new Druid(skillList));
+			}
 			else if (choice == 6) 
-	        	 heroes.addChar(new Paladin(skillList));
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
+				heroes.addChar(new Paladin(skillList));
+			}
 			else if (choice == 7) 
-	        	 heroes.addChar(new Mage(skillList)); 
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
+				heroes.addChar(new Mage(skillList)); 
+			}
 			else if (choice == 8) 
-	        	 heroes.addChar(new Shaman(skillList)); 
+			{	
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
+				heroes.addChar(new Shaman(skillList)); 
+			}
 			else if (choice == 9)
+			{
+				ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+				skillList.add(new Melee());
 				heroes.addChar(new MuscleWizard(skillList));
+			}
 		}      
 	      return (IParty) heroes; 
-	   }
+	}
 
-
+	public IHero getHero(String name)
+	{
+		ArrayList<IAttack> skillList = new ArrayList<IAttack>();
+		skillList.add(new Melee());
+		
+		if(name.equals("Hunter"))
+			return new Hunter(skillList);
+		else if(name.equals("Rogue"))
+			return new Rogue(skillList);
+		else if(name.equals("Priest"))
+			return new Priest(skillList);
+		else if(name.equals("Warrior"))
+			return new Warrior(skillList);
+		else if(name.equals("Druid"))
+			return new Druid(skillList);
+		else if(name.equals("Paladin"))
+			return new Paladin(skillList);
+		else if(name.equals("Mage"))
+			return new Mage(skillList);
+		else if(name.equals("Shaman"))
+			return new Shaman(skillList);
+		else if(name.equals("Muscle Wizard"))
+			return new MuscleWizard(skillList);
+		
+		return new Hunter(skillList);
+	}
 }

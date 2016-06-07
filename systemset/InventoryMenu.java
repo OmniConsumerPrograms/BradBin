@@ -48,7 +48,14 @@ public class InventoryMenu implements IMenuSystem
 			System.out.println("1: Equip Weapon/Equipment    2: Unequip Weapon/Equipment");
 			System.out.println("3: Use Item                  4: discard object");
 			System.out.println("5: Get object details        6: Continue game");
-			menuNumber = userInput.nextInt();
+			try
+			{
+				menuNumber = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return 906;
+			}
 			
 			switch(menuNumber)
 			{
@@ -79,7 +86,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.IVM.toString());
 			System.out.println("\nSelect weapon or equipment");
-			oID = userInput.nextInt() - 1;
+			try
+			{
+				oID = userInput.nextInt() - 1;
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -108,7 +122,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.PM);
 			System.out.println("Select party member to equip weapon or equipment");
-			oID = userInput.nextInt();
+			try
+			{
+				oID = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -126,7 +147,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println("Select witch equipment slot to place it");
 			System.out.println("1: " + GM.heroHolder.get().getEquipment(0).getName() + " 2: " + GM.heroHolder.get().getEquipment(1).getName() + " 3: " + GM.heroHolder.get().getEquipment(2).getName());
-			oID = userInput.nextInt();
+			try
+			{
+				oID = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -150,7 +178,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.PM);
 			System.out.println("Select party member to unequip weapon or equipment");
-			oID = userInput.nextInt();
+			try
+			{
+				oID = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -167,7 +202,14 @@ public class InventoryMenu implements IMenuSystem
 		while(trip != 1)
 		{
 			System.out.println("What is it that you want to unquip?\n1: Weapon\n2: Equipment");
-			oID = userInput.nextInt();
+			try
+			{
+				oID = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID <= 0)
 				trip = 1;
@@ -190,7 +232,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println("Select witch equipment slot to place it");
 			System.out.println("1: " + GM.heroHolder.get().getEquipment(0).getName() + " 2: " + GM.heroHolder.get().getEquipment(1).getName() + " 3: " + GM.heroHolder.get().getEquipment(2).getName());
-			oID = userInput.nextInt();
+			try
+			{
+				oID = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -214,7 +263,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.IVM.toString());
 			System.out.println("Select item");
-			oID = userInput.nextInt() - 1;
+			try
+			{
+				oID = userInput.nextInt() - 1;
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -246,7 +302,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.PM);
 			System.out.println("Select a party member to use item on.");
-			oID = userInput.nextInt();
+			try
+			{
+				oID = userInput.nextInt();
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -273,7 +336,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon, equipment, or Item to be discard");
-			oID = userInput.nextInt() - 1;
+			try
+			{
+				oID = userInput.nextInt() - 1;
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;
@@ -299,7 +369,14 @@ public class InventoryMenu implements IMenuSystem
 		{
 			System.out.println(GM.IVM.toString());
 			System.out.println("Select weapon, equipment, or Item to be looked at");
-			oID = userInput.nextInt() - 1;
+			try
+			{
+				oID = userInput.nextInt() - 1;
+			}
+			catch(InputMismatchException ime)
+			{
+				return;
+			}
 			
 			if(oID < 0)
 				trip = 1;

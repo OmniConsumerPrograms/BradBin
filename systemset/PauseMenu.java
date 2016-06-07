@@ -37,7 +37,14 @@ public class PauseMenu implements IMenuSystem
 				System.out.println("1: Access Inventory    2: Load game             3: Save game and continue");
 				System.out.println("4: Save game and quit  5: Quit with out saving  6: Rest game");
 				System.out.println("7: Check party         8: Continue game");
-				menuNumber = userInput.nextInt();
+				try
+				{
+					menuNumber = userInput.nextInt();
+				}
+				catch(InputMismatchException ime)
+				{
+					return 906;
+				}
 				
 				switch(menuNumber)
 				{
@@ -81,10 +88,17 @@ public class PauseMenu implements IMenuSystem
 			while(true)
 			{
 				System.out.println(menuType());
-				System.out.println("1: Access Inventory      2: Load game");
-				System.out.println("3: Quit with out saving  4: Rest game");
-				System.out.println("5: Check party           6: Continue game");
-				menuNumber = userInput.nextInt();
+				System.out.println("1: Access Inventory      2: Quit with out saving  ");
+				System.out.println("3: Rest game             4: Check party");
+				System.out.println("5: Continue game");
+				try
+				{
+					menuNumber = userInput.nextInt();
+				}
+				catch(InputMismatchException ime)
+				{
+					return 916;
+				}
 				
 				switch(menuNumber)
 				{
@@ -92,12 +106,9 @@ public class PauseMenu implements IMenuSystem
 						GM.callEvent(970);
 						break;
 					case 2:
-						GM.callEvent(902);
-						return 909;
-					case 3:
 						GM.callEvent(990);
 						break;
-					case 4:
+					case 3:
 						String temp = "";
 						System.out.println("Are you sure you want to restart game? (Y/N)");
 						userInput.next();
@@ -109,10 +120,10 @@ public class PauseMenu implements IMenuSystem
 						}
 						else
 							break;
-					case 5:
+					case 4:
 						System.out.println(GM.PM);
 						break;
-					case 6:
+					case 5:
 						return 909;
 				}
 			}

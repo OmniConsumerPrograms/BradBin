@@ -25,7 +25,7 @@ public class HeroTurn extends BattleTurn
    		IHero hero = (IHero)curAttacker;
 		Scanner user = new Scanner(System.in);
    		
-   		System.out.println("Choose an attack: ");
+   		System.out.println("\nChoose an attack: ");
    		hero.attackListString();      
    		
    		do 
@@ -52,7 +52,7 @@ public class HeroTurn extends BattleTurn
    		IHero hero = (IHero)curAttacker;
    		Scanner user = new Scanner(System.in);
    		
-   		System.out.println("Choose a heal: ");
+   		System.out.println("\nChoose a heal: ");
    		hero.healListString();      
       
    		do 
@@ -78,7 +78,7 @@ public class HeroTurn extends BattleTurn
       Scanner user = new Scanner(System.in);      
       do 
       {
-         System.out.println("Who would you like to attack?");
+         System.out.println("\nWho would you like to attack?");
          enemies.partyString();
                
          try 
@@ -102,7 +102,7 @@ public class HeroTurn extends BattleTurn
       Scanner user = new Scanner(System.in);      
       do 
       {
-         System.out.println("Who would you like to heal?");
+         System.out.println("\nWho would you like to heal?");
          allies.partyString();
                
          try 
@@ -128,8 +128,8 @@ public class HeroTurn extends BattleTurn
 	         
 	   while (done == false && choice < 1 && choice > 3);          
 	   {
-		   System.out.println(hero.getName() + "s turn. Make a selection");    
-		   System.out.println("1. Attack  \n2. Heal \n3. Use Item  \n4. Party Stats\n 5. Pause");
+		   System.out.println("\n" + hero.getName() + "s turn. Make a selection");    
+		   System.out.println("1. Attack  \n2. Heal \n3. Use Item  \n4. Party Stats\n5. Pause");
 		   try 
 		   {
 			   choice = user.nextInt();
@@ -150,11 +150,12 @@ public class HeroTurn extends BattleTurn
    {
       if (currentDefender.isAlive() == false) 
       {
-         System.out.println(currentAttacker.getName() + " defeated " + currentDefender.getName() + "!\n");          
+         System.out.println("\n" + currentAttacker.getName() + " defeated " + currentDefender.getName() + "!\n");          
          IVillain defender = (IVillain)currentDefender;
          int gainedXP = defender.getXP();         
          IHero attacker = (IHero)currentAttacker;         
-         attacker.setXP(attacker.getXP() +gainedXP);         
+         attacker.setXP(attacker.getXP() +gainedXP); 
+         System.out.println();
          attacker.levelUp();          
          defenders.removeChar(currentDefendersPos);                           
       }  
