@@ -1023,6 +1023,7 @@ public class Gamemaster
 	public void buildItemSet()
 	{
 		gameMode = 800;
+		difficulty = -1;
 		IM = new ItemManager();
 		IG = new ItemGenerator(IM);
 		callEvent(IG.build());

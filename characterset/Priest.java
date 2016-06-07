@@ -264,16 +264,18 @@ public class Priest implements IHero
 	{
 		level++;
 		
-		System.out.println("Congratulations!");
+		System.out.println("\nCongratulations!");
 		System.out.println(getName() + " has reached level " + getLevel());
 		setHPMax(getHPMax() + 25);
 		setHP( getHPMax());
+		setSPMax(getSPMax() + 10);
+		setSP(getSPMax());
 		System.out.println("Health increased to " + getHPMax() );
 		setAttackMin( getAttackMin() + 10);
 		setAttackMax(getAttackMax() + 10);
-		System.out.println("Attack increased to " + getAttackMin() + " - " + getAttackMax() );
+		System.out.println("Attack increased to " + getAttackMax() + " - " + getAttackMin() );
 		setAccuracy(getAccuracy() + 4);
-		System.out.println("Accuracy increaded t0 " + getAccuracy());
+		System.out.println("Accuracy increaded to " + getAccuracy());
 		setMagDefense(getMagDefense() + 11);
 		System.out.println("Magical Defense increased to " + getMagDefense());
 		setPhyDefense(getPhyDefense() + 11);

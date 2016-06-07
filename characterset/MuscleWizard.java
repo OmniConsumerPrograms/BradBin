@@ -259,13 +259,23 @@ public class MuscleWizard implements IHero
 	{
 		level++;
 		
-		setHPMax(HPMax * level);
-		setHP(HP * level);
-		setAccuracy(accuracy * (1 + 1 / ((double)level)));
+		System.out.println("\nCongratulations!");
+		System.out.println(getName() + " has reached level " + getLevel());
+		setHPMax(getHPMax() + 25);
+		setHP( getHPMax());
+		System.out.println("Health increased to " + getHPMax() );
+		setSPMax(getSPMax() + 10);
+		setSP(getSPMax());
+		System.out.println("Skill points increased to " + getSPMax());
 		setAttackMax((int)(attackMax * (1 + 1 / ((double)level))));
 		setAttackMin((int)(attackMin * (1 + 1 / ((double)level))));
+		System.out.println("Attack increased to " + getAttackMax() + " - " + getAttackMin() );
+		setAccuracy(accuracy * (1 + 1 / ((double)level)));
+		System.out.println("Accuracy increaded to " + getAccuracy());
 		setPhyDefense((int)(phyDefense * (1 + 1 / ((double)level))));
+		System.out.println("Magical Defense increased to " + getMagDefense());
 		setMagDefense((int)(magDefense * (1 + 1 / ((double)level))));
+		System.out.println("Physical Defense increased to " + getPhyDefense());
 		
 		switch(level)
 		{

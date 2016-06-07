@@ -102,7 +102,7 @@ public abstract class BattleTurn
 	
 	public void executeHeal(ICharacter curHealer, ICharacter curHealee, int choice)
 	{	
-		curHealer.heal(curHealer, choice);
+		curHealer.heal(curHealee, choice);
 	}
 
 	public void advanceTurnOrder(IParty attackers, IParty defenders) 
