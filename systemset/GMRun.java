@@ -1,6 +1,6 @@
 package systemset;
 
-public class GMTester
+public class GMRun
 {
 	public static void main(String[] args)
 	{
