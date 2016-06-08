@@ -283,7 +283,7 @@ public class InventoryMenu implements IMenuSystem
 					GM.ID = oID;
 					trip = 1;
 				}
-				else if(((IUsable) GM.IVM.get(oID).get()).getEventID() / 100 == 5)
+				else if(GM.getGameMode() == 910)
 				{
 					System.out.println(((IUsable) GM.IVM.get(oID).get()).getName());
 					GM.itemHolder.place((IItem) GM.IVM.get(oID).get());

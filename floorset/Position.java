@@ -1,5 +1,7 @@
 package floorset;
 
+import interfaces.IPosition;
+
 public class Position implements IPosition
 {
 	private int x;

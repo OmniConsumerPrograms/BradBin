@@ -40,7 +40,7 @@ public class BossDragon implements IVillain
 	{
 		name = "Smaug";
 		status = 000;
-		HPMax = 3000;
+		HPMax = 3000000;
 		HP = HPMax;
 		SPMax = 100;
 		SP = SPMax;

@@ -1,4 +1,4 @@
-package floorset;
+package interfaces;
 
 public interface IPosition
 {
